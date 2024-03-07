@@ -1,3 +1,0 @@
-# Theming {#configuring-layout}
-
-TBD
