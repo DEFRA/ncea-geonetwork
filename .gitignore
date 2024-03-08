@@ -29,3 +29,4 @@
 **/target
 **/schema_plugins
 **/web/src/main/webResources/WEB-INF/classes/git.properties
+**/geonetwork.war
