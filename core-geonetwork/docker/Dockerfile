@@ -21,7 +21,7 @@ RUN apt-get -y update && \
     chown -R jetty:jetty /var/lib/jetty/webapps/geonetwork
 
 USER jetty
-COPY geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
+COPY /core-geonetwork/web/target/geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
 
 RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
      unzip geonetwork.war && \
