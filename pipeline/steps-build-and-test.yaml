@@ -19,6 +19,7 @@ steps:
         core-geonetwork/web/target/geonetwork.war
         core-geonetwork/docker/**
       TargetFolder: $(Build.ArtifactStagingDirectory)
+      flattenFolders: true
 
   # - task: CopyFiles@2
   #   displayName: 'Copy Files to artifact staging directory'
