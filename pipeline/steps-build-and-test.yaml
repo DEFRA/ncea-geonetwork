@@ -16,8 +16,8 @@ steps:
     inputs:
       SourceFolder: '$(System.DefaultWorkingDirectory)'
       Contents: |
-        **/target/*.?(war|jar)
-        **/docker/*
+        core-geonetwork/web/target/geonetwork.war
+        core-geonetwork/docker/**
       TargetFolder: $(Build.ArtifactStagingDirectory)
 
   # - task: CopyFiles@2
