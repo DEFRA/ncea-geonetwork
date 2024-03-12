@@ -21,7 +21,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      vmImage: 'DEFRA-COMMON-ubuntu2204-SSV3'
+      name: DEFRA-COMMON-ubuntu2204-SSV3
     variables:
       - template: templates/variables-build.yml      
     steps:
