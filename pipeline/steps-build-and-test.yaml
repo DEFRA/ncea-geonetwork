@@ -1,6 +1,7 @@
 steps:
 
   - task: Maven@4
+    displayName: 'Maven build'
     inputs:
       mavenPomFile: 'core-geonetwork/pom.xml'
       mavenOptions: '-Xmx3072m'
@@ -12,7 +13,7 @@ steps:
       goals: 'package -DskipTests -DschemasCopy=true -T 2C'
 
   - task: CopyFiles@2
-    displayName: 'Copy Files to artifact staging directory'
+    displayName: 'Copy Files'
     inputs:
       SourceFolder: '$(System.DefaultWorkingDirectory)'
       Contents: |
@@ -21,9 +22,3 @@ steps:
         core-geonetwork/docker/docker-entrypoint.sh
       TargetFolder: $(Build.ArtifactStagingDirectory)
       flattenFolders: true
-
-  - task: CmdLine@2
-    inputs:
-        script: |
-          echo "Structure of ArtifactStagingDirectory:"
-          tree $(Build.ArtifactStagingDirectory)
