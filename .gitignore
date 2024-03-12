@@ -26,3 +26,6 @@
 **/web/src/main/webapp/WEB-INF/data/config/encryptor.properties
 **/web/src/main/webResources/WEB-INF/classes/git.properties
 
+**/target
+**/schema_plugins
+**/geonetwork.war
