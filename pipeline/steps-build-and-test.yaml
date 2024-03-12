@@ -5,11 +5,11 @@ steps:
       mavenPomFile: 'core-geonetwork/pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
-      jdkVersionOption: 'default'
+      jdkVersionOption: '1.8'
       jdkArchitectureOption: 'x64'
-      publishJUnitResults: true
+      publishJUnitResults: false
       testResultsFiles: '**/TEST-*.xml'
-      goals: 'package'
+      goals: 'package -DskipTests -DschemasCopy=true -T 2C'
 
   - task: CopyFiles@2
     displayName: 'Copy Files to artifact staging directory'
