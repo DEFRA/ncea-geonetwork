@@ -11,15 +11,22 @@ steps:
       testResultsFiles: '**/TEST-*.xml'
       goals: 'package -DskipTests -DschemasCopy=true -T 2C'
 
-  - task: CmdLine@2
+  - task: CopyFiles@2
+    displayName: 'Copy Files to artifact staging directory'
     inputs:
-        script: |
-          echo "Structure of work folder of this pipeline:"
-          tree $(System.DefaultWorkingDirectory)
+      SourceFolder: '$(System.DefaultWorkingDirectory)'
+      Contents: '**/target/*.war'
+      TargetFolder: '**/docker/**'
 
   # - task: CopyFiles@2
   #   displayName: 'Copy Files to artifact staging directory'
   #   inputs:
   #     SourceFolder: '$(System.DefaultWorkingDirectory)'
-  #     Contents: '**/target/*.war'
+  #     Contents: '*/docker/*.war'
   #     TargetFolder: $(Build.ArtifactStagingDirectory)
+
+  - task: CmdLine@2
+    inputs:
+        script: |
+          echo "Structure of DefaultWorkingDirectory:"
+          tree $(System.DefaultWorkingDirectory)
