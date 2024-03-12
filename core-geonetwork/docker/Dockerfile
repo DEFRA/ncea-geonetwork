@@ -21,15 +21,10 @@ RUN apt-get -y update && \
     chown -R jetty:jetty /var/lib/jetty/webapps/geonetwork
 
 USER jetty
-ENV GN_FILE geonetwork.war
-ENV GN_VERSION 4.2.8
-ENV GN_DOWNLOAD_MD5 5be7e03952eefd3a94778f4897764a54
+COPY geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
 
-RUN cd /var/lib/jetty/webapps/geonetwork/ && \
-     curl -fSL -o geonetwork.war \
-     https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download && \
-     echo "${GN_DOWNLOAD_MD5} *geonetwork.war" | md5sum -c && \
-     unzip -q geonetwork.war && \
+RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
+     unzip geonetwork.war && \
      rm geonetwork.war 
 
 COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
