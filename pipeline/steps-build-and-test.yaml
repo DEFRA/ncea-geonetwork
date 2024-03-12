@@ -17,16 +17,10 @@ steps:
       SourceFolder: '$(System.DefaultWorkingDirectory)'
       Contents: |
         core-geonetwork/web/target/geonetwork.war
-        core-geonetwork/docker/**
+        core-geonetwork/docker/Dockerfile
+        core-geonetwork/docker/docker-entrypoint.sh
       TargetFolder: $(Build.ArtifactStagingDirectory)
       flattenFolders: true
-
-  # - task: CopyFiles@2
-  #   displayName: 'Copy Files to artifact staging directory'
-  #   inputs:
-  #     SourceFolder: '$(System.DefaultWorkingDirectory)'
-  #     Contents: '*/docker/*.war'
-  #     TargetFolder: $(Build.ArtifactStagingDirectory)
 
   - task: CmdLine@2
     inputs:
