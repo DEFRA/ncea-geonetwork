@@ -15,8 +15,10 @@ steps:
     displayName: 'Copy Files to artifact staging directory'
     inputs:
       SourceFolder: '$(System.DefaultWorkingDirectory)'
-      Contents: '**/target/*.war'
-      TargetFolder: '**/docker/**'
+      Contents: |
+        '**/target/*.war'
+        '**/docker/**'
+      TargetFolder: $(Build.ArtifactStagingDirectory)
 
   # - task: CopyFiles@2
   #   displayName: 'Copy Files to artifact staging directory'
@@ -28,5 +30,5 @@ steps:
   - task: CmdLine@2
     inputs:
         script: |
-          echo "Structure of DefaultWorkingDirectory:"
-          tree $(System.DefaultWorkingDirectory)
+          echo "Structure of ArtifactStagingDirectory:"
+          tree $(Build.ArtifactStagingDirectory)

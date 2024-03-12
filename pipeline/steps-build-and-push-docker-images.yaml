@@ -5,7 +5,7 @@ steps:
   condition: succeeded()
   inputs:
     command: build
-    Dockerfile: '**/core-geonetwork/docker/Dockerfile'
+    Dockerfile: '$(Build.ArtifactStagingDirectory)/Dockerfile'
     containerRegistry: $(acrContainerRegistryServiceConnection)
     repository: $(acrContainerRepositoryGeoNetwork)
     tags: '$(imageTag)'
