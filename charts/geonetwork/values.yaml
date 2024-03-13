@@ -7,7 +7,7 @@ namespace: geonetwork
 georeplicaCount: 1
 
 geoimage:  
-  repository: @(containerRepostitoryFullPath)
+  repository: $(containerRepostitoryFullPath)
   tag: pipeline
   pullPolicy: IfNotPresent
 
