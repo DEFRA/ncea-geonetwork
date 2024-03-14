@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: {{ $.Values.elasticsearch.name }}
   annotations:
-    test: "test"
+    test: "testing"
   labels:
       geonetwork-ncea/app: {{ $.Values.elasticsearch.name }}
       geonetwork-ncea/siteName: {{ .Release.Name }}
