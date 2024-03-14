@@ -39,7 +39,7 @@ steps:
     command: 'upgrade'
     chartType: 'FilePath'
     chartPath: '$(Pipeline.Workspace)/ncea-geonetwork-$(Build.BuildNumber).tgz'
-    valueFile: $(Pipeline.Workspace)/chart/geonetwork/values.yaml
+    valueFile: $(Pipeline.Workspace)/charts/geonetwork/values.yaml
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
         geoimage.tag=$(imageTag)
