@@ -49,7 +49,7 @@ steps:
     azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "$(Build.BuildNumber)"
+    releaseName: "release2"
     namespace: $(aksNamespaceGeoNetwork)
     command: 'install'
     chartType: 'FilePath'
