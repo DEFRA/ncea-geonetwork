@@ -52,10 +52,10 @@ steps:
         pv.geoCataloguePvDiskResourceId=$(geoCataloguePvDiskResourceId)
         peSaFileshare.storageAccountResourceGroup=$(storageAccountResourceGroup)
         peSaFileshare.storageAccountName=$(storageAccountName)
-        peSaFileshare.storageAccountFilePrivateEndpointFqdn=(storageAccountFilePrivateEndpointFqdn)
+        peSaFileshare.storageAccountFilePrivateEndpointFqdn=$(storageAccountFilePrivateEndpointFqdn)
         identity.serviceAccountName=$(serviceAccountGeonetwork)
         identity.clientId=$(managedIdentityClientIdGeonetwork)
-        identity.tenantId=(tenantId)
+        identity.tenantId=$(tenantId)
         identity.keyvaultName=$(keyvaultName)
     install: true
     force: true
