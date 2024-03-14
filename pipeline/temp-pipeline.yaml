@@ -39,7 +39,7 @@ steps:
     namespace: $(aksNamespaceGeoNetwork)
     command: 'install'
     chartType: 'FilePath'
-    chartPath: '$(Build.SourcesDirectory)/ncea-geonetwork/charts/geonetwork'
+    chartPath: '$(Build.SourcesDirectory)/charts/geonetwork'
     chartVersion: 1
     valueFile: $(Agent.TempDirectory)/dev-values.yaml
     # valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
