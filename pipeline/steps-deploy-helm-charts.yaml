@@ -40,12 +40,12 @@ steps:
     azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: ${{ parameters.releaseName }}
+    releaseName: "testrelease"
     namespace: $(aksNamespaceGeoNetwork)
     command: 'install'
     chartType: 'FilePath'
     chartPath: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
-    #chartVersion: "$(Build.BuildNumber)"
+    chartVersion: "4.2.8"
     valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
