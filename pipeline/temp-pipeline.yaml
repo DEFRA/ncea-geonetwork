@@ -62,4 +62,4 @@ steps:
     #     identity.keyvaultName=$(keyvaultName)
     install: true
     force: true
-    arguments: --timeout=30m --dry-run --debug
+    arguments: --timeout=30m --debug
