@@ -6,26 +6,26 @@ metadata:
     test: "testing"
   labels:
     azure.workload.identity/use: "true"
-{{ include "geonetwork.labels" . | indent 4 }}
+    {{- include "geonetwork.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.georeplicaCount }}
   selector:
     matchLabels:
-      geonetwork/app: {{ include "geonetwork.name" . }}
+      geonetwork/app: {{- include "geonetwork.name" . }}
       geonetwork/siteName: {{ .Release.Name }}
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        geonetwork/app: {{ include "geonetwork.name" . }}
+        geonetwork/app: {{- include "geonetwork.name" . }}
         geonetwork/siteName: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ .Values.identity.serviceAccountName }}
-    {{- with .Values.imagePullSecrets }}
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- end }}
       securityContext:
         runAsUser: 999
         runAsGroup: 999

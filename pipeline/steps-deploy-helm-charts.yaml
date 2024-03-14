@@ -74,5 +74,5 @@ steps:
         identity.tenantId=$(tenantId)
         identity.keyvaultName=$(keyvaultName)
     install: true
-    force: true
+    # force: true
     arguments: --timeout=30m --dry-run --debug
