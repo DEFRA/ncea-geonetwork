@@ -35,7 +35,7 @@ steps:
     command: 'install'
     chartType: 'FilePath'
     chartPath: '$(Build.SourcesDirectory)/charts/geonetwork'
-    chartVersion: "4.2.8"
+    chartVersion: "$(Build.BuildNumber)"
     valueFile: $(Build.SourcesDirectory)/charts/geonetwork/values.yaml
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
