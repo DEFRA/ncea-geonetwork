@@ -42,7 +42,7 @@ steps:
     kubernetesCluster : $(aksClusterName)
     releaseName: ${{ parameters.releaseName }}
     namespace: $(aksNamespaceGeoNetwork)
-    command: 'upgrade'
+    command: 'install'
     chartType: 'FilePath'
     chartPath: '$(Pipeline.Workspace)/ncea-geonetwork-$(Build.BuildNumber).tgz'
     chartVersion: $(Build.BuildNumber)
@@ -67,4 +67,4 @@ steps:
     #     identity.keyvaultName=$(keyvaultName)
     install: true
     force: true
-    arguments: --timeout=30m --debug
+    arguments: --timeout=30m --dry-run --debug

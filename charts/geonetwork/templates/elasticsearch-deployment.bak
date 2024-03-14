@@ -31,7 +31,7 @@ spec:
         runAsGroup: 1000
         fsGroup: 1000
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ Values.elasticsearch.name }}
           image: "{{ .Values.esimage.repository }}:{{ .Values.esimage.tag }}"
           imagePullPolicy: {{ .Values.esimage.pullPolicy }}
           env:
