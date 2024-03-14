@@ -25,4 +25,4 @@ variables:
       value: $(Build.BuildNumber)_$(branch)
 
   - name : chartPath
-    value: 'charts/ncea-geonetwork'
+    value: 'charts/geonetwork'

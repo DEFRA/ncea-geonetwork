@@ -25,7 +25,7 @@ maintainers:
 - email: ncea@defra.org.uk
   name: ncea
   url: https://github.com/jingking/geonetwork-k8s
-name: geonetwork-k8s
+name: ncea-geonetwork
 sources:
 - https://github.com/jingking/geonetwork-k8s
 - https://github.com/geonetwork
