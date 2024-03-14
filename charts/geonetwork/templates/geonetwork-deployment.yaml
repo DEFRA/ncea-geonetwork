@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "geonetwork.fullname" . }}
   annotations:
-    geonetwork.version: "4.2.8"
+    test: "test"
   labels:
     azure.workload.identity/use: "true"
 {{ include "geonetwork.labels" . | indent 4 }}
