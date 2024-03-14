@@ -30,7 +30,7 @@ steps:
     azureSubscriptionEndpoint: $(azureServiceConnection)
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "testrelease"
+    releaseName: "$(Build.BuildNumber)"
     namespace: $(aksNamespaceGeoNetwork)
     command: 'install'
     chartType: 'FilePath'
