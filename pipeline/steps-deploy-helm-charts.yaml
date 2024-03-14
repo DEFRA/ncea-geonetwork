@@ -45,6 +45,7 @@ steps:
     command: 'upgrade'
     chartType: 'FilePath'
     chartPath: '$(Pipeline.Workspace)/ncea-geonetwork-$(Build.BuildNumber).tgz'
+    chartVersion: $(Build.BuildNumber)
     valueFile: $(Agent.TempDirectory)/dev-values.yaml
     # valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
     # overrideValues: |
