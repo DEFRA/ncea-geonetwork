@@ -44,27 +44,26 @@ steps:
     namespace: $(aksNamespaceGeoNetwork)
     command: 'install'
     chartType: 'FilePath'
-    chartPath: '$(Pipeline.Workspace)/ncea-geonetwork-$(Build.BuildNumber).tgz'
-    chartVersion: $(Build.BuildNumber)
-    valueFile: $(Agent.TempDirectory)/dev-values.yaml
-    # valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
-    # overrideValues: |
-    #     geoimage.repository=$(containerRepositoryFullPath)
-    #     geoimage.tag=$(imageTag)
-    #     ingress.host=$(ingressHostname)
-    #     postgres.host=$(postgresHostname)
-    #     postgres.dbuser=$(postgresDbUser)
-    #     postgres.password=$(postgresDbPassword)
-    #     postgres.dbname=$(postgresDbName)
-    #     esimage.repository=$(elasticContainerRepositoryFullPath)
-    #     pv.geoCataloguePvDiskResourceId=$(geoCataloguePvDiskResourceId)
-    #     peSaFileshare.storageAccountResourceGroup=$(storageAccountResourceGroup)
-    #     peSaFileshare.storageAccountName=$(storageAccountName)
-    #     peSaFileshare.storageAccountFilePrivateEndpointFqdn=$(storageAccountFilePrivateEndpointFqdn)
-    #     identity.serviceAccountName=$(serviceAccountGeonetwork)
-    #     identity.clientId=$(managedIdentityClientIdGeonetwork)
-    #     identity.tenantId=$(tenantId)
-    #     identity.keyvaultName=$(keyvaultName)
+    chartPath: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
+    #chartVersion: "$(Build.BuildNumber)"
+    valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
+    overrideValues: |
+        geoimage.repository=$(containerRepositoryFullPath)
+        geoimage.tag=$(imageTag)
+        ingress.host=$(ingressHostname)
+        postgres.host=$(postgresHostname)
+        postgres.dbuser=$(postgresDbUser)
+        postgres.password=$(postgresDbPassword)
+        postgres.dbname=$(postgresDbName)
+        esimage.repository=$(elasticContainerRepositoryFullPath)
+        pv.geoCataloguePvDiskResourceId=$(geoCataloguePvDiskResourceId)
+        peSaFileshare.storageAccountResourceGroup=$(storageAccountResourceGroup)
+        peSaFileshare.storageAccountName=$(storageAccountName)
+        peSaFileshare.storageAccountFilePrivateEndpointFqdn=$(storageAccountFilePrivateEndpointFqdn)
+        identity.serviceAccountName=$(serviceAccountGeonetwork)
+        identity.clientId=$(managedIdentityClientIdGeonetwork)
+        identity.tenantId=$(tenantId)
+        identity.keyvaultName=$(keyvaultName)
     install: true
     force: true
     arguments: --timeout=30m --dry-run --debug
