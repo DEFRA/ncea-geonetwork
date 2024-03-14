@@ -23,6 +23,9 @@ steps:
   inputs:
     secureFile: 'dev-values.yaml'
 
+- script: |
+    ls 
+  displayName: 'ls'
 
 - task: HelmDeploy@0
   displayName: 'Helm Deploy'
@@ -37,7 +40,7 @@ steps:
     command: 'install'
     chartType: 'FilePath'
     chartPath: '$(Build.SourcesDirectory)/ncea-geonetwork/charts/geonetwork'
-    chartVersion: $(Build.BuildNumber)
+    chartVersion: 1
     valueFile: $(Agent.TempDirectory)/dev-values.yaml
     # valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
     # overrideValues: |
