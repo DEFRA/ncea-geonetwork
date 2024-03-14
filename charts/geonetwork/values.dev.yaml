@@ -85,6 +85,7 @@ espvc:
   elasticsearchPvcName: elasticsearch-data-fileshare-pvc
   elasticsearchPvcSize: 10Gi
   size: 1000Mi
+  accessModes: ReadWriteMany
 
 elasticsearch:
   name: elasticsearch
