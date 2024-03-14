@@ -18,11 +18,6 @@ steps:
   inputs:
     kubeloginVersion: 'latest'
 
-- task: DownloadSecureFile@1
-  displayName: 'Download values file'
-  inputs:
-    secureFile: 'dev-values.yaml'
-
 - script: |
     ls 
   displayName: 'ls'
@@ -40,26 +35,25 @@ steps:
     command: 'install'
     chartType: 'FilePath'
     chartPath: '$(Build.SourcesDirectory)/charts/geonetwork'
-    chartVersion: 1
-    valueFile: $(Agent.TempDirectory)/dev-values.yaml
-    # valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
-    # overrideValues: |
-    #     geoimage.repository=$(containerRepositoryFullPath)
-    #     geoimage.tag=$(imageTag)
-    #     ingress.host=$(ingressHostname)
-    #     postgres.host=$(postgresHostname)
-    #     postgres.dbuser=$(postgresDbUser)
-    #     postgres.password=$(postgresDbPassword)
-    #     postgres.dbname=$(postgresDbName)
-    #     esimage.repository=$(elasticContainerRepositoryFullPath)
-    #     pv.geoCataloguePvDiskResourceId=$(geoCataloguePvDiskResourceId)
-    #     peSaFileshare.storageAccountResourceGroup=$(storageAccountResourceGroup)
-    #     peSaFileshare.storageAccountName=$(storageAccountName)
-    #     peSaFileshare.storageAccountFilePrivateEndpointFqdn=$(storageAccountFilePrivateEndpointFqdn)
-    #     identity.serviceAccountName=$(serviceAccountGeonetwork)
-    #     identity.clientId=$(managedIdentityClientIdGeonetwork)
-    #     identity.tenantId=$(tenantId)
-    #     identity.keyvaultName=$(keyvaultName)
+    chartVersion: "4.2.8"
+    valueFile: $(Build.SourcesDirectory)/charts/geonetwork/values.yaml
+    overrideValues: |
+        geoimage.repository=$(containerRepositoryFullPath)
+        geoimage.tag=$(imageTag)
+        ingress.host=$(ingressHostname)
+        postgres.host=$(postgresHostname)
+        postgres.dbuser=$(postgresDbUser)
+        postgres.password=$(postgresDbPassword)
+        postgres.dbname=$(postgresDbName)
+        esimage.repository=$(elasticContainerRepositoryFullPath)
+        pv.geoCataloguePvDiskResourceId=$(geoCataloguePvDiskResourceId)
+        peSaFileshare.storageAccountResourceGroup=$(storageAccountResourceGroup)
+        peSaFileshare.storageAccountName=$(storageAccountName)
+        peSaFileshare.storageAccountFilePrivateEndpointFqdn=$(storageAccountFilePrivateEndpointFqdn)
+        identity.serviceAccountName=$(serviceAccountGeonetwork)
+        identity.clientId=$(managedIdentityClientIdGeonetwork)
+        identity.tenantId=$(tenantId)
+        identity.keyvaultName=$(keyvaultName)
     install: true
     force: true
     arguments: --timeout=30m --debug
