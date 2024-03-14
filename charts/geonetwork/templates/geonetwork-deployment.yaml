@@ -6,13 +6,12 @@ metadata:
     test: "testing"
   labels:
     azure.workload.identity/use: "true"
-    {{- include "geonetwork.labels" . | indent 4 }}
+    {{- include "geonetwork.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.georeplicaCount }}
   selector:
     matchLabels:
-      geonetwork/app: {{- include "geonetwork.name" . }}
-      geonetwork/siteName: {{ .Release.Name }}
+      {{- include "geonetwork.selectorLabels" . | nindent 6 }}
   strategy:
     type: Recreate
   template:

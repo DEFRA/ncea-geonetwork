@@ -35,12 +35,21 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "geonetwork.labels" -}}
-geonetwork-ncea/app: {{ include "geonetwork.name" . }}
 helm.sh/chart: {{ include "geonetwork.chart" . }}
-geonetwork-ncea/siteName:  {{ .Release.Name }}
+{{ include "geonetwork.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
+
+{{/*
+Selector labels
+*/}}
+{{- define "geonetwork.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "geonetwork.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+geonetwork/app: {{- include "geonetwork.name" . }}
+geonetwork/siteName: {{ .Release.Name }}
+{{- end }}
 
