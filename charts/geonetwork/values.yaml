@@ -13,7 +13,7 @@ geoimage:
 
 imagePullSecrets: []
 nameOverride: &gn_host "geonetwork"
-fullnameOverride: "geonetwork"
+fullnameOverride: "geonetwork" 
 
 geoservice:
   type: ClusterIP
