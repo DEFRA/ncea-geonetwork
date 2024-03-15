@@ -54,7 +54,7 @@ steps:
     command: 'install'
     chartType: 'FilePath'
     chartPath: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
-    chartVersion: "44"
+    # chartVersion: "44"
     valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
