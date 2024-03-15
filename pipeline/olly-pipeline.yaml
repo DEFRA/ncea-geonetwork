@@ -42,8 +42,8 @@ steps:
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
     command: lint
-    chartPath: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
-    valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
+    chartPath: '$(Build.SourcesDirectory)/charts/geonetwork'
+    valueFile: $(Build.SourcesDirectory)/charts/geonetwork/values.yaml
 
 - task: HelmDeploy@0
   displayName: 'Helm Deploy'
