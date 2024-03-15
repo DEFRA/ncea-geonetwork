@@ -40,7 +40,7 @@ steps:
     azureSubscriptionEndpoint: $(azureServiceConnection)
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "$(Build.BuildNumber)"
+    releaseName: "geonetwork-helm-deploy"
     namespace: $(aksNamespaceGeoNetwork)
     command: 'upgrade'
     chartType: 'FilePath'
