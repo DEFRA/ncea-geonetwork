@@ -1,0 +1,24 @@
+steps:
+
+  - task: Maven@4
+    displayName: 'Maven build'
+    inputs:
+      mavenPomFile: 'core-geonetwork/pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      goals: 'package -DskipTests -DschemasCopy=true -T 2C'
+
+  - task: CopyFiles@2
+    displayName: 'Copy Files'
+    inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)'
+      Contents: |
+        core-geonetwork/web/target/geonetwork.war
+        core-geonetwork/docker/Dockerfile
+        core-geonetwork/docker/docker-entrypoint.sh
+      TargetFolder: $(Build.ArtifactStagingDirectory)
+      flattenFolders: true

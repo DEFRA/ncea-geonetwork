@@ -13,24 +13,30 @@ USER root
 RUN apt-get -y update && \
     apt-get -y install --no-install-recommends \ 
         curl \
-        wget \
         unzip && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p ${DATA_DIR} && \
     chown -R jetty:jetty ${DATA_DIR} && \
     mkdir -p /var/lib/jetty/webapps/geonetwork && \
     chown -R jetty:jetty /var/lib/jetty/webapps/geonetwork
-RUN rm /docker-entrypoint.sh
-USER jetty
-COPY geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
 
-RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
-     unzip geonetwork.war && \
+#COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh 
+#RUN chmod +x /geonetwork-entrypoint.sh 
+
+USER jetty
+ENV GN_FILE geonetwork.war
+ENV GN_VERSION 4.2.8
+ENV GN_DOWNLOAD_MD5 5be7e03952eefd3a94778f4897764a54
+
+RUN cd /var/lib/jetty/webapps/geonetwork/ && \
+     curl -fSL -o geonetwork.war \
+     https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download && \
+     echo "${GN_DOWNLOAD_MD5} *geonetwork.war" | md5sum -c && \
+     unzip -q geonetwork.war && \
      rm geonetwork.war 
 
-
-RUN curl -O https://github.com/geonetwork/docker-geonetwork/blob/983310e129d2a55e6481042cc8d90a1b33ddf128/4.2.7/docker-entrypoint.sh 
-
+RUN rm /var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins/iso19139/index-fields/index.xsl
+COPY ./index.xsl /var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins/iso19139/index-fields/
 COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
 ENTRYPOINT ["/geonetwork-entrypoint.sh"]
 CMD ["java","-jar","/usr/local/jetty/start.jar"]

@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>gn-schema-iso19139.mdc</artifactId>
+  <artifactId>schema-iso19139.mdc</artifactId>
   <name>GeoNetwork schema plugin for ISO 19139 MDC 5.0</name>
   <packaging>jar</packaging>
   <description>

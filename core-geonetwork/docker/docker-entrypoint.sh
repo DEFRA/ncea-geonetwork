@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+#
 export JAVA_OPTIONS=${JAVA_OPTS}
 
 if ! command -v -- "$1" >/dev/null 2>&1 ; then
