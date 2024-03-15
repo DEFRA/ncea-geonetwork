@@ -26,11 +26,6 @@ steps:
   inputs:
     kubeloginVersion: 'latest'
 
-- task: DownloadSecureFile@1
-  displayName: 'Download values file'
-  inputs:
-    secureFile: 'dev-values.yaml'
-
 - task: HelmDeploy@0
   displayName: Helm list
   inputs:
@@ -41,6 +36,10 @@ steps:
     command: ls
     arguments: --all
 
+- script: |
+    ls 
+  displayName: 'ls'
+
 - task: HelmDeploy@0
   displayName: 'Helm Deploy'
   condition: succeeded()
@@ -49,9 +48,9 @@ steps:
     azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "release3"
+    releaseName: "geonetwork-helm-deploy"
     namespace: $(aksNamespaceGeoNetwork)
-    command: 'install'
+    command: 'upgrade'
     chartType: 'FilePath'
     chartPath: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
     chartVersion: "1.1.2"
@@ -75,4 +74,4 @@ steps:
         identity.keyvaultName=$(keyvaultName)
     install: true
     # force: true
-    arguments: --timeout=30m --dry-run --debug
+    arguments: --timeout=30m --debug
