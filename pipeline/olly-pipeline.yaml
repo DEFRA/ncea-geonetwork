@@ -40,7 +40,7 @@ steps:
     azureSubscriptionEndpoint: $(azureServiceConnection)
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "geodeploy2"
+    releaseName: $(Build.BuildNumber)
     namespace: $(aksNamespaceGeoNetwork)
     command: 'upgrade'
     chartType: 'FilePath'
