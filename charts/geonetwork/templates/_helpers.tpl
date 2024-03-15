@@ -49,7 +49,7 @@ Selector labels
 {{- define "geonetwork.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "geonetwork.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-geonetwork/app: {{- include "geonetwork.name" . }}
+geonetwork/app: {{ include "geonetwork.name" . }}
 geonetwork/siteName: {{ .Release.Name }}
 {{- end }}
 
