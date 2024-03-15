@@ -10,7 +10,7 @@ metadata:
 spec:
   replicas: {{ .Values.georeplicaCount }}
   selector:
-    matchLabels:
+    matchLabels: 
       {{- include "geonetwork.selectorLabels" . | nindent 6 }}
   strategy:
     type: Recreate
