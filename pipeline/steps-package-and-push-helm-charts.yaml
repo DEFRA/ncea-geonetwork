@@ -12,5 +12,5 @@ steps:
 - task: PublishPipelineArtifact@1
   condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
   inputs:
-    targetPath: $(Build.ArtifactStagingDirectory)/ncea-geonetwork-$(Build.BuildNumber).tgz
+    targetPath: $(Build.ArtifactStagingDirectory)/ncea-geonetwork-1.1.2.tgz
     artifactName: charts
