@@ -17,6 +17,8 @@ spec:
   template:
     metadata:
       labels:
+        {{- include "geonetwork.labels" . | nindent 8 }}
+        azure.workload.identity/use: "true"
         geonetwork/app: {{- include "geonetwork.name" . }}
         geonetwork/siteName: {{ .Release.Name }}
     spec:
