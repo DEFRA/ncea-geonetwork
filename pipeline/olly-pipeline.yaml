@@ -1,64 +1,55 @@
-parameters:
-  - name: envName
-    type: string
-  - name: releaseName
-    type: string
-  - name: armServiceConnection
-    type: string
+trigger: none
+
+variables: 
+  - template: templates/variables-global.yml
+  - name : acrContainerRegistryServiceConnection
+    value: acr-AZR-NCE-DEV-TEMP
+  - name: azureServiceConnection
+    value: AZR-NCE-DEV1
+  - group: azureVariables-dev
+  - group: geoNetworkAppVariables-dev
+
+pool:
+  name: DEFRA-COMMON-ubuntu2204-SSV3
 
 steps:
 
-- task: DownloadPipelineArtifact@2
-  displayName: 'Download Helm Charts'
-  condition: succeeded()
-  inputs:
-    buildType: 'current'
-    artifact: charts
-
-- task: ExtractFiles@1
-  inputs:
-    archiveFilePatterns: '$(Pipeline.Workspace)/charts/*.tgz'
-    cleanDestinationFolder: true
-    overwriteExistingFiles: true
-    destinationFolder: '$(Pipeline.Workspace)/chart'
-    
 - task: KubeloginInstaller@0
   inputs:
     kubeloginVersion: 'latest'
 
-- task: DownloadSecureFile@1
-  displayName: 'Download values file'
-  inputs:
-    secureFile: 'dev-values.yaml'
+- script: |
+    ls 
+  displayName: 'ls'
 
 - task: HelmDeploy@0
   displayName: Helm list
   inputs:
     connectionType: Azure Resource Manager
-    azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
+    azureSubscriptionEndpoint: $(azureServiceConnection)
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
     command: ls
-    arguments: --all
+    arguments: -n geonetwork
 
 - task: HelmDeploy@0
   displayName: 'Helm Deploy'
   condition: succeeded()
   inputs:
     connectionType: Azure Resource Manager
-    azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
+    azureSubscriptionEndpoint: $(azureServiceConnection)
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "release3"
+    releaseName: "geodeploy2"
     namespace: $(aksNamespaceGeoNetwork)
-    command: 'install'
+    command: 'upgrade'
     chartType: 'FilePath'
-    chartPath: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
+    chartPath: '$(Build.SourcesDirectory)/charts/geonetwork'
     chartVersion: "1.1.2"
-    valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
+    valueFile: $(Build.SourcesDirectory)/charts/geonetwork/values.yaml
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
-        geoimage.tag=$(imageTag)
+        geoimage.tag="20240314.33_feature-326173-geonetwork-build-pipeline"
         ingress.host=$(ingressHostname)
         postgres.host=$(postgresHostname)
         postgres.dbuser=$(postgresDbUser)
@@ -74,5 +65,5 @@ steps:
         identity.tenantId=$(tenantId)
         identity.keyvaultName=$(keyvaultName)
     install: true
-    # force: true
-    arguments: --timeout=30m --dry-run --debug
+    force: true
+    arguments: --timeout=30m --debug
