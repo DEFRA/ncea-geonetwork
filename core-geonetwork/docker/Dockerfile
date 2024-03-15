@@ -28,6 +28,7 @@ RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
      rm geonetwork.war 
 
 COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
+RUN chmod +x /geonetwork-entrypoint.sh
 ENTRYPOINT ["/geonetwork-entrypoint.sh"]
 CMD ["java","-jar","/usr/local/jetty/start.jar"]
 
