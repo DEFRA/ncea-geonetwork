@@ -48,8 +48,8 @@ steps:
     chartVersion: "1.1.2"
     valueFile: $(Build.SourcesDirectory)/charts/geonetwork/values.yaml
     overrideValues: |
-        geoimage.repository=$(containerRepositoryFullPath)
-        geoimage.tag="20240314.33_feature-326173-geonetwork-build-pipeline"
+        geoimage.repository="devnceinfcr1401.azurecr.io/geonetwork428"
+        geoimage.tag="latest"
         ingress.host=$(ingressHostname)
         postgres.host=$(postgresHostname)
         postgres.dbuser=$(postgresDbUser)
