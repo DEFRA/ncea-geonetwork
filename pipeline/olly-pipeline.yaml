@@ -32,6 +32,17 @@ steps:
     command: ls
     arguments: -n geonetwork
 
+
+
+- task: HelmDeploy@0
+  displayName: Helm lint
+  inputs:
+    connectionType: Azure Resource Manager
+    azureSubscriptionEndpoint: $(azureServiceConnection)
+    azureResourceGroup: $(aksResourceGroupName)
+    kubernetesCluster : $(aksClusterName)
+    command: lint
+
 - task: HelmDeploy@0
   displayName: 'Helm Deploy'
   condition: succeeded()
