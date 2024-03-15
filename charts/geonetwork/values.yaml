@@ -12,8 +12,8 @@ geoimage:
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: &gn_host "geonetwork"
+fullnameOverride: "geonetwork"
 
 geoservice:
   type: ClusterIP
