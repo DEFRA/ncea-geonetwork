@@ -57,7 +57,7 @@ steps:
     valueFile: $(Pipeline.Workspace)/chart/ncea-geonetwork/values.yaml
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
-        geoimage.tag="latest"
+        geoimage.tag=$(imageTag)
         ingress.host=$(ingressHostname)
         postgres.host=$(postgresHostname)
         postgres.dbuser=$(postgresDbUser)
