@@ -81,28 +81,6 @@
 		<xs:attribute ref="gco:nilReason"/>
 	</xs:complexType>
 	<!-- =========================================================================== -->
-	<xs:complexType name="NCEA_Classifiers_Type">
-		<xs:complexContent>
-			<xs:extension base="gco:AbstractObject_Type">
-				<xs:sequence>
-					<xs:element name="statement" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-					<xs:element name="processStep" type="gmd:LI_ProcessStep_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="source" type="gmd:LI_Source_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<!-- ........................................................................ -->
-	<xs:element name="NCEA_Classifiers" type="gmd:NCEA_Classifiers_Type"/>
-	<!-- ........................................................................ -->
-	<xs:complexType name="NCEA_Classifiers_PropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="gmd:NCEA_Classifiers"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gco:ObjectReference"/>
-		<xs:attribute ref="gco:nilReason"/>
-	</xs:complexType>
-	<!-- =========================================================================== -->
 	<xs:complexType name="DQ_ConformanceResult_Type">
 		<xs:annotation>
 			<xs:documentation>quantitative_result from Quality Procedures -  - renamed to remove implied use limitiation.</xs:documentation>
