@@ -67,7 +67,7 @@ stages:
           steps:
             - template: steps-deploy-helm-charts.yaml
               parameters:
-                releaseName: "ncea-geonetwork-dev"
+                releaseName: "geonetwork-helm-deploy"
                 armServiceConnection: AZR-NCE-DEV1
 
 # - stage: 'test'
