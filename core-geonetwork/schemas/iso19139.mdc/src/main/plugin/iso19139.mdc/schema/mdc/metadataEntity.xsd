@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://www.isotc211.org/2005/gmd" elementFormDefault="qualified" version="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd">
+<xs:schema targetNamespace="http://www.isotc211.org/2005/mdc" elementFormDefault="qualified" version="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:mdc="http://www.isotc211.org/2005/mdc">
 	<!-- ================================= Annotation ================================ -->
 	<xs:annotation>
 		<xs:documentation>This file was generated from ISO TC/211 UML class diagrams == 01-26-2005 12:40:00 ====== </xs:documentation>
@@ -17,17 +17,17 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="ncea" type="gmd:NCEA_ClassifierInfo" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ncea" type="mdc:NCEA_ClassifierInfo" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="NCEA_Classifiers" type="gmd:NCEA_Classifiers_Type"/>
+	<xs:element name="NCEA_Classifiers" type="mdc:NCEA_Classifiers_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="MD_Metadata_PropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="gmd:NCEA_Classifiers"/>
+			<xs:element ref="mdc:NCEA_Classifiers"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 		<xs:attribute ref="gco:nilReason"/>
