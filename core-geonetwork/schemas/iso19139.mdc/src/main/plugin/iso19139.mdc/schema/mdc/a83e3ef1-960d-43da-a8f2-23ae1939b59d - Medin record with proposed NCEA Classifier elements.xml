@@ -491,7 +491,7 @@
       </gmd:lineage>
     </gmd:DQ_DataQuality>
   </gmd:dataQualityInfo>
-  <mdc:NCEA_Classifier>
+  <mdc:nceaClassifierInfo>
     <mdc:NC_Classifiers>
       <mdc:classifier>
         <mdc:classifierType>
@@ -532,5 +532,5 @@
         </mdc:classifierValue>
       </mdc:classifier>
     </mdc:NC_Classifiers>
-  </mdc:NCEA_Classifier>
+  </mdc:nceaClassifierInfo>
 </gmd:MD_Metadata>

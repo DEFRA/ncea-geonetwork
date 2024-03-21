@@ -10,42 +10,49 @@
     <!-- ########################################################################### -->
     <!-- ================================== Classes ================================= -->
 
-    <!-- =========================================================================== -->
-    <xs:complexType name="classifier">
-        <xs:complexContent>
-            <xs:extension base="gco:AbstractObject_Type">
-                <xs:sequence>
-                    <xs:element name="classifierType" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-                    <xs:element name="classifierValue" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <!-- ........................................................................ -->
-    <xs:element name="NCEA_classifier" type="mdc:classifier"/>
-    <!-- ........................................................................ -->
-    <xs:complexType name="NC_Classifiers">
-        <xs:sequence minOccurs="0">
-            <xs:element ref="mdc:NCEA_classifier"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="gco:ObjectReference"/>
-        <xs:attribute ref="gco:nilReason"/>
-    </xs:complexType>
-    <!-- =========================================================================== -->
+	<!-- =========================================================================== -->
+	<xs:complexType name="NC_Classifiers_Type">
+		<xs:complexContent>
+			<xs:extension base="gco:AbstractObject_Type">
+				<xs:sequence>
+					<xs:element name="classifier" type="mdc:NC_Element_PropertyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ........................................................................ -->
+	<xs:element name="NC_Classifiers" type="gmd:NC_Classifiers_Type"/>
+	<!-- ........................................................................ -->
+	<xs:complexType name="NC_Classifiers_PropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="gmd:NC_Classifiers"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gco:ObjectReference"/>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+	<!-- =========================================================================== -->
 
 
-    <!-- =========================================================================== -->
-    <xs:complexType name="NCEA_ClassifierInfo">
-        <xs:complexContent>
-            <xs:extension base="gco:AbstractObject_Type">
-                <xs:sequence>
-                    <xs:element name="ncea" type="mdc:NC_Classifiers" minOccurs="0"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <!-- ........................................................................ -->
-    <xs:element name="NCEA_Classifier" type="mdc:NCEA_ClassifierInfo"/>
-    <!-- ........................................................................ -->
-
+	<!-- =========================================================================== -->
+    	<xs:complexType name="NC_Element_Type">
+    		<xs:complexContent>
+    			<xs:extension base="gco:AbstractObject_Type">
+    				<xs:sequence>
+                        <xs:element name="classifierType" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+                        <xs:element name="classifierValue" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+    				</xs:sequence>
+    			</xs:extension>
+    		</xs:complexContent>
+    	</xs:complexType>
+    	<!-- ........................................................................ -->
+    	<xs:element name="NC_Element" type="gmd:NC_Element_Type"/>
+    	<!-- ........................................................................ -->
+    	<xs:complexType name="NC_Element_PropertyType">
+    		<xs:sequence minOccurs="0">
+    			<xs:element ref="gmd:NC_Element"/>
+    		</xs:sequence>
+    		<xs:attributeGroup ref="gco:ObjectReference"/>
+    		<xs:attribute ref="gco:nilReason"/>
+    	</xs:complexType>
+    	<!-- =========================================================================== -->
 </xs:schema>

@@ -10,25 +10,25 @@
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->
-	<xs:complexType name="NCEA_Classifiers_Type">
+	<xs:complexType name="NCEA_ClassifierInfo_Type">
 		<xs:annotation>
 			<xs:documentation>Information about the NCEA Classifiers</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="ncea" type="mdc:NCEA_ClassifierInfo" minOccurs="0" maxOccurs="unbounded"/>					<xs:element name="metadataStandardName" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+					<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>					<xs:element name="metadataStandardName" type="gco:CharacterString_PropertyType" minOccurs="0"/>
 					<xs:element name="metadataStandardName" type="gco:CharacterString_PropertyType" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="NCEA_Classifiers" type="mdc:NCEA_Classifiers_Type"/>
+	<xs:element name="NCEA_ClassifierInfo" type="mdc:NCEA_Classifiers_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="MD_Metadata_PropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="mdc:NCEA_Classifiers"/>
+			<xs:element ref="mdc:NCEA_ClassifierInfo"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 		<xs:attribute ref="gco:nilReason"/>
