@@ -14,6 +14,7 @@
 	<xs:include schemaLocation="../gmd/portrayalCatalogue.xsd"/>
 	<xs:include schemaLocation="../gmd/dataQuality.xsd"/>
 	<xs:include schemaLocation="../gmd/freeText.xsd"/>
+	<xs:include schemaLocation="../gmd/ncea.xsd"/>
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->
@@ -52,6 +53,7 @@
 					<xs:element name="propertyType" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="featureType" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="featureAttribute" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ncea" type="gmd:NCEA_ClassifierInfo_Type" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

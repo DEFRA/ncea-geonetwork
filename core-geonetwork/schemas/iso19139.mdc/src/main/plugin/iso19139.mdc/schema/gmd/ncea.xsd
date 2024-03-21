@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.isotc211.org/2005/gmd" elementFormDefault="qualified" version="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd">
+    <!-- ================================= Annotation ================================ -->
+    <xs:annotation>
+        <xs:documentation>This file was generated from ISO TC/211 UML class diagrams == 01-26-2005 12:40:01 ====== </xs:documentation>
+    </xs:annotation>
+    <!-- ================================== Imports ================================== -->
+    <xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
+    <xs:include schemaLocation="../gmd/identification.xsd"/>
+    <!-- ########################################################################### -->
+    <!-- ########################################################################### -->
+    <!-- ================================== Classes ================================= -->
+
+    <!-- =========================================================================== -->
+    <xs:complexType name="classifier">
+        <xs:complexContent>
+            <xs:extension base="gco:AbstractObject_Type">
+                <xs:sequence>
+                    <xs:element name="classifierType" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+                    <xs:element name="classifierValue" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ........................................................................ -->
+    <xs:element name="NCEA_classifier" type="gmd:classifier"/>
+    <!-- ........................................................................ -->
+    <xs:complexType name="NCEA_Classifiers_PropertyType">
+        <xs:sequence minOccurs="0">
+            <xs:element ref="gmd:NCEA_classifier"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="gco:ObjectReference"/>
+        <xs:attribute ref="gco:nilReason"/>
+    </xs:complexType>
+    <!-- =========================================================================== -->
+
+
+    <!-- =========================================================================== -->
+    <xs:complexType name="NCEA_ClassifierInfo_Type">
+        <xs:complexContent>
+            <xs:extension base="gco:AbstractObject_Type">
+                <xs:sequence>
+                    <xs:element name="ncea" type="gmd:NCEA_Classifiers_PropertyType" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ........................................................................ -->
+    <xs:element name="NCEA_Classifier" type="gmd:NCEA_ClassifierInfo_Type"/>
+    <!-- ........................................................................ -->
+
+</xs:schema>

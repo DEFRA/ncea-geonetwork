@@ -1195,8 +1195,7 @@
                   <resources>
                     <resource>
                       <directory>${project.basedir}/../schemas/iso19139.mdc/src/main/plugin</directory>
-<!--                      <targetPath>${basedir}/src/main/webapp/WEB-INF/data/config/schema_plugins</targetPath>-->
-                      <targetPath>${project.basedir}/../schemas/iso19139.mdc</targetPath>
+                      <targetPath>${project.basedir}/../web/src/main/webapp</targetPath>
                     </resource>
                     <!-- Copy src/main/plugin folder to webapp folder source directory
                     in order to be loaded by the application when running mvn jetty:run.
