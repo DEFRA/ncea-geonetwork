@@ -53,7 +53,7 @@ stages:
 - stage: 'dev'
   displayName: 'Deploy to Dev'
   dependsOn: Build
-  condition: and(succeeded(), and(eq(variables.isPullRequest, true), eq(variables.deployToDev, true)))
+  condition: and(succeeded(), eq(variables.deployToDev, true)))
   jobs:
   - deployment: Deploy
     pool:
@@ -67,8 +67,7 @@ stages:
           steps:
             - template: steps-deploy-helm-charts.yaml
               parameters:
-                envName: dev
-                releaseName: ncea-geonetwork-dev
+                releaseName: "ncea-geonetwork-dev"
                 armServiceConnection: AZR-NCE-DEV1
 
 # - stage: 'test'

@@ -1,6 +1,4 @@
 parameters:
-  - name: envName
-    type: string
   - name: releaseName
     type: string
   - name: armServiceConnection
@@ -48,7 +46,7 @@ steps:
     azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
     azureResourceGroup: $(aksResourceGroupName)
     kubernetesCluster : $(aksClusterName)
-    releaseName: "geonetwork-helm-deploy"
+    releaseName: ${{ parameters.releaseName }}
     namespace: $(aksNamespaceGeoNetwork)
     command: 'upgrade'
     chartType: 'FilePath'
