@@ -1,7 +1,11 @@
 
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
-trigger: none
+trigger:
+  branches:
+    include:
+      - main
+      - feature/*
 
 variables: 
   - template: templates/variables-global.yml
