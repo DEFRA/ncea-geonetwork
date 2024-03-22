@@ -1,7 +1,11 @@
 
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
-trigger: none
+trigger:
+  branches:
+    include:
+      - main
+      - feature/*
 
 variables: 
   - template: templates/variables-global.yml
@@ -53,7 +57,7 @@ stages:
 - stage: 'dev'
   displayName: 'Deploy to Dev'
   dependsOn: Build
-  condition: and(succeeded(), and(eq(variables.isPullRequest, true), eq(variables.deployToDev, true)))
+  condition: and(succeeded(), and(eq(variables.isMain, true), eq(variables.deployToDev, true)))
   jobs:
   - deployment: Deploy
     pool:
@@ -67,27 +71,25 @@ stages:
           steps:
             - template: steps-deploy-helm-charts.yaml
               parameters:
-                envName: dev
-                releaseName: ncea-geonetwork-dev
+                releaseName: "geonetwork-helm-deploy"
                 armServiceConnection: AZR-NCE-DEV1
 
-# - stage: 'test'
-#   displayName: 'Deploy to test'
-#   dependsOn: dev
-#   condition: and(succeeded(), eq(variables.deployToTest, true))
-#   jobs:
-#   - deployment: Deploy
-#     pool:
-#       name: DEFRA-COMMON-ubuntu2204-SSV3
-#     variables:
-#       - template: templates/variables-test.yml
-#     environment: test 
-#     strategy:
-#       runOnce:
-#         deploy:
-#           steps:
-#             - template: steps-deploy-helm-charts.yaml
-#               parameters:
-#                 envName: test
-#                 releaseName: ncea-geonetwork-test
-#                 armServiceConnection: AZR-NCE-DEV1
+- stage: 'test'
+  displayName: 'Deploy to test'
+  dependsOn: dev
+  condition: and(succeeded(), eq(variables.deployToTest, true))
+  jobs:
+  - deployment: Deploy
+    pool:
+      name: DEFRA-COMMON-ubuntu2204-SSV3
+    variables:
+      - template: templates/variables-test.yml
+    environment: test 
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - template: steps-deploy-helm-charts.yaml
+              parameters:
+                releaseName: ncea-geonetwork-test
+                armServiceConnection: AZR-NCE-DEV1
