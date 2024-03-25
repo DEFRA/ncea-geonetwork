@@ -10,7 +10,7 @@ steps:
       jdkArchitectureOption: 'x64'
       publishJUnitResults: false
       testResultsFiles: '**/TEST-*.xml'
-      goals: 'package -DskipTests -DschemasCopy=true -T 2C'
+      goals: 'clean install -DskipTests -DschemasCopy=true -T 2C'
 
   - task: CopyFiles@2
     displayName: 'Copy Files'
