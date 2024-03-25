@@ -31,7 +31,8 @@
            xmlns:mdc="http://www.isotc211.org/2005/mdc schema/mdc/mdc.xsd"
            elementFormDefault="qualified"
 >
-  <xs:include schemaLocation="schema/gmd/metadataApplication.xsd schema/mdc/metadataApplication.xsd"/>
+  <xs:include schemaLocation="schema/gmd/metadataApplication.xsd"/>
+  <xs:include schemaLocation="schema/mdc/metadataApplication.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema/srv/srv.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="schema/gmx/gmx.xsd"/>
 </xs:schema>
