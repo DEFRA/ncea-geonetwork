@@ -14,7 +14,7 @@ variables:
   - name : deployToDev
     value: true
   - name : deployToTest
-    value: false
+    value: true
 
 stages:
 - stage: 'Build'
@@ -91,5 +91,5 @@ stages:
           steps:
             - template: steps-deploy-helm-charts.yaml
               parameters:
-                releaseName: ncea-geonetwork-test
-                armServiceConnection: AZR-NCE-DEV1
+                releaseName: "geonetwork-helm-deploy"
+                armServiceConnection: AZR-NCE-TST1

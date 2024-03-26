@@ -1,20 +1,34 @@
 steps:
 
-- task: Docker@2
-  displayName: 'Docker Build'
-  condition: succeeded()
+- task: AzureCLI@2
   inputs:
-    command: build
-    Dockerfile: '$(Build.ArtifactStagingDirectory)/Dockerfile'
-    containerRegistry: $(acrContainerRegistryServiceConnection)
-    repository: $(acrContainerRepositoryGeoNetwork)
-    tags: '$(imageTag)'
+    displayName: 'Docker Build And Push'
+    condition: succeeded()
+    azureSubscription: $(azureServiceConnection)
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az account set --subscription $(azureSubscription)
+      PASSWORD=$(az acr login --name $(containerRegistry) --expose-token --output tsv --query accessToken)
+      docker login $(containerRegistry) -u $(acrUser) -p $PASSWORD
+      docker build -t '$(containerRepositoryFullPath):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
+      docker push '$(containerRepositoryFullPath):$(imageTag)'
 
-- task: Docker@2
-  displayName: 'Docker Push'
-  condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
-  inputs:
-    command: push
-    containerRegistry: $(acrContainerRegistryServiceConnection)
-    repository: $(acrContainerRepositoryGeoNetwork)
-    tags: '$(imageTag)'
+#- task: Docker@2
+#  displayName: 'Docker Build'
+#  condition: succeeded()
+#  inputs:
+#    command: build
+#    Dockerfile: '$(Build.ArtifactStagingDirectory)/Dockerfile'
+#    containerRegistry: $(acrContainerRegistryServiceConnection)
+#    repository: $(acrContainerRepositoryGeoNetwork)
+#    tags: '$(imageTag)'
+
+#- task: Docker@2
+#  displayName: 'Docker Push'
+#  condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
+#  inputs:
+#    command: push
+#    containerRegistry: $(acrContainerRegistryServiceConnection)
+#    repository: $(acrContainerRepositoryGeoNetwork)
+#    tags: '$(imageTag)'
