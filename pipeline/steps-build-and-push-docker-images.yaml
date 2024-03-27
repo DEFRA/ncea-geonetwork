@@ -16,9 +16,9 @@ steps:
       echo "change directory"
       cd $(Build.ArtifactStagingDirectory) && ls
       echo "Building Container"
-      docker build -t '$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
+      docker build -t '$(acrContainerRegistry)/$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
       echo "Pushing Container"
-      docker push '$(acrContainerRepositoryGeoNetwork):$(imageTag)'
+      docker push '$(acrContainerRegistry)/$(acrContainerRepositoryGeoNetwork):$(imageTag)'
 
 #- task: Docker@2
 #  displayName: 'Docker Build'
