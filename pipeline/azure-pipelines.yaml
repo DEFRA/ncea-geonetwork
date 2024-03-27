@@ -92,4 +92,4 @@ stages:
             - template: steps-deploy-helm-charts.yaml
               parameters:
                 releaseName: "geonetwork-helm-deploy"
-                armServiceConnection: AZR-NCE-TST1
+                armServiceConnection: AZR-NCE-TST
