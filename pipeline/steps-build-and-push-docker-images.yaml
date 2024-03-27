@@ -8,10 +8,14 @@ steps:
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
+      echo "setting Azure Subscription"
       az account set --subscription $(azureServiceConnectionForAcr)
       PASSWORD=$(az acr login --name $(acrContainerRegistry) --expose-token --output tsv --query accessToken)
+      echo "Logging into ACR"
       docker login $(acrContainerRegistry) -u $(acrUser) -p $PASSWORD
+      echo "Building Container"
       docker build -t '$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
+      echo "Pushing Container"
       docker push '$(acrContainerRepositoryGeoNetwork):$(imageTag)'
 
 #- task: Docker@2
