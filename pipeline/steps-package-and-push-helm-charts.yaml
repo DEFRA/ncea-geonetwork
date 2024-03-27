@@ -6,7 +6,6 @@ steps:
   inputs:
     command: package
     chartPath: $(chartPath)
-    chartVersion: "1.1.2"
     destination: $(Build.ArtifactStagingDirectory)
 
 - task: PublishPipelineArtifact@1
