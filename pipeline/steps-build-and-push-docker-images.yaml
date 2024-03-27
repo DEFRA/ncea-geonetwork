@@ -9,10 +9,10 @@ steps:
     scriptLocation: inlineScript
     inlineScript: |
       az account set --subscription $(azureSubscription)
-      PASSWORD=$(az acr login --name $(containerRegistry) --expose-token --output tsv --query accessToken)
-      docker login $(containerRegistry) -u $(acrUser) -p $PASSWORD
-      docker build -t '$(containerRepositoryFullPath):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
-      docker push '$(containerRepositoryFullPath):$(imageTag)'
+      PASSWORD=$(az acr login --name $(acrConatinerRegistry) --expose-token --output tsv --query accessToken)
+      docker login $(acrConatinerRegistry) -u $(acrName) -p $PASSWORD
+      docker build -t '$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
+      docker push '$(acrContainerRepositoryGeoNetwork):$(imageTag)'
 
 #- task: Docker@2
 #  displayName: 'Docker Build'
