@@ -8,8 +8,15 @@ steps:
     chartPath: $(chartPath)
     destination: $(Build.ArtifactStagingDirectory)
 
+- task: CopyFiles@2
+  displayName: 'Move Helm artifact'
+  inputs:
+    sourceFolder: $(Build.ArtifactStagingDirectory)
+    contents: '**.tgz'
+    targetFolder: '$(Build.ArtifactStagingDirectory)/helmartifact/'
+
 - task: PublishPipelineArtifact@1
   condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
   inputs:
-    targetPath: $(Build.ArtifactStagingDirectory)/*.tgz
+    targetPath: '$(Build.ArtifactStagingDirectory)/helmartifact/'
     artifactName: charts
