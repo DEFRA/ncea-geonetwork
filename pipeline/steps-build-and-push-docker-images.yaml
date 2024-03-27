@@ -1,14 +1,14 @@
 steps:
 
 - task: AzureCLI@2
-  inputs:
-    displayName: 'Docker Build And Push'
+  displayName: 'Docker Build And Push'
+  inputs:    
     condition: succeeded()
-    azureSubscription: $(azureServiceConnectionForAcr)
+    azureSubscription: $(azureSubscriptionDev)
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
-      az account set --subscription $(azureSubscription)
+      az account set --subscription $(azureSubscriptionDev)
       PASSWORD=$(az acr login --name $(acrConatinerRegistry) --expose-token --output tsv --query accessToken)
       docker login $(acrConatinerRegistry) -u $(acrName) -p $PASSWORD
       docker build -t '$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
