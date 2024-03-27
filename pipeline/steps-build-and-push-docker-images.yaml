@@ -10,7 +10,7 @@ steps:
     inlineScript: |
       az account set --subscription $(azureServiceConnectionForAcr)
       PASSWORD=$(az acr login --name $(acrContainerRegistry) --expose-token --output tsv --query accessToken)
-      docker login $(acrContainerRegistry) -u $(acrName) -p $PASSWORD
+      docker login $(acrContainerRegistry) -u $(acrUser) -p $PASSWORD
       docker build -t '$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
       docker push '$(acrContainerRepositoryGeoNetwork):$(imageTag)'
 
