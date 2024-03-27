@@ -6,10 +6,10 @@ steps:
   inputs:
     command: package
     chartPath: $(chartPath)
-    destination: $(Build.ArtifactStagingDirectory)/stage
+    destination: '$(Build.ArtifactStagingDirectory)/stage'
 
 - task: PublishPipelineArtifact@1
   condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
   inputs:
-    targetPath: $(Build.ArtifactStagingDirectory)/stage
+    targetPath: '$(Build.ArtifactStagingDirectory)/stage'
     artifactName: charts
