@@ -9,12 +9,12 @@ trigger:
 
 variables: 
   - template: templates/variables-global.yml
-  - name : acrContainerRegistryServiceConnection
-    value: acr-AZR-NCE-DEV-TEMP
+  - name : azureServiceConnectionForAcr
+    value: AZR-NCE-DEV1
   - name : deployToDev
     value: true
   - name : deployToTest
-    value: false
+    value: true
 
 stages:
 - stage: 'Build'
@@ -91,5 +91,5 @@ stages:
           steps:
             - template: steps-deploy-helm-charts.yaml
               parameters:
-                releaseName: ncea-geonetwork-test
-                armServiceConnection: AZR-NCE-DEV1
+                releaseName: "geonetwork-helm-deploy"
+                armServiceConnection: AZR-NCE-TST
