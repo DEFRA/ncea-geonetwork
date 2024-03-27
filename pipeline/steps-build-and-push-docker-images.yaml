@@ -24,7 +24,7 @@ steps:
   displayName: 'Docker Build And Push to Test Acr'
   inputs:    
     condition: succeeded()
-    azureSubscription: $(azureServiceConnectionForTst) 
+    azureSubscription: $(azureServiceConnectionForTest) 
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
