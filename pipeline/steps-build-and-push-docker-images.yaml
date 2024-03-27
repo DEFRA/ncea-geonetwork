@@ -1,18 +1,44 @@
 steps:
 
 - task: AzureCLI@2
-  displayName: 'Docker Build And Push'
+  displayName: 'Docker Build And Push to Dev Acr'
   inputs:    
     condition: succeeded()
     azureSubscription: $(azureServiceConnectionForAcr) 
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
+      echo "setting Azure Subscription"
       az account set --subscription $(azureServiceConnectionForAcr)
       PASSWORD=$(az acr login --name $(acrContainerRegistry) --expose-token --output tsv --query accessToken)
-      docker login $(acrContainerRegistry) -u $(acrName) -p $PASSWORD
-      docker build -t '$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
-      docker push '$(acrContainerRepositoryGeoNetwork):$(imageTag)'
+      echo "Logging into ACR"
+      docker login $(acrContainerRegistry) -u $(acrUser) -p $PASSWORD
+      echo "change directory"
+      cd $(Build.ArtifactStagingDirectory) && ls
+      echo "Building Container"
+      docker build -t '$(acrContainerRegistry)/$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
+      echo "Pushing Container"
+      docker push '$(acrContainerRegistry)/$(acrContainerRepositoryGeoNetwork):$(imageTag)'
+
+#- task: AzureCLI@2
+#  displayName: 'Docker Build And Push to Test Acr'
+#  inputs:    
+#    condition: succeeded()
+#    azureSubscription: $(azureServiceConnectionForTest) 
+#    scriptType: bash
+#    scriptLocation: inlineScript
+#    inlineScript: |
+#     echo "setting Azure Subscription"
+#      az account set --subscription $(azureServiceConnectionForTst)
+#      PASSWORD=$(az acr login --name $(acrContainerRegistryTest) --expose-token --output tsv --query accessToken)
+#      echo "Logging into ACR"
+#      docker login $(acrContainerRegistryTest) -u $(acrUser) -p $PASSWORD
+#      echo "change directory"
+#      cd $(Build.ArtifactStagingDirectory) && ls
+#      echo "Building Container"
+#      docker build -t '$(acrContainerRegistryTest)/$(acrContainerRepositoryGeoNetwork):$(imageTag)' -f '$(Build.ArtifactStagingDirectory)/Dockerfile' .
+#      echo "Pushing Container"
+#      docker push '$(acrContainerRegistryTest)/$(acrContainerRepositoryGeoNetwork):$(imageTag)'
 
 #- task: Docker@2
 #  displayName: 'Docker Build'
