@@ -21,11 +21,11 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="NC_Classifiers" type="gmd:NC_Classifiers_Type"/>
+	<xs:element name="NC_Classifiers" type="mdc:NC_Classifiers_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="NC_Classifiers_PropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="gmd:NC_Classifiers"/>
+			<xs:element ref="mdc:NC_Classifiers"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 		<xs:attribute ref="gco:nilReason"/>
@@ -45,11 +45,11 @@
     		</xs:complexContent>
     	</xs:complexType>
     	<!-- ........................................................................ -->
-    	<xs:element name="NC_Element" type="gmd:NC_Element_Type"/>
+    	<xs:element name="NC_Element" type="mdc:NC_Element_Type"/>
     	<!-- ........................................................................ -->
     	<xs:complexType name="NC_Element_PropertyType">
     		<xs:sequence minOccurs="0">
-    			<xs:element ref="gmd:NC_Element"/>
+    			<xs:element ref="mdc:NC_Element"/>
     		</xs:sequence>
     		<xs:attributeGroup ref="gco:ObjectReference"/>
     		<xs:attribute ref="gco:nilReason"/>
