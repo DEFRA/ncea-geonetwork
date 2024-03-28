@@ -151,7 +151,18 @@ public class SchemaManager {
                     get().
                     getBean(schemaBeanIdentifier);
 
+                String mdcIdentifier = "iso19139.mdc";
+
                 if (schemaPlugin == null &&
+                        schemaIdentifier.startsWith(mdcIdentifier)) {
+                    // For ISO19139 profiles, get the ISO19139 bean if no custom one defined
+                    // Can't depend here on ISO19139SchemaPlugin to avoid to introduce
+                    // circular ref.
+                    schemaBeanIdentifier = mdcIdentifier + "SchemaPlugin";
+                    schemaPlugin = (SchemaPlugin) ApplicationContextHolder.
+                            get().
+                            getBean(schemaBeanIdentifier);
+                } else if (schemaPlugin == null &&
                     schemaIdentifier.startsWith(ISO19139SchemaPlugin.IDENTIFIER)) {
                     // For ISO19139 profiles, get the ISO19139 bean if no custom one defined
                     // Can't depend here on ISO19139SchemaPlugin to avoid to introduce

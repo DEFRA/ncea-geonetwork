@@ -1082,6 +1082,12 @@
            
           <!-- End dataQualitySection -->
 
+          <section name="mdc:nceaClassifierInfo">
+            <field xpath="/gmd:MD_Metadata/mdc:nceaClassifierInfo/mdc:NC_Classifiers/mdc:classifier/mdc:classifierType" or="classifierType" in="/gmd:MD_Metadata/mdc:nceaClassifierInfo/mdc:NC_Classifiers" />
+          </section>
+
+
+
         <section name="gmd:MD_Metadata">
           <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
           <text ref="fileidentifier_help" if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification) > 0"/>
