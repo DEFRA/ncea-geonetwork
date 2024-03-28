@@ -44,6 +44,7 @@
   <xsl:import href="fn.xsl"/>
   <xsl:import href="common/inspire-constant.xsl"/>
   <xsl:import href="common/index-utils.xsl"/>
+  <xsl:import href="index-extra-fields.xsl"/>
 
   <xsl:output name="default-serialize-mode"
               indent="no"
@@ -81,8 +82,6 @@
   </xsl:template>
 
   <xsl:variable name="siteUrl" select="util:getSiteUrl()" />
-
-  <xsl:template mode="index-extra-fields" match="*"/>
 
   <xsl:template mode="index-extra-documents" match="*"/>
 
@@ -866,6 +865,16 @@
           </xsl:if>
 
           <crsDetails type="object">{
+			"ciTitle":"<xsl:value-of select="gn-fn-index:json-escape((gmd:authority/gmd:CI_Citation/gmd:title/gco:CharacterString/text()[1]))"/>",
+			<xsl:if test="gn-fn-index:is-isoDate((gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date)[1])">
+				<xsl:variable name="dateType"
+				select="gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType[1]/gmd:CI_DateTypeCode/@codeListValue"
+				as="xs:string?"/>
+				<xsl:variable name="date"
+				select="string(gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[1]/gco:Date|gmd:date[1]/gco:DateTime)"/>
+				"type": "<xsl:value-of select="$dateType"/>", 
+				"date": "<xsl:value-of select="$date" />",
+			</xsl:if>
             "code": "<xsl:value-of select="util:escapeForJson((gmd:code/*/text())[1])"/>",
             "codeSpace": "<xsl:value-of select="util:escapeForJson((gmd:codeSpace/*/text())[1])"/>",
             "name": "<xsl:value-of select="util:escapeForJson($crsLabel)"/>",
@@ -1207,12 +1216,15 @@
       <xsl:copy-of select="gn-fn-index:add-multilingual-field(
                             $roleField, $organisationName, $languages)"/>
     </xsl:if>
-    <xsl:element name="contact{$fieldSuffix}">
+    
+	<xsl:variable name="orgObject" select="gn-fn-index:add-multilingual-field('organisation', $organisationName, $languages, true())"/>
+	<xsl:element name="contact{$fieldSuffix}">
       <xsl:attribute name="type" select="'object'"/>{
-      <xsl:if test="$organisationName">
-        "organisationObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
-                              'organisation', $organisationName, $languages, true())"/>,
-      </xsl:if>
+      <!-- <xsl:if test="$organisationName"> -->
+		<!-- <xsl:if test="$orgObject != ''"> -->
+			<!-- "organisationObject": "<xsl:value-of select="util:escapeForJson($orgObject)"/>", -->
+		<!-- </xsl:if> -->
+      <!-- </xsl:if> -->
       "role":"<xsl:value-of select="$role"/>",
       "email":"<xsl:value-of select="util:escapeForJson($email[1])"/>",
       "website":"<xsl:value-of select="util:escapeForJson($website)"/>",
