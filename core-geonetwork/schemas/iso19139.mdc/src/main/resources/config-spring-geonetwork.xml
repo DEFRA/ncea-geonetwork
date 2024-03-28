@@ -28,8 +28,8 @@
   xmlns:util="http://www.springframework.org/schema/util"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="iso19139.gemini23SchemaPlugin"
-        class="org.fao.geonet.schema.iso19139.ISO19139SchemaPlugin">
+  <bean id="iso19139.mdcSchemaPlugin"
+        class="org.fao.geonet.schema.iso19139_mdc.ISO19139MDCSchemaPlugin">
     <property name="xpathTitle">
       <util:list value-type="java.lang.String">
         <value>gmd:identificationInfo/*/gmd:citation/*/gmd:title/gco:CharacterString</value>

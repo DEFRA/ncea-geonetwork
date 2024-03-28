@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
                  xmlns:gco="http://www.isotc211.org/2005/gco"
                  xmlns:srv="http://www.isotc211.org/2005/srv"
                  xmlns:gmx="http://www.isotc211.org/2005/gmx"
@@ -10,7 +11,7 @@
                  xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>82439de2-5369-4423-b0bb-34d471cb067e</gco:CharacterString>
   </gmd:fileIdentifier>
@@ -338,4 +339,61 @@
          </gmd:lineage>
       </gmd:DQ_DataQuality>
   </gmd:dataQualityInfo>
+   <mdc:nceaClassifierInfo>
+      <mdc:NC_Classifiers>
+         <mdc:classifier>
+            <mdc:classifierType>
+               <gco:CharacterString>Level 1</gco:CharacterString>
+            </mdc:classifierType>
+            <mdc:classifierValue>
+               <gco:CharacterString>value 1</gco:CharacterString>
+            </mdc:classifierValue>
+         </mdc:classifier>
+         <mdc:classifier>
+            <!-- classifier type -->
+            <mdc:classifierType>
+               <gco:CharacterString>Dimension</gco:CharacterString>
+            </mdc:classifierType>
+            <!-- classifier value -->
+            <mdc:classifierValue>
+               <gco:CharacterString>Ecosystem Services and Benefits</gco:CharacterString>
+            </mdc:classifierValue>
+         </mdc:classifier>
+         <mdc:classifier>
+            <!-- classifier type -->
+            <mdc:classifierType>
+               <gco:CharacterString>Level 1</gco:CharacterString>
+            </mdc:classifierType>
+            <!-- classifier value -->
+            <mdc:classifierValue>
+               <gco:CharacterString>Regulating Services</gco:CharacterString>
+            </mdc:classifierValue>
+         </mdc:classifier>
+         <mdc:classifier>
+            <!-- classifier type -->
+            <mdc:classifierType>
+               <gco:CharacterString>Level 2</gco:CharacterString>
+            </mdc:classifierType>
+            <!-- classifier value -->
+            <mdc:classifierValue>
+               <gco:CharacterString>Environmental quality</gco:CharacterString>
+            </mdc:classifierValue>
+         </mdc:classifier>
+      </mdc:NC_Classifiers>
+   </mdc:nceaClassifierInfo>
+   <mdc:nceaIdentifiers>
+      <mdc:ProjectID>
+         <mdc:projectID>
+            <gco:CharacterString>some project ID</gco:CharacterString>
+         </mdc:projectID>
+      </mdc:ProjectID>
+      <mdc:MasterReferenceID>
+         <mdc:catalogueEntry>
+            <gco:CharacterString>some NCEACatalogueEntry</gco:CharacterString>
+         </mdc:catalogueEntry>
+         <mdc:sourceSystemReferenceID>
+            <gco:CharacterString>some SourceSystemReferenceID</gco:CharacterString>
+         </mdc:sourceSystemReferenceID>
+      </mdc:MasterReferenceID>
+   </mdc:nceaIdentifiers>
 </gmd:MD_Metadata>
