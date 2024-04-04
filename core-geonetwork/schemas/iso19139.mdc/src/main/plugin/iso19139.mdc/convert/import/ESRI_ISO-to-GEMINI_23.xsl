@@ -97,6 +97,10 @@
         <xsl:call-template name="distributionInfo" />
         <!-- Data quality information -->
         <xsl:call-template name="dataQualityInfo"/>
+        <!-- NCEA Classifiers information -->
+        <xsl:call-template name="nceaClassifierInfo"/>
+        <!-- NCEA Identifiers information -->
+        <xsl:call-template name="nceaIdentifiers"/>
     </xsl:template>
     <!-- ========================================================================== -->
     <!-- Metadata standard information                                              -->
@@ -1484,6 +1488,52 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
+
+    <!-- ========================================================================== -->
+    <!-- NCEA Classifiers information                                               -->
+    <!-- ========================================================================== -->
+    <xsl:template name="nceaClassifierInfo">
+        <xsl:element name="mdc:nceaClassifierInfo" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+        <xsl:element name="mdc:NC_Classifiers" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+            <xsl:comment>NCEA Classifiers</xsl:comment>
+            <xsl:element name="mdc:classifier" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                <xsl:element name="mdc:classifierType" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                    <xsl:element name="gco:CharacterString" namespace="http://www.isotc211.org/2005/gco">
+                    </xsl:element>
+                </xsl:element>
+                <xsl:element name="mdc:classifierValue" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                    <xsl:element name="gco:CharacterString" namespace="http://www.isotc211.org/2005/gco">
+                    </xsl:element>
+                </xsl:element>
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
+
+    <!-- ========================================================================== -->
+    <!-- NCEA Identifiers information                                               -->
+    <!-- ========================================================================== -->
+    <xsl:template name="nceaIdentifiers">
+        <xsl:element name="mdc:nceaIdentifiers" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+        <xsl:element name="mdc:ProjectID" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+            <xsl:comment>Project ID</xsl:comment>
+            <xsl:element name="mdc:projectID" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                <xsl:element name="gco:CharacterString" namespace="http://www.isotc211.org/2005/gco">
+                </xsl:element>
+                <xsl:element name="mdc:MasterReferenceID" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                    <xsl:comment>MasterReference ID</xsl:comment>
+                    <xsl:element name="mdc:catalogueEntry" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                        <xsl:element name="gco:CharacterString" namespace="http://www.isotc211.org/2005/gco">
+                        </xsl:element>
+                    </xsl:element>
+                    <xsl:element name="mdc:sourceSystemReferenceID" namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
+                        <xsl:element name="gco:CharacterString" namespace="http://www.isotc211.org/2005/gco">
+                        </xsl:element>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
+
     <!-- ========================================================================== -->
     <!-- EX_TemporalExtent                                                          -->
     <!-- ========================================================================== -->

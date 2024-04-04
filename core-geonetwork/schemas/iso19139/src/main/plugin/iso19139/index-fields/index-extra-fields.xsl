@@ -33,6 +33,7 @@
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gn-fn-index="http://geonetwork-opensource.org/xsl/functions/index"
+				xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
                 xmlns:index="java:org.fao.geonet.kernel.search.EsSearchManager"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:date-util="java:org.fao.geonet.utils.DateUtil"
@@ -203,10 +204,20 @@
 		</xsl:for-each>
 						
 	</xsl:for-each>	
+	<OrgNceaIdentifiers type="object">
+	{
+		"projectId":"<xsl:value-of select="mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString"/>",
+		"masterReferenceID":{
+				"catalogueEntry":"<xsl:value-of select="mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:catalogueEntry/gco:CharacterString"/>", 
+				"sourceSystemReferenceID": "<xsl:value-of select="mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:sourceSystemReferenceID/gco:CharacterString"/>"
+			}
+	}
+	</OrgNceaIdentifiers>
   </xsl:template>
   
   
-  
+  <xsl:template match="gmi:MI_Metadata|gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']" mode="index">
+  </xsl:template>
   
   
   

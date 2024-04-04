@@ -64,14 +64,16 @@ of data.]]>
   <standardUrl>https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=53798
   </standardUrl>
   <!-- 19139:2007 version -->
-  <schemaLocation>http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd</schemaLocation>
+  <schemaLocation>http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc/mdc.xsd</schemaLocation>
   <!-- 19139:2005 version
   <schemaLocation>http://www.isotc211.org/2005/gmd https://www.isotc211.org/2005/gmd/gmd.xsd
                   http://www.isotc211.org/2005/gmx https://www.isotc211.org/2005/gmx/gmx.xsd
                   http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd
   </schemaLocation>-->
   <autodetect xmlns:gmd="http://www.isotc211.org/2005/gmd"
-              xmlns:gco="http://www.isotc211.org/2005/gco">
+              xmlns:gco="http://www.isotc211.org/2005/gco"
+              xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
+  >
     <elements type="root">
       <gmd:MD_Metadata/>
       <!-- Identify responsible party subtemplate as ISO19139 -->
@@ -79,6 +81,7 @@ of data.]]>
       <gmd:DQ_DomainConsistency/>
       <gmd:MD_Format/>
       <gmd:EX_Extent/>
+      <mdc:nceaClassifierInfo/>
     </elements>
   </autodetect>
   <filters xmlns:gco="http://www.isotc211.org/2005/gco">

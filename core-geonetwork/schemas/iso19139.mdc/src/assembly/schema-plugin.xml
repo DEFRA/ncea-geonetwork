@@ -1,6 +1,6 @@
 <assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
   <id>plugin</id>
   <includeBaseDirectory>false</includeBaseDirectory>
   <formats>
@@ -11,6 +11,17 @@
       <directory>src/main/plugin/</directory>
       <outputDirectory></outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
+      <excludes>
+        <exclude>iso19139/sample-data/**</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet>
+      <directory>target/sample-data</directory>
+      <outputDirectory>iso19139/sample-data</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <includes>
+        <include>*.mef</include>
+      </includes>
     </fileSet>
   </fileSets>
 </assembly>

@@ -35,6 +35,7 @@
     <ows:Keywords>
       <!-- Keywords are automatically added by GeoNetwork
             according to catalogue content. -->
+      <ows:Keyword>MDC</ows:Keyword>
       <ows:Keyword>hydrology</ows:Keyword>
       <ows:Keyword>water resources</ows:Keyword>
       <ows:Keyword>inlandWaters</ows:Keyword>

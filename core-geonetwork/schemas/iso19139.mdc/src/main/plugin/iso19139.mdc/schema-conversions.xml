@@ -33,8 +33,8 @@
 		 in the convert dir of the schema
 -->
 <conversions>
-  <converter name="xml_iso19139" nsUri="http://www.isotc211.org/2005/gmd"
-             schemaLocation="www.isotc211.org/2005/gmd/gmd.xsd" xslt=""/> <!-- built in -->
+  <converter name="xml_iso19139.mdc" nsUri="http://www.isotc211.org/2005/gmd"
+             schemaLocation="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc/mdc.xsd" xslt=""/> <!-- built in -->
   <converter name="xml_iso19139Tooai_dc" nsUri="http://www.openarchives.org/OAI/2.0/"
              schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xslt="oai_dc.xsl"/>
 </conversions>
