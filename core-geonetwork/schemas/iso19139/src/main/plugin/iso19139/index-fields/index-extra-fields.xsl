@@ -33,7 +33,7 @@
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gn-fn-index="http://geonetwork-opensource.org/xsl/functions/index"
-				xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
+xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
                 xmlns:index="java:org.fao.geonet.kernel.search.EsSearchManager"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:date-util="java:org.fao.geonet.utils.DateUtil"
@@ -49,6 +49,7 @@
   <!--VARIABLES-->
   <xsl:variable name="isMultilingual" select="count(distinct-values(*//gmd:LocalisedCharacterString/@locale)) > 0"/>
   <xsl:variable name="mainLanguage" as="xs:string?" select="util:getLanguage()"/>
+  <xsl:variable name="mainLanguageFullName" as="xs:string?" select="gmd:language[1]/gco:CharacterString[normalize-space(.) != '']"/>
   <xsl:variable name="otherLanguages" select="distinct-values(//gmd:LocalisedCharacterString/@locale)"/>
   <xsl:variable name="allLanguages">
     <lang id="default" value="{$mainLanguage}"/>
@@ -59,6 +60,8 @@
 
   <!-- Extra Fields indexing -->
   <xsl:template mode="index-extra-fields" match="*">
+	<xsl:copy-of select="gn-fn-index:add-field('mainLanguageFullName', $mainLanguageFullName)"/>
+	
 	<xsl:for-each select="gmd:identificationInfo">
 		<xsl:for-each select="gmd:MD_DataIdentification">
 			
@@ -66,8 +69,7 @@
 			<xsl:for-each select="gmd:characterSet/*[@codeListValue != '']">
 				<OrgCharacterSet type="object">
 					{
-						"characterSetCodeDesc":"<xsl:value-of select="."/>",
-						"test":"ffffffffff"
+						"characterSetCodeDesc":"<xsl:value-of select="."/>"
 					}
 				</OrgCharacterSet>
 			</xsl:for-each>
@@ -113,8 +115,8 @@
 			
 			<!-- Additional Information -->
 			<xsl:copy-of select="gn-fn-index:add-multilingual-field('OrgSupplementalInformation', gmd:supplementalInformation, $allLanguages)"/>
-			
-			
+
+						
 			<!-- Citation Props -->
 			<xsl:for-each select="gmd:citation/gmd:CI_Citation">
 				<xsl:copy-of select="gn-fn-index:add-multilingual-field('OrgResourceTitle', gmd:title, $allLanguages)"/>
@@ -191,9 +193,49 @@
 				</xsl:for-each>
 			</xsl:for-each>
 		
-		</xsl:for-each>
-		
-		
+			<!--Constraints-->
+			<xsl:for-each select="gmd:resourceConstraints/*">
+				<OrgResourceConstraints type="object">{
+					<xsl:if test="count(gmd:useConstraints/gmd:MD_RestrictionCode[text() != '']) &gt; 0">
+						"OrgUseConstraints": 
+						[
+							<xsl:for-each select="gmd:useConstraints">					
+								"<xsl:value-of select="gmd:MD_RestrictionCode"/>"
+								<xsl:if test="position() != last()">
+									<xsl:text>,</xsl:text>
+								</xsl:if>
+							</xsl:for-each>
+						],
+					</xsl:if>
+					<xsl:if test="count(gmd:otherConstraints/(gmx:Anchor | gco:CharacterString)[text() != '']) &gt; 0">
+						"OrgOtherConstraints": 
+						[
+							<xsl:for-each select="gmd:otherConstraints">					
+								"<xsl:value-of select="(gmx:Anchor | gco:CharacterString)"/>"
+								<xsl:if test="position() != last()">
+									<xsl:text>,</xsl:text>
+								</xsl:if>
+							</xsl:for-each>
+						],
+					</xsl:if>
+					<xsl:if test="count(gmd:accessConstraints/gmd:MD_RestrictionCode[text() != '']) &gt; 0">
+						"OrgAccessConstraints": 
+						[
+							<xsl:for-each select="gmd:accessConstraints">					
+								"<xsl:value-of select="gmd:MD_RestrictionCode"/>"
+								<xsl:if test="position() != last()">
+									<xsl:text>,</xsl:text>
+								</xsl:if>
+							</xsl:for-each>
+						]
+					</xsl:if>
+				}
+				</OrgResourceConstraints>
+			</xsl:for-each>
+
+		</xsl:for-each>		
+
+
 		<!-- ServiceType -->
 		<xsl:for-each select="srv:SV_ServiceIdentification">
 			<xsl:for-each select="srv:serviceType/gco:LocalName[string(text())]">
@@ -204,6 +246,22 @@
 		</xsl:for-each>
 						
 	</xsl:for-each>	
+
+
+	<!--distributionInfo-->
+	<xsl:for-each select="gmd:distributionInfo/*">
+		<xsl:for-each select="gmd:distributionFormat/*[gmd:name/* != '']">
+			<OrgDistributionFormats type="object">
+			{
+				"name":"<xsl:value-of select="gmd:name/(gmx:Anchor | gco:CharacterString)"/>",
+				"version":"<xsl:value-of select="gmd:version/@gco:nilReason "/>"
+			}
+			</OrgDistributionFormats>
+		</xsl:for-each>
+	</xsl:for-each>
+
+
+	<!--MDC Classifiers-->
 	<OrgNceaIdentifiers type="object">
 	{
 		"projectId":"<xsl:value-of select="mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString"/>",
@@ -213,12 +271,6 @@
 			}
 	}
 	</OrgNceaIdentifiers>
+
   </xsl:template>
-  
-  
-  <xsl:template match="gmi:MI_Metadata|gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']" mode="index">
-  </xsl:template>
-  
-  
-  
 </xsl:stylesheet>
