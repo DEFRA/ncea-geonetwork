@@ -4,7 +4,7 @@
         xmlns:gmd="http://www.isotc211.org/2005/gmd"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts"
-        xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
+        xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
         xmlns:gco="http://www.isotc211.org/2005/gco">
   <gmd:fileIdentifier>
     <gco:CharacterString>8b1fd363-cfed-49f0-b6e2-8eab3138a735</gco:CharacterString>

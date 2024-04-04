@@ -29,8 +29,8 @@
   <id>3f95190a-dde4-11df-8626-001c2346de4c</id>
   <version>1.0</version>
   <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
-  <title xml:lang="en">Geographic information -- Metadata (iso19139:2007)</title>
-  <title xml:lang="fr">Information géographique -- Métadonnées (iso19139:2007)</title>
+  <title xml:lang="en">MDC Schema - iso19139:2007</title>
+  <title xml:lang="fr">MDC Schema - iso19139:2007</title>
   <description xml:lang="en"><![CDATA[
 ISO 19115 defines the schema required for describing geographic information and services by
 means of metadata. It provides information about the identification, the extent, the quality,
@@ -64,7 +64,7 @@ of data.]]>
   <standardUrl>https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=53798
   </standardUrl>
   <!-- 19139:2007 version -->
-  <schemaLocation>http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc/mdc.xsd</schemaLocation>
+  <schemaLocation>http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc/mdc.xsd</schemaLocation>
   <!-- 19139:2005 version
   <schemaLocation>http://www.isotc211.org/2005/gmd https://www.isotc211.org/2005/gmd/gmd.xsd
                   http://www.isotc211.org/2005/gmx https://www.isotc211.org/2005/gmx/gmx.xsd
@@ -72,7 +72,7 @@ of data.]]>
   </schemaLocation>-->
   <autodetect xmlns:gmd="http://www.isotc211.org/2005/gmd"
               xmlns:gco="http://www.isotc211.org/2005/gco"
-              xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
+              xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
   >
     <elements type="root">
       <gmd:MD_Metadata/>

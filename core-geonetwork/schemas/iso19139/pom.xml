@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>gn-schema-iso19139</artifactId>
-  <name>GeoNetwork schema plugin for ISO19139/119 standards</name>
+  <name>GeoNetwork schema plugin for MDC ISO19139/119 standards</name>
   <packaging>jar</packaging>
 
   <dependencies>
