@@ -26,7 +26,7 @@
         xmlns="http://geonetwork-opensource.org/schemas/schema-ident"
         xsi:schemaLocation="http://geonetwork-opensource.org/schemas/schema-ident http://geonetwork-opensource.org/schemas/schema-ident/schema-ident.xsd">
   <name>iso19139.mdc</name>
-  <id>c9054754-5692-4189-9ac2-e95cf404a470</id>
+  <id>b6bcdfb0-2211-4394-a6f5-d66a06886d7c</id>
   <version>5.0</version>
   <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
   <title>MDC 5.0 Metadata Profile</title>
@@ -34,9 +34,9 @@
   <standardUrl>https://shorturl.at/qtDQX</standardUrl>
   <depends>iso19139</depends>
   <!-- 19139:2007 version -->
-  <schemaLocation>http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc/mdc.xsd</schemaLocation>
+  <schemaLocation>http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc/mdc.xsd</schemaLocation>
     <autodetect xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:mdc="http://www.isotc211.org/2005/mdc schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc/mdc.xsd">
+                xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc">
         <elements>
             <gmd:metadataStandardName>
                 <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/M25/current/GEMINI/">NCEA MDC</gmx:Anchor>

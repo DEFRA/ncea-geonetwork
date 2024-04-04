@@ -12,7 +12,7 @@
                  xsi:schemaLocation="http://www.isotc211.org/2005/gmd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <gmd:fileIdentifier>
-    <gco:CharacterString>a83e3ef1-960d-43da-a8f2-23ae1939b59d</gco:CharacterString>
+    <gco:CharacterString>e1df2e34-bec3-44d3-9bea-165202ec1341</gco:CharacterString>
   </gmd:fileIdentifier>
   <!-- 29 Metadata Language (M) -->
   <gmd:language>

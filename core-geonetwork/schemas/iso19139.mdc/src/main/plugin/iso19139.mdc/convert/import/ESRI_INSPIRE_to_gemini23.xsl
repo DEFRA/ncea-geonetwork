@@ -7,6 +7,7 @@
 <xsl:stylesheet xmlns:geonet="http://www.fao.org/geonetwork"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:gmx="http://www.isotc211.org/2005/gmx"
+	xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc"
 	xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco"
 	xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2"
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -78,7 +79,9 @@
 			<xsl:apply-templates select="gmd:contentInfo" />    
 			<xsl:apply-templates select="gmd:distributionInfo" />    
 			<xsl:apply-templates select="gmd:dataQualityInfo" />    
-			<xsl:apply-templates select="gmd:portrayalCatalogueInfo" />    
+			<xsl:apply-templates select="mdc:nceaClassifierInfo" />
+			<xsl:apply-templates select="mdc:nceaIdentifiers" />
+			<xsl:apply-templates select="gmd:portrayalCatalogueInfo" />
 			<xsl:apply-templates select="gmd:metadataConstraints" />    
 			<xsl:apply-templates select="gmd:applicationSchemaInfo" />    
 			<xsl:apply-templates select="gmd:metadataMaintenance" />    
