@@ -56,6 +56,7 @@ public class ISO19139SchemaPluginTest {
             .add(ISO19139Namespaces.GMD)
             .add(ISO19139Namespaces.SRV)
             .add(ISO19139Namespaces.XSI)
+            .add(ISO19139Namespaces.MDC)
             .build().asList();
 
     protected Map<String, String> ns = new HashMap<String, String>();

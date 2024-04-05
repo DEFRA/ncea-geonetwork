@@ -23,7 +23,6 @@
 **/project.lock.json
 **/*.csproj.user
 **/web/logs/**
-**/web/src/main/webapp/iso19139.mdc
 **/web/src/main/webapp/WEB-INF/data/config/schemaplugin-uri-catalog.xml
 **/web/src/main/webapp/WEB-INF/data/config/encryptor.properties
 **/web/src/main/webResources/WEB-INF/classes/git.properties

@@ -37,8 +37,8 @@ public class ISO19139Namespaces {
         Namespace.getNamespace("srv", "http://www.isotc211.org/2005/srv");
     public static final Namespace GMD =
         Namespace.getNamespace("gmd", "http://www.isotc211.org/2005/gmd");
-//    public static final Namespace MDC =
-//            Namespace.getNamespace("mdc", "https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139.mdc/src/main/plugin/iso19139.mdc/schema/mdc");
+    public static final Namespace MDC =
+            Namespace.getNamespace("mdc", "https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc");
     public static final Namespace GML =
         Namespace.getNamespace("gml", "http://www.opengis.net/gml/3.2");
     public static final Namespace GML320 =
