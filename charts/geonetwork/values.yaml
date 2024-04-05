@@ -42,6 +42,7 @@ ingress:
   enabled: true
   classname: nginx
   host: $(ingressHostname)
+  elasticHostName: $(elasticSearchIngressHostname)
   path: /
   pathType: Prefix
 
