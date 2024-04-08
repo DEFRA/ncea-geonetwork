@@ -65,6 +65,7 @@ steps:
         identity.clientId=$(managedIdentityClientIdGeonetwork)
         identity.tenantId=$(tenantId)
         identity.keyvaultName=$(keyvaultName)
+        ingress.elasticHostName=$(elasticSearchIngressHostname)
     install: true
     # force: true
     arguments: --timeout=30m --debug
