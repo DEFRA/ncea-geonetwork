@@ -5,6 +5,8 @@
         xmlns:srv="http://www.isotc211.org/2005/srv"
         xmlns:gco="http://www.isotc211.org/2005/gco"
         xmlns:gml="http://www.opengis.net/gml"
+        xmlns:srv="http://www.isotc211.org/2005/srv"
+        xmlns:gmx="http://www.isotc211.org/2005/gmx"
         xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -126,358 +128,448 @@
         </gmd:MD_ReferenceSystem>
     </gmd:referenceSystemInfo>
     <gmd:identificationInfo>
-        <gmd:MD_DataIdentification id="ID00">
+        <srv:SV_ServiceIdentification>
             <gmd:citation>
                 <gmd:CI_Citation>
+                    <!-- Title -->
                     <gmd:title>
-                        <gco:CharacterString>Localities in Victoria (VMADMIN.LOCALITY_POLYGON) - Comprehensive Elements</gco:CharacterString>
+                        <gco:CharacterString>Historic Marine Protected Areas WFS</gco:CharacterString>
                     </gmd:title>
+                    <!-- Date of publication -->
                     <gmd:date>
                         <gmd:CI_Date>
                             <gmd:date>
-                                <gco:Date>2006-09-11</gco:Date>
+                                <gco:Date>2013-03-18</gco:Date>
                             </gmd:date>
                             <gmd:dateType>
-                                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+                                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
                             </gmd:dateType>
                         </gmd:CI_Date>
                     </gmd:date>
-                    <gmd:citedResponsibleParty xlink:href="#DSE_Falzon_cust">
-                        <gmd:CI_ResponsibleParty>
-                            <gmd:individualName>
-                                <gco:CharacterString>Falzon Katie Ms</gco:CharacterString>
-                            </gmd:individualName>
-                            <gmd:organisationName>
-                                <gco:CharacterString>Department of Sustainability and Environment (DSE)</gco:CharacterString>
-                            </gmd:organisationName>
-                            <gmd:positionName>
-                                <gco:CharacterString>Project Officer</gco:CharacterString>
-                            </gmd:positionName>
-                            <gmd:contactInfo>
-                                <gmd:CI_Contact>
-                                    <gmd:phone>
-                                        <gmd:CI_Telephone>
-                                            <gmd:voice>
-                                                <gco:CharacterString>+61 3 8636 2319</gco:CharacterString>
-                                            </gmd:voice>
-                                            <gmd:facsimile>
-                                                <gco:CharacterString>+61 3 8636 2813</gco:CharacterString>
-                                            </gmd:facsimile>
-                                        </gmd:CI_Telephone>
-                                    </gmd:phone>
-                                    <gmd:address>
-                                        <gmd:CI_Address>
-                                            <gmd:deliveryPoint>
-                                                <gco:CharacterString>PO Box 500</gco:CharacterString>
-                                            </gmd:deliveryPoint>
-                                            <gmd:city>
-                                                <gco:CharacterString>East Melbourne</gco:CharacterString>
-                                            </gmd:city>
-                                            <gmd:administrativeArea>
-                                                <gco:CharacterString>Victoria</gco:CharacterString>
-                                            </gmd:administrativeArea>
-                                            <gmd:postalCode>
-                                                <gco:CharacterString>3002</gco:CharacterString>
-                                            </gmd:postalCode>
-                                            <gmd:country>
-                                                <gco:CharacterString>Australia</gco:CharacterString>
-                                            </gmd:country>
-                                            <gmd:electronicMailAddress>
-                                                <gco:CharacterString>katie.falzon@dse.vic.gov.au</gco:CharacterString>
-                                            </gmd:electronicMailAddress>
-                                        </gmd:CI_Address>
-                                    </gmd:address>
-                                    <gmd:onlineResource>
-                                        <gmd:CI_OnlineResource>
-                                            <gmd:linkage>
-                                                <gmd:URL>http://www.land.vic.gov.au/vicmap</gmd:URL>
-                                            </gmd:linkage>
-                                        </gmd:CI_OnlineResource>
-                                    </gmd:onlineResource>
-                                </gmd:CI_Contact>
-                            </gmd:contactInfo>
-                            <gmd:role>
-                                <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
-                            </gmd:role>
-                        </gmd:CI_ResponsibleParty>
-                    </gmd:citedResponsibleParty>
-                    <gmd:presentationForm>
-                        <gmd:CI_PresentationFormCode               codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_PresentationFormCode"               codeListValue="mapDigital">mapDigital</gmd:CI_PresentationFormCode>
-                    </gmd:presentationForm>
+                    <!-- Date of creation -->
+                    <gmd:date>
+                        <gmd:CI_Date>
+                            <gmd:date>
+                                <gco:Date>2013-03-18</gco:Date>
+                            </gmd:date>
+                            <gmd:dateType>
+                                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+                            </gmd:dateType>
+                        </gmd:CI_Date>
+                    </gmd:date>
+                    <gmd:date>
+                        <gmd:CI_Date>
+                            <gmd:date>
+                                <gco:Date>2016-10-28</gco:Date>
+                            </gmd:date>
+                            <gmd:dateType>
+                                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                            </gmd:dateType>
+                        </gmd:CI_Date>
+                    </gmd:date>
                 </gmd:CI_Citation>
             </gmd:citation>
+            <!-- Abstract -->
             <gmd:abstract>
-                <gco:CharacterString> This dataset is the definitive set of locality boundaries for the state of Victoria            as defined by Local Government and registered by the Registrar of Geographic Names.            The boundaries are aligned to Vicmap Property. This dataset is part of the Vicmap Admin dataset series.         </gco:CharacterString>
+                <gco:CharacterString>Historic Marine Protected Areas Historic MPAs are designated under Section 67 of the Marine Scotland Act 2010 to protect marine historic assets (e.g historic shipwrecks) of national importance within Scottish territorial waters. The Historic_Marine_Protected Area dataset comprises the boundaries of all Historic Marine Protected Areas in Scotland. The purpose of this dataset is to allow the user to identify the boundaries of Historic Marine Protected Areas in Scotland. The user should refer to the Historic Marine Protected Area Order documentation for exact locations of individual boundary points and supplementary information. The Scottish Government is committed to clean, healthy, safe, productive, biologically diverse marine and coastal environments, managed to meet the long-term needs of people and nature. This includes protecting and, where appropriate, enhancing our most important historic wrecks and other marine heritage sites in such a way that they can be valued and understood. One way Scottish Ministers can achieve this is by designating nationally important marine historic assets in Scottish territorial waters as Historic Marine Protected Areas under the Marine (Scotland) Act 2010.</gco:CharacterString>
             </gmd:abstract>
-            <gmd:purpose>
-                <gco:CharacterString>The Vicmap Admin product, which includes this dataset,            provides an accurate representation of various administrative boundaries across Victoria, at a capture scale of 1:25,000.            It is used in a variety of applications, particularly in            emergency services,            natural resource management,            planning and development, and            digital map publications.</gco:CharacterString>
-            </gmd:purpose>
-            <!-- <gmd:credit><gco:CharacterString></gco:CharacterString></gmd:credit> -->
-            <gmd:status>
-                <gmd:MD_ProgressCode           codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_RoleCode"           codeListValue="onGoing">onGoing</gmd:MD_ProgressCode>
-            </gmd:status>
+            <!-- Originator -->
             <gmd:pointOfContact>
                 <gmd:CI_ResponsibleParty>
                     <gmd:organisationName>
-                        <gco:CharacterString>Department of Sustainability and Environment (DSE)</gco:CharacterString>
+                        <gco:CharacterString>Historic Environment Scotland</gco:CharacterString>
                     </gmd:organisationName>
                     <gmd:positionName>
-                        <gco:CharacterString>Marketting manager</gco:CharacterString>
+                        <gco:CharacterString>GIS Officer</gco:CharacterString>
                     </gmd:positionName>
                     <gmd:contactInfo>
                         <gmd:CI_Contact>
-                            <gmd:phone>
-                                <gmd:CI_Telephone>
-                                    <gmd:voice>
-                                        <gco:CharacterString>+61 3 8636 2683</gco:CharacterString>
-                                    </gmd:voice>
-                                    <gmd:facsimile>
-                                        <gco:CharacterString>+61 3 8636 2813</gco:CharacterString>
-                                    </gmd:facsimile>
-                                </gmd:CI_Telephone>
-                            </gmd:phone>
                             <gmd:address>
                                 <gmd:CI_Address>
-                                    <gmd:deliveryPoint>
-                                        <gco:CharacterString>PO Box 500</gco:CharacterString>
-                                    </gmd:deliveryPoint>
-                                    <gmd:city>
-                                        <gco:CharacterString>East Melbourne</gco:CharacterString>
-                                    </gmd:city>
-                                    <gmd:administrativeArea>
-                                        <gco:CharacterString>Victoria</gco:CharacterString>
-                                    </gmd:administrativeArea>
-                                    <gmd:postalCode>
-                                        <gco:CharacterString>3002</gco:CharacterString>
-                                    </gmd:postalCode>
-                                    <gmd:country>
-                                        <gco:CharacterString>Australia</gco:CharacterString>
-                                    </gmd:country>
                                     <gmd:electronicMailAddress>
-                                        <gco:CharacterString>vicmap@dse.vic.gov.au</gco:CharacterString>
+                                        <gco:CharacterString>GIEnquiries@hes.scot</gco:CharacterString>
                                     </gmd:electronicMailAddress>
                                 </gmd:CI_Address>
                             </gmd:address>
-                            <gmd:onlineResource>
-                                <gmd:CI_OnlineResource>
-                                    <gmd:linkage>
-                                        <gmd:URL>http://www.land.vic.gov.au/vicmapdsp</gmd:URL>
-                                    </gmd:linkage>
-                                </gmd:CI_OnlineResource>
-                            </gmd:onlineResource>
-                            <gmd:contactInstructions>
-                                <gco:CharacterString>Please consult the above link for a list of Data Suppliers from whom this dataset may be purchased</gco:CharacterString>
-                            </gmd:contactInstructions>
                         </gmd:CI_Contact>
                     </gmd:contactInfo>
                     <gmd:role>
-                        <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+                        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
                     </gmd:role>
                 </gmd:CI_ResponsibleParty>
             </gmd:pointOfContact>
-            <gmd:resourceMaintenance>
-                <gmd:MD_MaintenanceInformation>
-                    <gmd:maintenanceAndUpdateFrequency>
-                        <gmd:MD_MaintenanceFrequencyCode               codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#MD_MaintenanceFrequencyCode"               codeListValue="fortnightly">fortnightly</gmd:MD_MaintenanceFrequencyCode>
-                    </gmd:maintenanceAndUpdateFrequency>
-                    <gmd:updateScope>
-                        <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
-                    </gmd:updateScope>
-                </gmd:MD_MaintenanceInformation>
-            </gmd:resourceMaintenance>
+            <!-- Data point of contact -->
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>Historic Environment Scotland</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:positionName>
+                        <gco:CharacterString>GIS Officer</gco:CharacterString>
+                    </gmd:positionName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>GIEnquiries@hes.scot</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <!-- Keywords -->
             <gmd:descriptiveKeywords>
                 <gmd:MD_Keywords>
                     <gmd:keyword>
-                        <gco:CharacterString>BOUNDARIES-Administrative</gco:CharacterString>
+                        <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/N01/current/NDGO0001/">Marine Environmental Data and Information Network</gmx:Anchor>
                     </gmd:keyword>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
                     <gmd:keyword>
-                        <gco:CharacterString>LAND-Ownership</gco:CharacterString>
+                        <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P22/current/15/">Buildings</gmx:Anchor>
                     </gmd:keyword>
-                    <gmd:type>
-                        <gmd:MD_KeywordTypeCode               codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#MD_KeywordTypeTypeCode"               codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
-                    </gmd:type>
                     <gmd:thesaurusName>
                         <gmd:CI_Citation>
                             <gmd:title>
-                                <gco:CharacterString>ANZLIC search words</gco:CharacterString>
+                                <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
                             </gmd:title>
                             <gmd:date>
                                 <gmd:CI_Date>
                                     <gmd:date>
-                                        <gco:Date>2006-10-10</gco:Date>
+                                        <gco:Date>2008-01-06</gco:Date>
                                     </gmd:date>
                                     <gmd:dateType>
-                                        <gmd:CI_DateTypeCode                       codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_DateTypeCode"                       codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
                                     </gmd:dateType>
                                 </gmd:CI_Date>
                             </gmd:date>
-                            <gmd:edition>
-                                <gco:CharacterString>2</gco:CharacterString>
-                            </gmd:edition>
-                            <gmd:citedResponsibleParty>
-                                <gmd:CI_ResponsibleParty id="ANZLIC_Contact">
-                                    <gmd:organisationName>
-                                        <gco:CharacterString>ANZLIC</gco:CharacterString>
-                                    </gmd:organisationName>
-                                    <gmd:contactInfo>
-                                        <gmd:CI_Contact>
-                                            <gmd:address>
-                                                <gmd:CI_Address>
-                                                    <gmd:deliveryPoint>
-                                                        <gco:CharacterString>GPO Box 337</gco:CharacterString>
-                                                    </gmd:deliveryPoint>
-                                                    <gmd:city>
-                                                        <gco:CharacterString>CANBERRA</gco:CharacterString>
-                                                    </gmd:city>
-                                                    <gmd:administrativeArea>
-                                                        <gco:CharacterString>Australian Capital Territory</gco:CharacterString>
-                                                    </gmd:administrativeArea>
-                                                    <gmd:postalCode>
-                                                        <gco:CharacterString>2601</gco:CharacterString>
-                                                    </gmd:postalCode>
-                                                    <gmd:country>
-                                                        <gco:CharacterString>AUSTRALIA</gco:CharacterString>
-                                                    </gmd:country>
-                                                    <gmd:electronicMailAddress>
-                                                        <gco:CharacterString>info@ANZLIC.org.au</gco:CharacterString>
-                                                    </gmd:electronicMailAddress>
-                                                </gmd:CI_Address>
-                                            </gmd:address>
-                                        </gmd:CI_Contact>
-                                    </gmd:contactInfo>
-                                    <gmd:role>
-                                        <gmd:CI_RoleCode                       codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_RoleCode"                       codeListValue="custodian">custodian</gmd:CI_RoleCode>
-                                    </gmd:role>
-                                </gmd:CI_ResponsibleParty>
-                            </gmd:citedResponsibleParty>
-                            <gmd:presentationForm>
-                                <gmd:CI_PresentationFormCode                   codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_PresentationFormCode"                   codeListValue="documentDigital">documentDigital</gmd:CI_PresentationFormCode>
-                            </gmd:presentationForm>
                         </gmd:CI_Citation>
                     </gmd:thesaurusName>
                 </gmd:MD_Keywords>
             </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="">Marine</gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>UNESCO</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2003-01-01</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="201">infoFeatureAccessService</gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>Spatial Data Service Type</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2011-02-14</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P02/current/MMST/">Man-made structures</gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>SeaDataNet P021 parameter discovery vocabulary</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2009-11-16</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="">Wrecks and Obstructions</gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="">Protected Areas</gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>MEDIN</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2012-02-14</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <!-- Conditions for access -->
+            <gmd:resourceConstraints>
+                <gmd:MD_Constraints>
+                    <gmd:useLimitation>
+                        <gco:CharacterString>If this data is reproduced it must be attributed with the following: Contains Historic Environment Scotland and Ordnance Survey data &amp;copy Historic Environment Scotland - Scottish Charity No. SC045925 &amp;copy Crown copyright and database right [year]</gco:CharacterString>
+                    </gmd:useLimitation>
+                </gmd:MD_Constraints>
+            </gmd:resourceConstraints>
+            <!-- Limitations on public access -->
             <gmd:resourceConstraints>
                 <gmd:MD_LegalConstraints>
                     <gmd:accessConstraints>
-                        <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#MD_RestrictionCode" codeListValue="intellectualPropertyRights">intellectualPropertyRights</gmd:MD_RestrictionCode>
+                        <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
                     </gmd:accessConstraints>
-                    <gmd:useConstraints>
-                        <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
-                    </gmd:useConstraints>
                     <gmd:otherConstraints>
-                        <gco:CharacterString>The data is available under licence from Spatial Information Infrastructure               in a variety of formats and media.                Licence fees and distribution charges apply</gco:CharacterString>
+                        <gco:CharacterString>No other restrictions.  See constraints on usage below.</gco:CharacterString>
                     </gmd:otherConstraints>
                 </gmd:MD_LegalConstraints>
             </gmd:resourceConstraints>
-            <gmd:spatialRepresentationType>
-                <gmd:MD_SpatialRepresentationTypeCode           codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#MD_SpatialRepresentationTypeCode"           codeListValue="vector">vector</gmd:MD_SpatialRepresentationTypeCode>
-            </gmd:spatialRepresentationType>
-            <gmd:spatialResolution>
-                <gmd:MD_Resolution>
-                    <gmd:distance>
-                        <gco:Distance uom="meters">25</gco:Distance>
-                    </gmd:distance>
-                </gmd:MD_Resolution>
-            </gmd:spatialResolution>
-            <gmd:language>
-                <gco:CharacterString>eng</gco:CharacterString>
-            </gmd:language>
-            <gmd:topicCategory>
-                <gmd:MD_TopicCategoryCode>boundaries</gmd:MD_TopicCategoryCode>
-            </gmd:topicCategory>
-            <gmd:environmentDescription>
-                <gco:CharacterString>           This dataset is maintained by a Spatial Information Infrastructure (SII) contractor.            It is supplied to SII in SII's proprietary Incremental Update Format (IUF) and loaded into ESRI's ArcSDE (Oracle with geometry stored as sde binary)         </gco:CharacterString>
-            </gmd:environmentDescription>
-            <gmd:extent>
+            <srv:serviceType>
+                <gco:LocalName>download</gco:LocalName>
+            </srv:serviceType>
+            <srv:extent>
                 <gmd:EX_Extent>
-                    <gmd:description>
-                        <gco:CharacterString>Victoria</gco:CharacterString>
-                    </gmd:description>
-                    <gmd:geographicElement>
-                        <gmd:EX_GeographicBoundingBox>
-                            <gmd:extentTypeCode>
-                                <gco:Boolean>1</gco:Boolean>
-                            </gmd:extentTypeCode>
-                            <gmd:westBoundLongitude>
-                                <gco:Decimal>141</gco:Decimal>
-                            </gmd:westBoundLongitude>
-                            <gmd:eastBoundLongitude>
-                                <gco:Decimal>150</gco:Decimal>
-                            </gmd:eastBoundLongitude>
-                            <gmd:southBoundLatitude>
-                                <gco:Decimal>-39</gco:Decimal>
-                            </gmd:southBoundLatitude>
-                            <gmd:northBoundLatitude>
-                                <gco:Decimal>-34</gco:Decimal>
-                            </gmd:northBoundLatitude>
-                        </gmd:EX_GeographicBoundingBox>
-                    </gmd:geographicElement>
+                    <!-- Extents -->
                     <gmd:geographicElement>
                         <gmd:EX_GeographicDescription>
-                            <gmd:extentTypeCode>
-                                <gco:Boolean>1</gco:Boolean>
-                            </gmd:extentTypeCode>
+                            <!-- Extent - by Identifier -->
                             <gmd:geographicIdentifier>
                                 <gmd:MD_Identifier>
                                     <gmd:authority>
-                                        <gmd:CI_Citation id="ANZLIC_GEN_states">
+                                        <gmd:CI_Citation>
                                             <gmd:title>
-                                                <gco:CharacterString>ANZLIC Geographic Extent Name                           Register - States and Territories</gco:CharacterString>
+                                                <gco:CharacterString>Charting Progress 2 Sea Areas</gco:CharacterString>
                                             </gmd:title>
                                             <gmd:date>
                                                 <gmd:CI_Date>
                                                     <gmd:date>
-                                                        <gco:Date>2006-10-10</gco:Date>
+                                                        <gco:Date>2009-06-18</gco:Date>
                                                     </gmd:date>
                                                     <gmd:dateType>
-                                                        <gmd:CI_DateTypeCode                               codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_DateTypeCode"                               codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
                                                     </gmd:dateType>
                                                 </gmd:CI_Date>
                                             </gmd:date>
-                                            <gmd:edition>
-                                                <gco:CharacterString>Version 2</gco:CharacterString>
-                                            </gmd:edition>
-                                            <gmd:identifier>
-                                                <gmd:MD_Identifier>
-                                                    <gmd:code>
-                                                        <gco:CharacterString>http://www.ga.gov.au/anzmeta/gen/anzlic-algens.xml#anzlic-state_territory</gco:CharacterString>
-                                                    </gmd:code>
-                                                </gmd:MD_Identifier>
-                                            </gmd:identifier>
-                                            <gmd:citedResponsibleParty xlink:href="#ANZLIC_Contact"/>
-                                            <gmd:presentationForm>
-                                                <gmd:CI_PresentationFormCode                           codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelist.xml#CI_PresentationFormCode"                           codeListValue="documentDigital"                           >documentDigital</gmd:CI_PresentationFormCode>
-                                            </gmd:presentationForm>
                                         </gmd:CI_Citation>
                                     </gmd:authority>
                                     <gmd:code>
-                                        <gco:CharacterString>VIC</gco:CharacterString>
+                                        <gco:CharacterString>Northern North Sea</gco:CharacterString>
                                     </gmd:code>
                                 </gmd:MD_Identifier>
                             </gmd:geographicIdentifier>
                         </gmd:EX_GeographicDescription>
                     </gmd:geographicElement>
+                    <gmd:geographicElement>
+                        <gmd:EX_GeographicDescription>
+                            <!-- Extent - by Identifier -->
+                            <gmd:geographicIdentifier>
+                                <gmd:MD_Identifier>
+                                    <gmd:authority>
+                                        <gmd:CI_Citation>
+                                            <gmd:title>
+                                                <gco:CharacterString>Charting Progress 2 Sea Areas</gco:CharacterString>
+                                            </gmd:title>
+                                            <gmd:date>
+                                                <gmd:CI_Date>
+                                                    <gmd:date>
+                                                        <gco:Date>2009-06-18</gco:Date>
+                                                    </gmd:date>
+                                                    <gmd:dateType>
+                                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+                                                    </gmd:dateType>
+                                                </gmd:CI_Date>
+                                            </gmd:date>
+                                        </gmd:CI_Citation>
+                                    </gmd:authority>
+                                    <gmd:code>
+                                        <gco:CharacterString>Minches &amp; Western Scotland</gco:CharacterString>
+                                    </gmd:code>
+                                </gmd:MD_Identifier>
+                            </gmd:geographicIdentifier>
+                        </gmd:EX_GeographicDescription>
+                    </gmd:geographicElement>
+                    <gmd:geographicElement>
+                        <gmd:EX_GeographicDescription>
+                            <!-- Extent - by Identifier -->
+                            <gmd:geographicIdentifier>
+                                <gmd:MD_Identifier>
+                                    <gmd:authority>
+                                        <gmd:CI_Citation>
+                                            <gmd:title>
+                                                <gco:CharacterString>Charting Progress 2 Sea Areas</gco:CharacterString>
+                                            </gmd:title>
+                                            <gmd:date>
+                                                <gmd:CI_Date>
+                                                    <gmd:date>
+                                                        <gco:Date>2009-06-18</gco:Date>
+                                                    </gmd:date>
+                                                    <gmd:dateType>
+                                                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+                                                    </gmd:dateType>
+                                                </gmd:CI_Date>
+                                            </gmd:date>
+                                        </gmd:CI_Citation>
+                                    </gmd:authority>
+                                    <gmd:code>
+                                        <gco:CharacterString>Scottish Continental Shelf</gco:CharacterString>
+                                    </gmd:code>
+                                </gmd:MD_Identifier>
+                            </gmd:geographicIdentifier>
+                        </gmd:EX_GeographicDescription>
+                    </gmd:geographicElement>
+                    <!-- Geographic bounding box -->
+                    <gmd:geographicElement>
+                        <gmd:EX_GeographicBoundingBox>
+                            <gmd:westBoundLongitude>
+                                <gco:Decimal>-8.0306</gco:Decimal>
+                            </gmd:westBoundLongitude>
+                            <gmd:eastBoundLongitude>
+                                <gco:Decimal>2.9117</gco:Decimal>
+                            </gmd:eastBoundLongitude>
+                            <gmd:southBoundLatitude>
+                                <gco:Decimal>55.5626</gco:Decimal>
+                            </gmd:southBoundLatitude>
+                            <gmd:northBoundLatitude>
+                                <gco:Decimal>60.9169</gco:Decimal>
+                            </gmd:northBoundLatitude>
+                        </gmd:EX_GeographicBoundingBox>
+                    </gmd:geographicElement>
                 </gmd:EX_Extent>
-            </gmd:extent>
-            <gmd:extent>
-                <gmd:EX_Extent>
-                    <gmd:description>
-                        <gco:CharacterString>Data represents localities mapped since mid 2005</gco:CharacterString>
-                    </gmd:description>
-                    <gmd:temporalElement>
-                        <gmd:EX_TemporalExtent>
-                            <gmd:extent>
-                                <gml:TimePeriod gml:id="TP01">
-                                    <gml:beginPosition>2005-05-15</gml:beginPosition>
-                                    <gml:endPosition indeterminatePosition="now"/>
-                                </gml:TimePeriod>
-                            </gmd:extent>
-                        </gmd:EX_TemporalExtent>
-                    </gmd:temporalElement>
-                </gmd:EX_Extent>
-            </gmd:extent>
-        </gmd:MD_DataIdentification>
+            </srv:extent>
+            <!--Inspire Coupled Resource-->
+            <srv:coupledResource>
+                <srv:SV_CoupledResource>
+                    <srv:operationName>
+                        <gco:CharacterString>GetMap</gco:CharacterString>
+                    </srv:operationName>
+                    <srv:identifier>
+                        <gco:CharacterString>HESHMPA</gco:CharacterString>
+                    </srv:identifier>
+                </srv:SV_CoupledResource>
+            </srv:coupledResource>
+            <!-- Other Coupled Resource Record for URL-->
+            <srv:coupledResource>
+                <srv:SV_CoupledResource>
+                    <srv:operationName>
+                        <gco:CharacterString>GetMap</gco:CharacterString>
+                    </srv:operationName>
+                    <srv:identifier>
+                        <gco:CharacterString>http://portal.historicenvironment.scot/spatialdownloads</gco:CharacterString>
+                    </srv:identifier>
+                </srv:SV_CoupledResource>
+            </srv:coupledResource>
+            <!-- Coupling Type-->
+            <srv:couplingType>
+                <SV_CouplingType codeListValue="tight" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#SV_CouplingType" />
+            </srv:couplingType>
+            <!--containsOperations-->
+            <srv:containsOperations>
+                <srv:SV_OperationMetadata>
+                    <srv:operationName>
+                        <gco:CharacterString>GetCapabilities</gco:CharacterString>
+                    </srv:operationName>
+                    <srv:DCP>
+                        <DCPList codeListValue="WebService" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#DCPList" />
+                    </srv:DCP>
+                    <srv:connectPoint>
+                        <gmd:CI_OnlineResource>
+                            <gmd:linkage>
+                                <gmd:URL>http://inspire.hes.scot/arcgis/services/HES/Historic_Marine_Protected_Areas/MapServer/WFSServer</gmd:URL>
+                            </gmd:linkage>
+                        </gmd:CI_OnlineResource>
+                    </srv:connectPoint>
+                </srv:SV_OperationMetadata>
+            </srv:containsOperations>
+            <!--end of containsOperations-->
+            <srv:containsOperations>
+                <srv:SV_OperationMetadata>
+                    <srv:operationName>
+                        <gco:CharacterString>GetFeature</gco:CharacterString>
+                    </srv:operationName>
+                    <srv:DCP>
+                        <DCPList codeListValue="WebService" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#DCPList" />
+                    </srv:DCP>
+                    <srv:connectPoint>
+                        <gmd:CI_OnlineResource>
+                            <gmd:linkage>
+                                <gmd:URL>http://inspire.hes.scot/arcgis/services/HES/Historic_Marine_Protected_Areas/MapServer/WFSServer</gmd:URL>
+                            </gmd:linkage>
+                        </gmd:CI_OnlineResource>
+                    </srv:connectPoint>
+                </srv:SV_OperationMetadata>
+            </srv:containsOperations>
+            <!--end of containsOperations-->
+            <srv:containsOperations>
+                <srv:SV_OperationMetadata>
+                    <srv:operationName>
+                        <gco:CharacterString>DescribeFeatureType</gco:CharacterString>
+                    </srv:operationName>
+                    <srv:DCP>
+                        <DCPList codeListValue="WebService" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#DCPList" />
+                    </srv:DCP>
+                    <srv:connectPoint>
+                        <gmd:CI_OnlineResource>
+                            <gmd:linkage>
+                                <gmd:URL>http://inspire.hes.scot/arcgis/services/HES/Historic_Marine_Protected_Areas/MapServer/WFSServer</gmd:URL>
+                            </gmd:linkage>
+                        </gmd:CI_OnlineResource>
+                    </srv:connectPoint>
+                </srv:SV_OperationMetadata>
+            </srv:containsOperations>
+            <!--end of containsOperations-->
+            <!--Operates On -->
+            <srv:operatesOn uuidref="HESHMPA" xlink:href="HESHMPA" />
+            <srv:operatesOn uuidref="http://portal.historicenvironment.scot/spatialdownloads" xlink:href="http://portal.historicenvironment.scot/spatialdownloads" />
+        </srv:SV_ServiceIdentification>
     </gmd:identificationInfo>
     <gmd:distributionInfo>
         <gmd:MD_Distribution>
@@ -757,42 +849,85 @@
     <mdc:nceaClassifierInfo>
         <mdc:NC_Classifiers>
             <mdc:classifier>
-                <mdc:classifierType>
-                    <gco:CharacterString>Level 1</gco:CharacterString>
-                </mdc:classifierType>
-                <mdc:classifierValue>
-                    <gco:CharacterString>value 1</gco:CharacterString>
-                </mdc:classifierValue>
-            </mdc:classifier>
-            <mdc:classifier>
                 <!-- classifier type -->
                 <mdc:classifierType>
-                    <gco:CharacterString>Dimension</gco:CharacterString>
+                    <gco:CharacterString>Level 1</gco:CharacterString>
                 </mdc:classifierType>
                 <!-- classifier value -->
                 <mdc:classifierValue>
                     <gco:CharacterString>Ecosystem Services and Benefits</gco:CharacterString>
                 </mdc:classifierValue>
-            </mdc:classifier>
-            <mdc:classifier>
-                <!-- classifier type -->
-                <mdc:classifierType>
-                    <gco:CharacterString>Level 1</gco:CharacterString>
-                </mdc:classifierType>
-                <!-- classifier value -->
-                <mdc:classifierValue>
-                    <gco:CharacterString>Regulating Services</gco:CharacterString>
-                </mdc:classifierValue>
-            </mdc:classifier>
-            <mdc:classifier>
-                <!-- classifier type -->
-                <mdc:classifierType>
-                    <gco:CharacterString>Level 2</gco:CharacterString>
-                </mdc:classifierType>
-                <!-- classifier value -->
-                <mdc:classifierValue>
-                    <gco:CharacterString>Environmental quality</gco:CharacterString>
-                </mdc:classifierValue>
+                <!-- child classifiers -->
+                <mdc:NC_Classifiers>
+                    <mdc:classifier>
+                        <!-- classifier type -->
+                        <mdc:classifierType>
+                            <gco:CharacterString>Level 2</gco:CharacterString>
+                        </mdc:classifierType>
+                        <!-- classifier value -->
+                        <mdc:classifierValue>
+                            <gco:CharacterString>Regulating Services</gco:CharacterString>
+                        </mdc:classifierValue>
+                        <!-- child classifiers -->
+                        <mdc:NC_Classifiers>
+                            <mdc:classifier>
+                                <!-- classifier type -->
+                                <mdc:classifierType>
+                                    <gco:CharacterString>Level 3</gco:CharacterString>
+                                </mdc:classifierType>
+                                <!-- classifier value -->
+                                <mdc:classifierValue>
+                                    <gco:CharacterString>Environmental quality</gco:CharacterString>
+                                </mdc:classifierValue>
+                            </mdc:classifier>
+                            <mdc:classifier>
+                                <!-- classifier type -->
+                                <mdc:classifierType>
+                                    <gco:CharacterString>Level 3</gco:CharacterString>
+                                </mdc:classifierType>
+                                <!-- classifier value -->
+                                <mdc:classifierValue>
+                                    <gco:CharacterString>Maintaining wild populations</gco:CharacterString>
+                                </mdc:classifierValue>
+                            </mdc:classifier>
+                        </mdc:NC_Classifiers>
+                    </mdc:classifier>
+                    <mdc:classifier>
+                        <!-- classifier type -->
+                        <mdc:classifierType>
+                            <gco:CharacterString>Level 2</gco:CharacterString>
+                        </mdc:classifierType>
+                        <!-- classifier value -->
+                        <mdc:classifierValue>
+                            <gco:CharacterString>Cultural Services</gco:CharacterString>
+                        </mdc:classifierValue>
+                        <!-- child classifiers -->
+                        <mdc:NC_Classifiers>
+                            <mdc:classifier>
+                                <!-- classifier type -->
+                                <mdc:classifierType>
+                                    <gco:CharacterString>Level 3</gco:CharacterString>
+                                </mdc:classifierType>
+                                <!-- classifier value -->
+                                <mdc:classifierValue>
+                                    <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                </mdc:classifierValue>
+                                <mdc:NC_Classifiers>
+                                    <mdc:classifier>
+                                        <!-- classifier type -->
+                                        <mdc:classifierType>
+                                            <gco:CharacterString>Level 4</gco:CharacterString>
+                                        </mdc:classifierType>
+                                        <!-- classifier value -->
+                                        <mdc:classifierValue>
+                                            <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                        </mdc:classifierValue>
+                                    </mdc:classifier>
+                                </mdc:NC_Classifiers>
+                            </mdc:classifier>
+                        </mdc:NC_Classifiers>
+                    </mdc:classifier>
+                </mdc:NC_Classifiers>
             </mdc:classifier>
         </mdc:NC_Classifiers>
     </mdc:nceaClassifierInfo>
