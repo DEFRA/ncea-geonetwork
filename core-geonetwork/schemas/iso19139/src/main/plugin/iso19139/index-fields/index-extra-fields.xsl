@@ -111,6 +111,25 @@
 						}</OrgResourceVerticalRange>
 					</xsl:if>
 				</xsl:for-each>
+
+				<xsl:for-each select=".//gmd:geographicElement[local-name(./*) = 'EX_GeographicDescription']">
+					<xsl:for-each select="gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier">
+						<OrgGeographicElement type="object">
+							{
+								"ciTitle":"<xsl:value-of select="gn-fn-index:json-escape((gmd:authority/gmd:CI_Citation/gmd:title/gco:CharacterString/text()[1]))"/>",
+								<xsl:if test="gn-fn-index:is-isoDate((gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date)[1])">
+									<xsl:variable name="dateType" select="gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType[1]/gmd:CI_DateTypeCode/@codeListValue" as="xs:string?"/>
+									<xsl:variable name="date"
+									select="string(gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[1]/gco:Date|gmd:date[1]/gco:DateTime)"/>
+									"type": "<xsl:value-of select="$dateType"/>", 
+									"date": "<xsl:value-of select="$date" />",
+								</xsl:if>
+								"code": "<xsl:value-of select="util:escapeForJson((gmd:code/*/text())[1])"/>",
+								"url": "<xsl:value-of select="util:escapeForJson(gmd:code/*/@xlink:href)"/>"
+								}
+						</OrgGeographicElement>
+					</xsl:for-each>
+				</xsl:for-each>
 			</xsl:for-each>
 			
 			<!-- Additional Information -->
@@ -248,6 +267,11 @@
 				<OrgServiceType>
 					<xsl:value-of select="util:escapeForJson(text())"/>
 				</OrgServiceType>
+			</xsl:for-each>
+			<xsl:for-each select="srv:operatesOn[@xlink:href != '']">
+				<OrgCoupledResource>
+					<xsl:value-of select="util:escapeForJson(@xlink:href)"/>
+				</OrgCoupledResource>
 			</xsl:for-each>
 		</xsl:for-each>
 						
