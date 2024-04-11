@@ -111,6 +111,25 @@
 						}</OrgResourceVerticalRange>
 					</xsl:if>
 				</xsl:for-each>
+
+				<xsl:for-each select=".//gmd:geographicElement[local-name(./*) = 'EX_GeographicDescription']">
+					<xsl:for-each select="gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier">
+						<OrgGeographicElement type="object">
+							{
+								"ciTitle":"<xsl:value-of select="gn-fn-index:json-escape((gmd:authority/gmd:CI_Citation/gmd:title/gco:CharacterString/text()[1]))"/>",
+								<xsl:if test="gn-fn-index:is-isoDate((gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date)[1])">
+									<xsl:variable name="dateType" select="gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType[1]/gmd:CI_DateTypeCode/@codeListValue" as="xs:string?"/>
+									<xsl:variable name="date"
+									select="string(gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[1]/gco:Date|gmd:date[1]/gco:DateTime)"/>
+									"type": "<xsl:value-of select="$dateType"/>", 
+									"date": "<xsl:value-of select="$date" />",
+								</xsl:if>
+								"code": "<xsl:value-of select="util:escapeForJson((gmd:code/*/text())[1])"/>",
+								"url": "<xsl:value-of select="util:escapeForJson(gmd:code/*/@xlink:href)"/>"
+								}
+						</OrgGeographicElement>
+					</xsl:for-each>
+				</xsl:for-each>
 			</xsl:for-each>
 			
 			<!-- Additional Information -->
@@ -182,8 +201,8 @@
 				<xsl:for-each select="gmd:identifier/*[string(gmd:code/*)]">
 					<OrgResourceIdentifier type="object">{
 					  "code": "<xsl:value-of select="util:escapeForJson(gmd:code/(gco:CharacterString|gmx:Anchor))"/>",
-					  "codeSpace": "<xsl:value-of select="gmd:codeSpace/(gco:CharacterString|gmx:Anchor)"/>",
-					  "link": "<xsl:value-of select="gmd:code/gmx:Anchor/@xlink:href"/>"
+					  "codeSpace": "<xsl:value-of select="util:escapeForJson(gmd:codeSpace/(gco:CharacterString|gmx:Anchor))"/>",
+					  "link": "<xsl:value-of select="util:escapeForJson(gmd:code/gmx:Anchor/@xlink:href)"/>"
 					  }
 					</OrgResourceIdentifier>
 				</xsl:for-each>
@@ -196,33 +215,39 @@
 			<!--Constraints-->
 			<xsl:for-each select="gmd:resourceConstraints/*">
 				<OrgResourceConstraints type="object">{
-					<xsl:if test="count(gmd:useConstraints/gmd:MD_RestrictionCode[text() != '']) &gt; 0">
+					<xsl:variable name="userConstraintsCount" select="count(gmd:useConstraints/gmd:MD_RestrictionCode[text() != ''])"/>
+					<xsl:variable name="otherConstraintsCount" select="count(gmd:otherConstraints/(gmx:Anchor | gco:CharacterString)[text() != ''])"/>
+					<xsl:variable name="accessConstraintsCount" select="count(gmd:accessConstraints/gmd:MD_RestrictionCode[text() != ''])"/>
+
+					<xsl:if test="$userConstraintsCount &gt; 0">
 						"OrgUseConstraints": 
 						[
 							<xsl:for-each select="gmd:useConstraints">					
-								"<xsl:value-of select="gmd:MD_RestrictionCode"/>"
+								"<xsl:value-of select="util:escapeForJson(gmd:MD_RestrictionCode)"/>"
 								<xsl:if test="position() != last()">
 									<xsl:text>,</xsl:text>
 								</xsl:if>
 							</xsl:for-each>
-						],
+						]
 					</xsl:if>
-					<xsl:if test="count(gmd:otherConstraints/(gmx:Anchor | gco:CharacterString)[text() != '']) &gt; 0">
+					<xsl:if test="$otherConstraintsCount &gt; 0">
+						<xsl:if test="$userConstraintsCount &gt; 0"><xsl:text>,</xsl:text></xsl:if>
 						"OrgOtherConstraints": 
 						[
 							<xsl:for-each select="gmd:otherConstraints">					
-								"<xsl:value-of select="(gmx:Anchor | gco:CharacterString)"/>"
+								"<xsl:value-of select="util:escapeForJson((gmx:Anchor | gco:CharacterString))"/>"
 								<xsl:if test="position() != last()">
 									<xsl:text>,</xsl:text>
 								</xsl:if>
 							</xsl:for-each>
-						],
+						]
 					</xsl:if>
-					<xsl:if test="count(gmd:accessConstraints/gmd:MD_RestrictionCode[text() != '']) &gt; 0">
+					<xsl:if test="$accessConstraintsCount &gt; 0">
+						<xsl:if test="$userConstraintsCount &gt; 0 or $otherConstraintsCount &gt; 0"><xsl:text>,</xsl:text></xsl:if>
 						"OrgAccessConstraints": 
 						[
 							<xsl:for-each select="gmd:accessConstraints">					
-								"<xsl:value-of select="gmd:MD_RestrictionCode"/>"
+								"<xsl:value-of select="util:escapeForJson(gmd:MD_RestrictionCode)"/>"
 								<xsl:if test="position() != last()">
 									<xsl:text>,</xsl:text>
 								</xsl:if>
@@ -240,8 +265,13 @@
 		<xsl:for-each select="srv:SV_ServiceIdentification">
 			<xsl:for-each select="srv:serviceType/gco:LocalName[string(text())]">
 				<OrgServiceType>
-					<xsl:value-of select="text()"/>
+					<xsl:value-of select="util:escapeForJson(text())"/>
 				</OrgServiceType>
+			</xsl:for-each>
+			<xsl:for-each select="srv:operatesOn[@xlink:href != '']">
+				<OrgCoupledResource>
+					<xsl:value-of select="util:escapeForJson(@xlink:href)"/>
+				</OrgCoupledResource>
 			</xsl:for-each>
 		</xsl:for-each>
 						
@@ -253,24 +283,69 @@
 		<xsl:for-each select="gmd:distributionFormat/*[gmd:name/* != '']">
 			<OrgDistributionFormats type="object">
 			{
-				"name":"<xsl:value-of select="gmd:name/(gmx:Anchor | gco:CharacterString)"/>",
-				"version":"<xsl:value-of select="gmd:version/@gco:nilReason "/>"
+				"name":"<xsl:value-of select="util:escapeForJson(gmd:name/(gmx:Anchor | gco:CharacterString))"/>",
+				"version":"<xsl:value-of select="util:escapeForJson(gmd:version/@gco:nilReason)"/>"
 			}
 			</OrgDistributionFormats>
 		</xsl:for-each>
 	</xsl:for-each>
 
 
+	<!--MDC Identifiers-->
+	<xsl:if test="mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString/text() != ''">
+		<OrgNceaIdentifiers type="object">
+		{
+			"projectId":"<xsl:value-of select="util:escapeForJson(mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString)"/>",
+			"masterReferenceID":{
+					"catalogueEntry":"<xsl:value-of select="util:escapeForJson(mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:catalogueEntry/gco:CharacterString)"/>", 
+					"sourceSystemReferenceID": "<xsl:value-of select="util:escapeForJson(mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:sourceSystemReferenceID/gco:CharacterString)"/>"
+				}
+		}
+		</OrgNceaIdentifiers>
+	</xsl:if>
+
+	
 	<!--MDC Classifiers-->
-	<OrgNceaIdentifiers type="object">
-	{
-		"projectId":"<xsl:value-of select="mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString"/>",
-		"masterReferenceID":{
-				"catalogueEntry":"<xsl:value-of select="mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:catalogueEntry/gco:CharacterString"/>", 
-				"sourceSystemReferenceID": "<xsl:value-of select="mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:sourceSystemReferenceID/gco:CharacterString"/>"
-			}
-	}
-	</OrgNceaIdentifiers>
+	<xsl:for-each select="mdc:nceaClassifierInfo">
+		<OrgNceaClassifiers type="object">
+		[
+			<xsl:call-template name="index-classifiers">
+				<xsl:with-param name="classifiers" select="mdc:NC_Classifiers"/>
+			</xsl:call-template>
+		]
+		</OrgNceaClassifiers>
+	</xsl:for-each>
+
+  </xsl:template>
+
+
+  <xsl:template name="index-classifiers">
+	<xsl:param name="classifiers"/>
+
+	<xsl:choose>
+		<xsl:when test="count($classifiers/mdc:classifier) &gt; 0">
+			<xsl:for-each select="$classifiers/mdc:classifier">
+				{
+					"classifierType":"<xsl:value-of select="util:escapeForJson(mdc:classifierType/gco:CharacterString)"/>",
+					"classifierValue":"<xsl:value-of select="util:escapeForJson(mdc:classifierValue/gco:CharacterString)"/>"
+
+					<xsl:if test="count(mdc:NC_Classifiers/mdc:classifier) &gt; 0">
+						<xsl:text>,</xsl:text>
+						"classifiers":[<xsl:call-template name="index-classifiers">
+											<xsl:with-param name="classifiers" select="mdc:NC_Classifiers"/>
+										</xsl:call-template>]
+					</xsl:if>
+				}
+				<xsl:if test="position() != last()">
+					<xsl:text>,</xsl:text>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:text>{}</xsl:text>
+		</xsl:otherwise>
+	</xsl:choose>
+
 
   </xsl:template>
 </xsl:stylesheet>
