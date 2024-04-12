@@ -62,6 +62,12 @@ spec:
             - name: tcp
               containerPort: 8080
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /geonetwork
+              port: 8080
+            initialDelaySeconds: 120
+            periodSeconds: 60
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
