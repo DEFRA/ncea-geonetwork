@@ -15,8 +15,8 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="project" type="mdc:NC_ProjectID_PropertyType"/>
-					<xs:element name="masterReference" type="mdc:NC_MasterReferenceID_PropertyType"/>
+					<xs:element name="ProjectID" type="mdc:NC_ProjectID_PropertyType"/>
+					<xs:element name="MasterReferenceID" type="mdc:NC_MasterReferenceID_PropertyType"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
