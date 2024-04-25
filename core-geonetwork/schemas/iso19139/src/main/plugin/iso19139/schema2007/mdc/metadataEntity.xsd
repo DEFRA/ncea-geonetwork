@@ -11,7 +11,7 @@
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->
-	<xs:complexType name="NCEA_ClassifierInfo_Type">
+	<xs:complexType name="NC_ClassifierInfo_Type">
 		<xs:annotation>
 			<xs:documentation>Information about the NCEA Classifiers</xs:documentation>
 		</xs:annotation>
@@ -25,11 +25,11 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="NCEA_ClassifierInfo" type="mdc:NCEA_Classifiers_Type"/>
+	<xs:element name="NC_ClassifierInfo" type="mdc:NC_Classifiers_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="MD_Metadata_PropertyType">
 		<xs:sequence minOccurs="0">
-			<xs:element ref="mdc:NCEA_ClassifierInfo"/>
+			<xs:element ref="mdc:NC_ClassifierInfo"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gco:ObjectReference"/>
 		<xs:attribute ref="gco:nilReason"/>
