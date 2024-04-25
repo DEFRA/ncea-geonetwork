@@ -18,9 +18,8 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>					<xs:element name="metadataStandardName" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-					<xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>					<xs:element name="metadataStandardName" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-					<xs:element name="metadataStandardName" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+					<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
