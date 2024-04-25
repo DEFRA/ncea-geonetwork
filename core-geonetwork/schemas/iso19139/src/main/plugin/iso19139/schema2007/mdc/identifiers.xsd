@@ -15,8 +15,8 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="project" type="mdc:NC_ProjectID_PropertyType"/>
-					<xs:element name="masterReference" type="mdc:NC_MasterReferenceID_PropertyType"/>
+					<xs:element name="ProjectID" type="mdc:NC_ProjectID_PropertyType"  minOccurs="0"/>
+					<xs:element name="MasterReferenceID" type="mdc:NC_MasterReferenceID_PropertyType"  minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -50,7 +50,7 @@
     	<!-- ........................................................................ -->
     	<xs:complexType name="NC_MasterReferenceID_PropertyType">
     		<xs:sequence minOccurs="0">
-    			<xs:element ref="mdc:NC_MasterReferenceID"/>
+    			<xs:element ref="mdc:NC_MasterReferenceID" minOccurs="0"/>
     		</xs:sequence>
     		<xs:attributeGroup ref="gco:ObjectReference"/>
     		<xs:attribute ref="gco:nilReason"/>
@@ -72,7 +72,7 @@
             <!-- ........................................................................ -->
             <xs:complexType name="NC_ProjectID_PropertyType">
                 <xs:sequence minOccurs="0">
-                    <xs:element ref="mdc:NC_ProjectID"/>
+                    <xs:element ref="mdc:NC_ProjectID"  minOccurs="0"/>
                 </xs:sequence>
                 <xs:attributeGroup ref="gco:ObjectReference"/>
                 <xs:attribute ref="gco:nilReason"/>
