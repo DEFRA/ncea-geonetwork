@@ -22,15 +22,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="NC_Identifiers" type="mdc:NC_Identifiers_Type"/>
-	<!-- ........................................................................ -->
-	<xs:complexType name="NC_Identifiers_PropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="mdc:NC_Identifiers"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gco:ObjectReference"/>
-		<xs:attribute ref="gco:nilReason"/>
-	</xs:complexType>
+	<xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_Type"/>
 	<!-- =========================================================================== -->
 
 

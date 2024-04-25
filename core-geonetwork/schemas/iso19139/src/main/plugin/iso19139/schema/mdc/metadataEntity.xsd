@@ -19,7 +19,7 @@
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
 					<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_Type" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
