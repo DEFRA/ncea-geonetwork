@@ -15,7 +15,7 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="classifier" type="mdc:classifier_PropertyType"/>
+					<xs:element name="classifier" type="mdc:classifier_Type"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -48,12 +48,12 @@
     	<!-- ........................................................................ -->
     	<xs:element name="classifier" type="mdc:classifier_Type"/>
     	<!-- ........................................................................ -->
-    	<xs:complexType name="classifier_PropertyType">
+    	<!--<xs:complexType name="classifier_PropertyType">
     		<xs:sequence minOccurs="0">
     			<xs:element ref="mdc:classifier"/>
     		</xs:sequence>
     		<xs:attributeGroup ref="gco:ObjectReference"/>
     		<xs:attribute ref="gco:nilReason"/>
-    	</xs:complexType>
+    	</xs:complexType>-->
     	<!-- =========================================================================== -->
 </xs:schema>
