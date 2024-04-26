@@ -58,8 +58,6 @@
 					<xs:element name="propertyType" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="featureType" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="featureAttribute" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element ref="mdc:nceaClassifierInfo" />
-                    <xs:element ref="mdc:nceaIdentifiers" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
