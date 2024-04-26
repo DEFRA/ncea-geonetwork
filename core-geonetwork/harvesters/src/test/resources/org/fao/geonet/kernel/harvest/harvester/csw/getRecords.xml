@@ -24,8 +24,8 @@
 
 <csw:GetRecordsResponse xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                        xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
-                        xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc/mdc.xsd http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd">
+                        xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/feature/366505-master-reference/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
+                        xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 https://github.com/DEFRA/ncea-geonetwork/tree/feature/366505-master-reference/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc/mdc.xsd http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd">
   <csw:SearchStatus timestamp="2013-10-22T10:57:12"/>
   <csw:SearchResults numberOfRecordsMatched="2" numberOfRecordsReturned="2" elementSet="summary"
                      nextRecord="0">

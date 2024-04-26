@@ -27,13 +27,13 @@
            xmlns:gco="http://www.isotc211.org/2005/gco"
            xmlns:gsr="http://www.isotc211.org/2005/gsr"
            xmlns:gmx="http://www.isotc211.org/2005/gmx"
-           xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
+           xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/feature/366505-master-reference/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
            elementFormDefault="qualified"
 >
   <!-- 19139:2007 version -->
   <xs:include schemaLocation="schema2007/gmd/metadataApplication.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema2007/srv/srv.xsd"/>
-  <xs:import namespace="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc" schemaLocation="schema2007/mdc/mdc.xsd"/>
+  <xs:import namespace="https://github.com/DEFRA/ncea-geonetwork/tree/feature/366505-master-reference/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc" schemaLocation="schema2007/mdc/mdc.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="schema2007/gmx/gmx.xsd"/>
   <!-- 19139:2005 version
   <xs:include schemaLocation="schema/gmd/metadataApplication.xsd"/>
