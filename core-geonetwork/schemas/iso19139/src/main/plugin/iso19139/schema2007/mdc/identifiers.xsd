@@ -27,6 +27,22 @@
 
 
 	<!-- =========================================================================== -->
+	<xs:complexType name="NC_ProjectID_PropertyType">
+		<xs:complexContent>
+			<xs:extension base="gco:AbstractObject_Type">
+				<xs:sequence>
+					<xs:element name="projectId" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ........................................................................ -->
+	<xs:element name="ProjectID" type="mdc:NC_ProjectID_PropertyType"/>
+	<!-- =========================================================================== -->
+
+
+
+	<!-- =========================================================================== -->
     	<xs:complexType name="MasterReferenceID_Type">
     		<xs:complexContent>
     			<xs:extension base="gco:AbstractObject_Type">
@@ -41,8 +57,9 @@
     	<xs:element name="MasterReferenceID" type="mdc:MasterReferenceID_Type"/>
     	<!-- =========================================================================== -->
 
+
     	<!-- =========================================================================== -->
-            <xs:complexType name="ProjectID_Type">
+           <!-- <xs:complexType name="ProjectID_Type">
                 <xs:complexContent>
                     <xs:extension base="gco:AbstractObject_Type">
                         <xs:sequence>
@@ -50,17 +67,17 @@
                         </xs:sequence>
                     </xs:extension>
                 </xs:complexContent>
-            </xs:complexType>
+            </xs:complexType>-->
             <!-- ........................................................................ -->
-            <xs:element name="NC_ProjectID" type="mdc:ProjectID_Type"/>
+            <!--<xs:element name="NC_ProjectID" type="mdc:ProjectID_Type"/>-->
             <!-- ........................................................................ -->
-            <xs:complexType name="NC_ProjectID_PropertyType">
+            <!--<xs:complexType name="NC_ProjectID_PropertyType">
                 <xs:sequence minOccurs="0">
                     <xs:element ref="mdc:NC_ProjectID"  minOccurs="0"/>
                 </xs:sequence>
                 <xs:attributeGroup ref="gco:ObjectReference"/>
                 <xs:attribute ref="gco:nilReason"/>
-            </xs:complexType>
+            </xs:complexType>-->
         <!-- =========================================================================== -->
 
 </xs:schema>
