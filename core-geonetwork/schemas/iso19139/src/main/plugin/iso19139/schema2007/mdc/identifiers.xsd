@@ -32,7 +32,7 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="projectId" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+					<xs:element name="projectID" type="gco:CharacterString_PropertyType" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
