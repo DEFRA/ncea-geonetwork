@@ -40,16 +40,16 @@
   <xs:import namespace="http://www.isotc211.org/2007/gmd"
              schemaLocation="../iso19139/schema2007/gmd/metadataEntity.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gco"
-             schemaLocation="../iso19139/schema/gco/basicTypes.xsd"/>
+             schemaLocation="../iso19139/schema2007/gco/basicTypes.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gmx"
-             schemaLocation="../iso19139/schema/gmx/gmx.xsd"/>
+             schemaLocation="../iso19139/schema2007/gmx/gmx.xsd"/>
 
   <!-- Original imports causing error in schema loading in GeoNetwork -->
   <!-- src-resolve: Cannot resolve the name 'gmd:AbstractDQ_PositionalAccuracy' to a(n) 'element declaration' component. -->
 
-  <!-- <xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso19139/schema/gmd/citation.xsd"/>
-  <xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../iso19139/schema/gco/gco.xsd"/>
-  <xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="../iso19139/schema/gmx/gmx.xsd"/>  -->
+  <!-- <xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso19139/schema2007/gmd/citation.xsd"/>
+  <xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../iso19139/schema2007/gco/gco.xsd"/>
+  <xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="../iso19139/schema2007/gmx/gmx.xsd"/>  -->
   <!-- ########################################################################### -->
   <!-- ########################################################################### -->
   <!-- ================================== Classes ================================= -->
