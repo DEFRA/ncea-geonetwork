@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gco="http://www.isotc211.org/2005/gco"
+           xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/feature/366505-master-reference/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
            xmlns:gmd="http://www.isotc211.org/2005/gmd" targetNamespace="http://www.isotc211.org/2005/gmd"
            elementFormDefault="qualified"
            version="2012-07-13">
@@ -9,6 +10,7 @@
 	</xs:annotation>
 	<!-- ================================== Imports ================================== -->
 	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
+	<xs:import namespace="https://github.com/DEFRA/ncea-geonetwork/tree/feature/366505-master-reference/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc" schemaLocation="../mdc/mdc.xsd"/>
 	<xs:include schemaLocation="gmd.xsd"/>
 	<xs:include schemaLocation="spatialRepresentation.xsd"/>
 	<xs:include schemaLocation="metadataExtension.xsd"/>
@@ -56,6 +58,8 @@
 					<xs:element name="propertyType" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="featureType" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="featureAttribute" type="gco:ObjectReference_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_Type" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
