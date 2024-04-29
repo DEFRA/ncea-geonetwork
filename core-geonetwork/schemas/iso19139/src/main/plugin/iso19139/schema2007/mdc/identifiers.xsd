@@ -16,8 +16,8 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="ProjectID" type="mdc:NC_ProjectID_PropertyType"  minOccurs="0"/>
-					<xs:element name="MasterReferenceID" type="mdc:MasterReferenceID_Type"  minOccurs="0"/>
+					<xs:element name="ProjectID" type="mdc:NC_ProjectID_PropertyType"  minOccurs="1"/>
+					<xs:element name="MasterReferenceID" type="mdc:MasterReferenceID_Type"  minOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -32,7 +32,7 @@
 		<xs:complexContent>
 			<xs:extension base="gco:AbstractObject_Type">
 				<xs:sequence>
-					<xs:element name="projectID" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+					<xs:element name="projectID" type="gco:CharacterString_PropertyType" minOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -46,8 +46,8 @@
     		<xs:complexContent>
     			<xs:extension base="gco:AbstractObject_Type">
     				<xs:sequence>
-                        <xs:element name="catalogueEntry" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-                        <xs:element name="sourceSystemReferenceID" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+                        <xs:element name="catalogueEntry" type="gco:CharacterString_PropertyType" minOccurs="1"/>
+                        <xs:element name="sourceSystemReferenceID" type="gco:CharacterString_PropertyType" minOccurs="1"/>
     				</xs:sequence>
     			</xs:extension>
     		</xs:complexContent>
