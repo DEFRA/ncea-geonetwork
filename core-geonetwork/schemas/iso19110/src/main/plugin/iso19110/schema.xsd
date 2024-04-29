@@ -37,8 +37,8 @@
     </xs:documentation>
   </xs:annotation>
   <!-- ================================== Imports ================================== -->
-  <xs:import namespace="http://www.isotc211.org/2005/gmd"
-             schemaLocation="../iso19139/schema/gmd/metadataEntity.xsd"/>
+  <xs:import namespace="http://www.isotc211.org/2007/gmd"
+             schemaLocation="../iso19139/schema2007/gmd/metadataEntity.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gco"
              schemaLocation="../iso19139/schema/gco/basicTypes.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gmx"
