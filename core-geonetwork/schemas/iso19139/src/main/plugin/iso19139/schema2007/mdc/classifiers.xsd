@@ -24,17 +24,6 @@
 	<!-- ........................................................................ -->
 	<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType"/>
 	<!-- ........................................................................ -->
-	<!--<xs:complexType name="NC_Classifiers_PropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="mdc:nceaClassifierInfo"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gco:ObjectReference"/>
-		<xs:attribute ref="gco:nilReason"/>
-	</xs:complexType>-->
-	<!-- =========================================================================== -->
-
-
-
 
 	<!-- =========================================================================== -->
 	<xs:complexType name="NC_Classifiers_Type">
@@ -49,20 +38,6 @@
 	<!-- ........................................................................ -->
 	<xs:element name="NC_Classifiers" type="mdc:NC_Classifiers_Type"/>
 	<!-- ........................................................................ -->
-	<!--<xs:complexType name="NC_Classifiers_PropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="mdc:NC_Classifiers"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gco:ObjectReference"/>
-		<xs:attribute ref="gco:nilReason"/>
-	</xs:complexType>-->
-	<!-- =========================================================================== -->
-
-
-
-
-
-
 
 	<!-- =========================================================================== -->
     	<xs:complexType name="classifier_Type">
@@ -77,14 +52,4 @@
     		</xs:complexContent>
     	</xs:complexType>
     	<!-- ........................................................................ -->
-    	<!--<xs:element name="classifier" type="mdc:classifier_Type"/>-->
-    	<!-- ........................................................................ -->
-    	<!--<xs:complexType name="classifier_PropertyType">
-    		<xs:sequence minOccurs="0">
-    			<xs:element ref="mdc:classifier"/>
-    		</xs:sequence>
-    		<xs:attributeGroup ref="gco:ObjectReference"/>
-    		<xs:attribute ref="gco:nilReason"/>
-    	</xs:complexType>-->
-    	<!-- =========================================================================== -->
 </xs:schema>
