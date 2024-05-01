@@ -43,6 +43,7 @@ ingress:
   classname: nginx
   host: $(ingressHostname)
   elasticHostName: $(elasticSearchIngressHostname)
+  kibanaHostName: $(kibanaIngressHostName)
   path: /
   pathType: Prefix
 
