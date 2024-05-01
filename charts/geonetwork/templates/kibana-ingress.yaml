@@ -2,21 +2,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ $.Values.elasticsearch.name }}
+  name: {{ $.Values.kibana.name }}
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: {{ $.Values.ingress.classname }}
   rules:
-  - host: {{ $.Values.ingress.elasticHostName }}
+  - host: {{ $.Values.ingress.kibanaHostName }}
     http:
       paths:
       - backend:
           service:
-            name: {{ $.Values.elasticsearch.name }}
+            name: {{ $.Values.kibana.name }}
             port:
-              number: {{ $.Values.esservice.port }}
+              number: {{ $.Values.kibana.port }}
         path: {{ $.Values.ingress.path }}
         pathType: {{ $.Values.ingress.pathType }}
 
