@@ -66,6 +66,10 @@ steps:
         identity.tenantId=$(tenantId)
         identity.keyvaultName=$(keyvaultName)
         ingress.elasticHostName=$(elasticSearchIngressHostname)
+        kibana.host=$(kibanaHostName)
+        kibana.name=$(kibanaInstanceName)
+        kibana.repository=$(kibanaContainerRepositoryFullPath)
+        ingress.kibanaHostName=$(kibanaIngressHostName)
     install: true
     # force: true
     arguments: --timeout=30m --debug
