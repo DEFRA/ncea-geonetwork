@@ -56,12 +56,21 @@ postgres:
   password: $(postgresDbPassword)
   dbname: $(postgresDbName)
 
+create_kibana_pod: true
+kibana:
+  host: $(kibanaHostName)
+  port: 5601
+  name: $(kibanaInstanceName)
+  serviceType: ClusterIP
+  repository: $(kibanaContainerRepositoryFullPath)
+  tag: 7.17.15
+  pullPolicy: IfNotPresent
+
 # Default values for elasticsearch.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 create_elasticsearch_pod: true
-
 esimage:
   repository: $(elasticContainerRepositoryFullPath)
   tag: 7.17.15
