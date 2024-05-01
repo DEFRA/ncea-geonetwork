@@ -35,6 +35,8 @@
 **/geonetwork.war
 local-values.yaml
 
-# HELM values with sensitive values
+# Local HELM values with sensitive values
 
 tst-values.yaml
+sbox-values.yaml
+snd3-values.yaml
