@@ -19,6 +19,5 @@ spec:
               number: {{ $.Values.esservice.port }}
         path: {{ $.Values.ingress.path }}
         pathType: {{ $.Values.ingress.pathType }}
-{{- end }}
 
-    
+{{- end }}
