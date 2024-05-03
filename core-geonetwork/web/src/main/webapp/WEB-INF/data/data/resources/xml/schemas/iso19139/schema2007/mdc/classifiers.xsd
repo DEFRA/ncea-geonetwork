@@ -45,8 +45,8 @@
     		<xs:complexContent>
     			<xs:extension base="gco:AbstractObject_Type">
     				<xs:sequence>
-                        <xs:element name="classifierType" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-                        <xs:element name="classifierValue" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+                        <xs:element name="name" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+                        <xs:element name="code" type="gco:CharacterString_PropertyType" minOccurs="0"/>
                         <xs:element name="NC_Classifiers" type="mdc:NC_Classifiers_Type" minOccurs="0"/>
     				</xs:sequence>
     			</xs:extension>

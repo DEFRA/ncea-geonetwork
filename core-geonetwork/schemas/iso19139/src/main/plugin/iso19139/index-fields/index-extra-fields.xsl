@@ -326,8 +326,8 @@
 		<xsl:when test="count($classifiers/mdc:classifier) &gt; 0">
 			<xsl:for-each select="$classifiers/mdc:classifier">
 				{
-					"classifierType":"<xsl:value-of select="util:escapeForJson(mdc:classifierType/gco:CharacterString)"/>",
-					"classifierValue":"<xsl:value-of select="util:escapeForJson(mdc:classifierValue/gco:CharacterString)"/>"
+				    "name":"<xsl:value-of select="util:escapeForJson(mdc:name/gco:CharacterString)"/>"
+				    "code":"<xsl:value-of select="util:escapeForJson(mdc:code/gco:CharacterString)"/>",
 
 					<xsl:if test="count(mdc:NC_Classifiers/mdc:classifier) &gt; 0">
 						<xsl:text>,</xsl:text>
