@@ -94,12 +94,6 @@ esservice:
 esresources:
   resources: {}
 
-espvc:
-  elasticsearchPvcName: elasticsearch-data-fileshare-pvc
-  elasticsearchPvcSize: 10Gi
-  size: 1000Mi
-  accessModes: ReadWriteMany
-
 elasticsearch:
   name: elasticsearch
   host: elasticsearch
@@ -113,15 +107,9 @@ pv:
   geoCataloguePvName: geonetwork-azuredisk-pv
   geoCataloguePvDiskResourceId: $(geoCataloguePvDiskResourceId)
   geoCataloguePvSize: 4Gi
-
-peSaFileshare:
-  elasticsearchShareScName: pe-elastic-data-azurefile-sc
-  geoMetaDataFileShareScName: pe-geonetwork-metadata-azurefile-sc
-  storageAccountResourceGroup: $(storageAccountResourceGroup)
-  storageAccountName: $(storageAccountName)
-  storageAccountFilePrivateEndpointFqdn: $(storageAccountFilePrivateEndpointFqdn)
-  geoStorageAccountShareName: metadata-import
-  esStorageAccountShareName: elasticsearch-data
+  elasticIndexPvName: elasticindex-azuredisk-pv
+  elasticIndexPvDiskResourceId: $(elasticIndexPvDiskResourceId)
+  elasticIndexPvSize: 30Gi
 
 pvc:
   geoCataloguePvcName: geonetwork-azuredisk-pvc
@@ -130,11 +118,15 @@ pvc:
   geoCatalogueStorageClassName: managed-csi # Class for managed Azure disks
   geoMetaDataFileShareName: geonetwork-meta-fileshare-pvc
   geoMetaDataFileShareSize: 10Gi
+  elasticIndexPvcName: elasticindex-azuredisk-pvc
+  elasticIndexPvcSize: 30Gi
+  elasticIndexStorageClassName: managed-csi 
 
-identity:
-  serviceAccountName: $(serviceAccountGeonetwork)
-  secretProviderClass: secret-prov-class-geo-kv
-  clientId: $(managedIdentityClientIdGeonetwork)
-  tenantId: $(tenantId)
-  keyvaultName: $(keyvaultName)
+peSaFileshare:
+  geoMetaDataFileShareScName: pe-geonetwork-metadata-azurefile-sc
+  storageAccountResourceGroup: $(storageAccountResourceGroup)
+  storageAccountName: $(storageAccountName)
+  storageAccountFilePrivateEndpointFqdn: $(storageAccountFilePrivateEndpointFqdn)
+  geoStorageAccountShareName: metadata-import
+
   

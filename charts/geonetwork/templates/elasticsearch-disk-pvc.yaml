@@ -1,0 +1,13 @@
+{{- $global := .Values.global | default dict }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.pvc.elasticIndexPvcName }}
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.elasticIndexPvcSize }}
+  volumeName: {{ .Values.pv.elasticIndexPvName }}
+  storageClassName: {{ .Values.pvc.elasticIndexStorageClassName }}
