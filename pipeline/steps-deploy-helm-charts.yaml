@@ -69,6 +69,7 @@ steps:
         kibana.host=$(kibanaHostName)
         kibana.name=$(kibanaInstanceName)
         kibana.repository=$(kibanaContainerRepositoryFullPath)
+        pv.elasticIndexPvDiskResourceId=$(elasticIndexPvDiskResourceId)
     install: true
     # force: true
     arguments: --timeout=30m --debug
