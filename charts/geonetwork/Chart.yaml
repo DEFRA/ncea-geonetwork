@@ -1,7 +1,7 @@
 apiVersion: v2
 name: ncea-geonetwork
 description: Helm Chart for GeoNetwork refined for Defra (ncea) plugin v4.2.8
-version: 1.1.6
+version: 1.1.7
 appVersion: "0.0.1"
 annotations:
   artifacthub.io/category: storage

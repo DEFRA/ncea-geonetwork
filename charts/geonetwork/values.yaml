@@ -107,7 +107,7 @@ pv:
   geoCataloguePvName: geonetwork-azuredisk-pv
   geoCataloguePvDiskResourceId: $(geoCataloguePvDiskResourceId)
   geoCataloguePvSize: 4Gi
-  elasticIndexPvName: elasticindex-azuredisk-pv
+  elasticIndexPvName: elastic-index-azuredisk-pv
   elasticIndexPvDiskResourceId: $(elasticIndexPvDiskResourceId)
   elasticIndexPvSize: 30Gi
 
