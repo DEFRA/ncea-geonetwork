@@ -5,7 +5,6 @@ metadata:
   annotations:
     geonetwork.version: {{ .Chart.Version }}
   labels:
-    azure.workload.identity/use: "true"
 {{ include "geonetwork.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.georeplicaCount }}
@@ -21,7 +20,6 @@ spec:
         geonetwork/app: {{ include "geonetwork.name" . }}
         geonetwork/siteName: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ .Values.identity.serviceAccountName }}
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -77,9 +75,6 @@ spec:
               name: geonetwork            
             - mountPath: /metadata-import
               name: geonetworkmetadata
-            - mountPath: "/mnt/secrets-store"
-              name: kvmount
-              readOnly: true
       restartPolicy: Always
       volumes:
         - name: geonetwork
@@ -88,12 +83,6 @@ spec:
         - name: geonetworkmetadata
           persistentVolumeClaim:
             claimName: {{ .Values.pvc.geoMetaDataFileShareName }}
-        - name: kvmount
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: {{ .Values.identity.secretProviderClass }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

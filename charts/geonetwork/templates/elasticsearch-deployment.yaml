@@ -52,7 +52,7 @@ spec:
       volumes:
         - name: esdata
           persistentVolumeClaim:
-            claimName: {{ .Values.espvc.elasticsearchPvcName }}
+            claimName: {{ .Values.pvc.elasticIndexPvcName }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
