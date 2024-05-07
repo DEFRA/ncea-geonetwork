@@ -4,12 +4,12 @@ kind: Deployment
 metadata:
   name: {{ $.Values.elasticsearch.name }}
   annotations:
-    test: "testing"
+    geonetwork.version: {{ .Chart.Version }}
   labels:
       geonetwork-ncea/app: {{ $.Values.elasticsearch.name }}
       geonetwork-ncea/siteName: {{ .Release.Name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.esimage.replicaCount }}
   selector:
     matchLabels:
       geonetwork-ncea/app: {{ $.Values.elasticsearch.name }}
