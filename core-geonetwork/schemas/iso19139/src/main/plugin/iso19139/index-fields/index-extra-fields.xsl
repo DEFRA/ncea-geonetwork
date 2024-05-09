@@ -33,7 +33,7 @@
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gn-fn-index="http://geonetwork-opensource.org/xsl/functions/index"
-			        	xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
+			        	xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/feature/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
                 xmlns:index="java:org.fao.geonet.kernel.search.EsSearchManager"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:date-util="java:org.fao.geonet.utils.DateUtil"
@@ -326,8 +326,8 @@
 		<xsl:when test="count($classifiers/mdc:classifier) &gt; 0">
 			<xsl:for-each select="$classifiers/mdc:classifier">
 				{
-					"classifierType":"<xsl:value-of select="util:escapeForJson(mdc:classifierType/gco:CharacterString)"/>",
-					"classifierValue":"<xsl:value-of select="util:escapeForJson(mdc:classifierValue/gco:CharacterString)"/>"
+				    "name":"<xsl:value-of select="util:escapeForJson(mdc:name/gco:CharacterString)"/>",
+				    "code":"<xsl:value-of select="util:escapeForJson(mdc:code/gco:CharacterString)"/>"
 
 					<xsl:if test="count(mdc:NC_Classifiers/mdc:classifier) &gt; 0">
 						<xsl:text>,</xsl:text>

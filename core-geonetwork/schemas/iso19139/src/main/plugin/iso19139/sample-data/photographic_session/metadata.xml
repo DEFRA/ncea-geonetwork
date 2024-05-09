@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gmd:MD_Metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gco="http://www.isotc211.org/2005/gco"
                  xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gts="http://www.isotc211.org/2005/gts"
-                 xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
+                 xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/feature/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
                  xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gss="http://www.isotc211.org/2005/gss"
                  xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gml="http://www.opengis.net/gml"
                  xmlns:srv="http://www.isotc211.org/2005/srv"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc http://www.isotc211.org/2005/gmd/gmd.xsd http://www.opengis.net/gml http://www.opengis.net/gml/gml.xsd     http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink/xlinks.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd https://github.com/DEFRA/ncea-geonetwork/tree/feature/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc http://www.isotc211.org/2005/gmd/gmd.xsd http://www.opengis.net/gml http://www.opengis.net/gml/gml.xsd     http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink/xlinks.xsd">
     <gmd:fileIdentifier>
         <gco:CharacterString>3e9996f8-1e24-4817-9101-3886de035be1</gco:CharacterString>
     </gmd:fileIdentifier>
@@ -723,69 +723,57 @@
     <mdc:nceaClassifierInfo>
         <mdc:NC_Classifiers>
             <mdc:classifier>
-                <!-- classifier type -->
-                <mdc:classifierType>
-                    <gco:CharacterString>Level 1</gco:CharacterString>
-                </mdc:classifierType>
-                <!-- classifier value -->
-                <mdc:classifierValue>
+                <mdc:name>
                     <gco:CharacterString>Ecosystem Services and Benefits</gco:CharacterString>
-                </mdc:classifierValue>
-                <!-- child classifiers -->
+                </mdc:name>
+                <mdc:code>
+                    <gco:CharacterString>lv1-013</gco:CharacterString>
+                </mdc:code>
                 <mdc:NC_Classifiers>
                     <mdc:classifier>
-                        <!-- classifier type -->
-                        <mdc:classifierType>
-                            <gco:CharacterString>Level 2</gco:CharacterString>
-                        </mdc:classifierType>
-                        <!-- classifier value -->
-                        <mdc:classifierValue>
+                        <mdc:name>
                             <gco:CharacterString>Regulating Services</gco:CharacterString>
-                        </mdc:classifierValue>
+                        </mdc:name>
+                        <mdc:code>
+                            <gco:CharacterString>lV2-007</gco:CharacterString>
+                        </mdc:code>
                         <!-- child classifiers -->
                         <mdc:NC_Classifiers>
                             <mdc:classifier>
-                                <!-- classifier type -->
-                                <mdc:classifierType>
-                                    <gco:CharacterString>Level 3</gco:CharacterString>
-                                </mdc:classifierType>
-                                <!-- classifier value -->
-                                <mdc:classifierValue>
-                                    <gco:CharacterString>Environmental quality</gco:CharacterString>
-                                </mdc:classifierValue>
-                            </mdc:classifier>
-                            <mdc:classifier>
-                                <!-- classifier type -->
-                                <mdc:classifierType>
-                                    <gco:CharacterString>Level 3</gco:CharacterString>
-                                </mdc:classifierType>
-                                <!-- classifier value -->
-                                <mdc:classifierValue>
+                                <mdc:name>
                                     <gco:CharacterString>Maintaining wild populations</gco:CharacterString>
-                                </mdc:classifierValue>
+                                </mdc:name>
+                                <mdc:code>
+                                    <gco:CharacterString>lV2-008</gco:CharacterString>
+                                </mdc:code>
+                                <mdc:NC_Classifiers>
+                                    <mdc:classifier>
+                                        <mdc:name>
+                                            <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                        </mdc:name>
+                                        <mdc:code>
+                                            <gco:CharacterString>lV4-003</gco:CharacterString>
+                                        </mdc:code>
+                                    </mdc:classifier>
+                                </mdc:NC_Classifiers>
                             </mdc:classifier>
                         </mdc:NC_Classifiers>
                     </mdc:classifier>
                     <mdc:classifier>
-                        <!-- classifier type -->
-                        <mdc:classifierType>
-                            <gco:CharacterString>Level 2</gco:CharacterString>
-                        </mdc:classifierType>
-                        <!-- classifier value -->
-                        <mdc:classifierValue>
+                        <mdc:name>
                             <gco:CharacterString>Cultural Services</gco:CharacterString>
-                        </mdc:classifierValue>
-                        <!-- child classifiers -->
+                        </mdc:name>
+                        <mdc:code>
+                            <gco:CharacterString>lV2-020</gco:CharacterString>
+                        </mdc:code>
                         <mdc:NC_Classifiers>
                             <mdc:classifier>
-                                <!-- classifier type -->
-                                <mdc:classifierType>
-                                    <gco:CharacterString>Level 3</gco:CharacterString>
-                                </mdc:classifierType>
-                                <!-- classifier value -->
-                                <mdc:classifierValue>
+                                <mdc:name>
                                     <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
-                                </mdc:classifierValue>
+                                </mdc:name>
+                                <mdc:code>
+                                    <gco:CharacterString>lV2-015</gco:CharacterString>
+                                </mdc:code>
                             </mdc:classifier>
                         </mdc:NC_Classifiers>
                     </mdc:classifier>
