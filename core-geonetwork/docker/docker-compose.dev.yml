@@ -1,7 +1,14 @@
 version: '3.1'
-
+ 
+volumes:
+  DataSource:
+  Indexes:
+ 
 services:
   geonetwork:
     build: 
         context: .
         dockerfile: Dockerfile.local
+    volumes:
+      - ../../../DataSource:/DataSource
+      - ../../../Indexes:/Indexes

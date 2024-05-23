@@ -1,8 +1,5 @@
 FROM jetty:9-jdk8
 
-ENV GN_FILE geonetwork.war
-ENV GN_VERSION 4.2.8
-
 ENV DATA_DIR /catalogue-data
 ENV JAVA_OPTS -Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF \
         -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true \
@@ -13,21 +10,30 @@ ENV JAVA_OPTS -Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF \
         -Dgeonetwork.schema.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins 
 
 USER root
-RUN apt-get update && apt-get update && apt-get install -y unzip
-RUN mkdir -p /catalogue-data && \
-    chown -R jetty:jetty /catalogue-data && \
+RUN apt-get -y update && \
+    apt-get -y install --no-install-recommends \ 
+        curl \
+        unzip && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p ${DATA_DIR} && \
+    chown -R jetty:jetty ${DATA_DIR} && \
     mkdir -p /var/lib/jetty/webapps/geonetwork && \
     chown -R jetty:jetty /var/lib/jetty/webapps/geonetwork
-COPY /docker-entrypoint.sh /geonetwork-entrypoint.sh    
-RUN chmod 774 /geonetwork-entrypoint.sh  
 
 USER jetty
-COPY geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
+ENV GN_FILE geonetwork.war
+ENV GN_VERSION 4.2.8
+ENV GN_DOWNLOAD_MD5 5be7e03952eefd3a94778f4897764a54
 
-RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
-     unzip geonetwork.war && \
-     rm geonetwork.war
+RUN cd /var/lib/jetty/webapps/geonetwork/ && \
+     curl -fSL -o geonetwork.war \
+     https://sourceforge.net/projects/geonetwork/files/GeoNetwork_opensource/v${GN_VERSION}/${GN_FILE}/download && \
+     echo "${GN_DOWNLOAD_MD5} *geonetwork.war" | md5sum -c && \
+     unzip -q geonetwork.war && \
+     rm geonetwork.war 
 
-#COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
+COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
 ENTRYPOINT ["/geonetwork-entrypoint.sh"]
 CMD ["java","-jar","/usr/local/jetty/start.jar"]
+
+VOLUME [ "${DATA_DIR}" ]
