@@ -80,7 +80,7 @@ kibana:
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-create_elasticsearch_pod: true
+create_elasticsearch_pod: false
 esimage:
   repository: $(elasticContainerRepositoryFullPath)
   tag: 7.17.15
@@ -95,12 +95,12 @@ esresources:
   resources: {}
 
 elasticsearch:
-  name: elasticsearch
-  host: elasticsearch
+  name: elasticsearch-master
+  host: elasticsearch-master
   port: 9200
-  protocol: http
+  protocol: https
   # values override for subchart elasticsearch
-  create_elasticsearch_pod: true
+  create_elasticsearch_pod: false
 
 pv:
   # This is the resource id of the precreated azure disk for geonetwork persistent volume.

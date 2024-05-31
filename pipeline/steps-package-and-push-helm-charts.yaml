@@ -8,6 +8,14 @@ steps:
     chartPath: $(chartPath)
     destination: $(Build.ArtifactStagingDirectory)
 
+- task: HelmDeploy@0
+  displayName: Helm package
+  condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
+  inputs:
+    command: package
+    chartPath: $(elasticchartPath)
+    destination: $(Build.ArtifactStagingDirectory)
+
 - task: CopyFiles@2
   displayName: 'Move Helm artifact'
   inputs:
