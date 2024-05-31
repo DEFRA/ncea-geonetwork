@@ -1,11 +1,19 @@
 steps:
 
 - task: HelmDeploy@0
-  displayName: Helm package
+  displayName: Helm package - GeoNetwork
   condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
   inputs:
     command: package
     chartPath: $(chartPath)
+    destination: $(Build.ArtifactStagingDirectory)
+
+- task: HelmDeploy@0
+  displayName: Helm package - Elastic Search
+  condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
+  inputs:
+    command: package
+    chartPath: $(elasticchartPath)
     destination: $(Build.ArtifactStagingDirectory)
 
 - task: CopyFiles@2

@@ -1,3 +1,4 @@
 variables:
 - group: azureVariables-dev
 - group: geoNetworkAppVariables-dev
+- group: elasticSearchVariables-dev

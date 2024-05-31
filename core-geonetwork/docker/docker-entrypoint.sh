@@ -3,8 +3,15 @@ set -e
 #
 export JAVA_OPTIONS=${JAVA_OPTS}
 
+CERT_FILE="/usr/share/elasticsearch/config/certs/ca.crt"
+
 if ! command -v -- "$1" >/dev/null 2>&1 ; then
 	set -- java -jar "$JETTY_HOME/start.jar" "$@"
+fi
+
+if [[ -f "$CERT_FILE" ]]; then
+    keytool -import -trustcacerts -alias elasticsearch-ca -keystore /var/lib/jetty/cacerts -file /usr/share/elasticsearch/config/certs/ca.crt -noprompt -storepass changeit
+    keytool -importkeystore -srckeystore /opt/java/openjdk/jre/lib/security/cacerts -destkeystore /var/lib/jetty/cacerts -srcstorepass changeit -deststorepass changeit
 fi
 
 if [[ "$1" = jetty.sh ]] || [[ $(expr "$*" : 'java .*/start\.jar.*$') != 0 ]]; then
