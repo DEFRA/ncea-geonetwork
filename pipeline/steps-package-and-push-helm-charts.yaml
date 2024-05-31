@@ -1,7 +1,7 @@
 steps:
 
 - task: HelmDeploy@0
-  displayName: Helm package
+  displayName: Helm package - GeoNetwork
   condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
   inputs:
     command: package
@@ -9,7 +9,7 @@ steps:
     destination: $(Build.ArtifactStagingDirectory)
 
 - task: HelmDeploy@0
-  displayName: Helm package
+  displayName: Helm package - Elastic Search
   condition: and(succeeded(), or(eq(variables['isMain'], 'true'), eq(variables['isPullRequest'], 'true')))
   inputs:
     command: package

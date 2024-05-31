@@ -3,7 +3,7 @@ parameters:
     type: string
   - name: armServiceConnection
     type: string
-  - name: deployElasticsearch
+  - name: deployElasticSearch
     type: string
 
 steps:
@@ -27,8 +27,8 @@ steps:
     kubeloginVersion: 'latest'
 
 - task: HelmDeploy@0
-  displayName: Helm lint
-  condition: eq('${{ parameters.deployElasticsearch }}', 'true')
+  displayName: Helm lint - Elastic Search
+  condition: eq('${{ parameters.deployElasticSearch }}', 'true')
   inputs:
     connectionType: Azure Resource Manager
     azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
@@ -38,7 +38,7 @@ steps:
     arguments: '$(Pipeline.Workspace)/chart/elasticsearch'
 
 - task: HelmDeploy@0
-  displayName: 'Helm Deploy'
+  displayName: Helm Deploy  - Elastic Search
   condition: and(succeeded(), eq('${{ parameters.deployElasticsearch }}', 'true'))
   inputs:
     connectionType: Azure Resource Manager
@@ -65,7 +65,7 @@ steps:
     arguments: --timeout=30m --debug
 
 - task: HelmDeploy@0
-  displayName: 'Helm Rollback'
+  displayName: Helm Rollback  - Elastic Search
   condition: and(failed(), eq('${{ parameters.deployElasticsearch }}', 'true'))
   inputs:
     connectionType: Azure Resource Manager
@@ -77,7 +77,7 @@ steps:
     arguments: elasticsearch --timeout=30m --debug
 
 - task: HelmDeploy@0
-  displayName: Helm lint
+  displayName: Helm lint - GeoNetwork
   inputs:
     connectionType: Azure Resource Manager
     azureSubscriptionEndpoint: ${{ parameters.armServiceConnection }}
@@ -87,7 +87,7 @@ steps:
     arguments: '$(Pipeline.Workspace)/chart/ncea-geonetwork'
 
 - task: HelmDeploy@0
-  displayName: 'Helm Deploy'
+  displayName: Helm Deploy - GeoNetwork
   condition: succeeded()
   inputs:
     connectionType: Azure Resource Manager
@@ -127,7 +127,7 @@ steps:
     arguments: --timeout=30m --debug
 
 - task: HelmDeploy@0
-  displayName: 'Helm Rollback'
+  displayName: Helm Rollback  - GeoNetwork
   condition: failed()
   inputs:
     connectionType: Azure Resource Manager

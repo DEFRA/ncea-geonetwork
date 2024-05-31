@@ -75,7 +75,7 @@ stages:
               parameters:
                 releaseName: "geonetwork-helm-deploy"
                 armServiceConnection: AZR-NCE-DEV1
-                deployElasticsearch: "true"
+                deployElasticSearch: "true"
 
 - stage: 'test'
   displayName: 'Deploy to test'
@@ -96,3 +96,4 @@ stages:
               parameters:
                 releaseName: "geonetwork-helm-deploy"
                 armServiceConnection: AZR-NCE-TST
+                deployElasticSearch: "true"
