@@ -26,7 +26,4 @@ variables:
 
   - name : chartPath
     value: 'charts/geonetwork'
-
-  - name : elasticchartPath
-    value: 'charts/elasticsearch'
   
