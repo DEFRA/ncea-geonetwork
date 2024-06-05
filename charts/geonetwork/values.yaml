@@ -66,7 +66,7 @@ postgres:
   password: $(postgresDbPassword)
   dbname: $(postgresDbName)
 
-create_kibana_pod: true
+create_kibana_pod: false
 kibana:
   host: $(kibanaHostName)
   port: 5601
@@ -80,7 +80,7 @@ kibana:
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-create_elasticsearch_pod: true
+create_elasticsearch_pod: false
 esimage:
   repository: $(elasticContainerRepositoryFullPath)
   tag: 7.17.15
@@ -98,9 +98,9 @@ elasticsearch:
   name: elasticsearch
   host: elasticsearch
   port: 9200
-  protocol: http
+  protocol: https
   # values override for subchart elasticsearch
-  create_elasticsearch_pod: true
+  create_elasticsearch_pod: false
 
 pv:
   # This is the resource id of the precreated azure disk for geonetwork persistent volume.
@@ -116,14 +116,14 @@ pvc:
   # initial size for geonetwork catalogue data
   geoCataloguePvcSize: 4Gi  
   geoCatalogueStorageClassName: managed-csi # Class for managed Azure disks
-  geoMetaDataFileShareName: geonetwork-meta-fileshare-pvc
+  geoMetaDataFileShareName: ncea-enricher-fileshare-pvc
   geoMetaDataFileShareSize: 10Gi
   elasticIndexPvcName: elasticindex-azuredisk-pvc
   elasticIndexPvcSize: 30Gi
   elasticIndexStorageClassName: managed-csi 
 
 peSaFileshare:
-  geoMetaDataFileShareScName: pe-geonetwork-metadata-azurefile-sc
+  geoMetaDataFileShareScName: ncea-enricher-fileshare-sc
   storageAccountResourceGroup: $(storageAccountResourceGroup)
   storageAccountName: $(storageAccountName)
   storageAccountFilePrivateEndpointFqdn: $(storageAccountFilePrivateEndpointFqdn)
