@@ -123,7 +123,6 @@ pvc:
   elasticIndexStorageClassName: managed-csi 
 
 peSaFileshare:
-  geoMetaDataFileShareScName: ncea-enricher-fileshare-sc
   storageAccountResourceGroup: $(storageAccountResourceGroup)
   storageAccountName: $(storageAccountName)
   storageAccountFilePrivateEndpointFqdn: $(storageAccountFilePrivateEndpointFqdn)
