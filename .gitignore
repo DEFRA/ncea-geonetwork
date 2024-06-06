@@ -41,3 +41,6 @@ tst-values.yaml
 sbox-values.yaml
 snd3-values.yaml
 dev-values.yaml
+charts/geonetwork/sbox-values 1.yaml
+charts/geonetwork/sbox-values copy.yaml
+sc.yaml
