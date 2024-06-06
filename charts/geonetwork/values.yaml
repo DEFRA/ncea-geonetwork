@@ -115,7 +115,7 @@ pvc:
   geoCataloguePvcName: geonetwork-azuredisk-pvc
   # initial size for geonetwork catalogue data
   geoCataloguePvcSize: 4Gi  
-  geoCatalogueStorageClassName: managed-csi # Class for managed Azure disks
+  geoCatalogueStorageClassName: dynamic-premium-zrs # Class for managed Azure disks
   geoMetaDataFileShareName: ncea-enricher-fileshare-pvc
   geoMetaDataFileShareSize: 10Gi
   elasticIndexPvcName: elasticindex-azuredisk-pvc
