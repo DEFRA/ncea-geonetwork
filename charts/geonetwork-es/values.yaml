@@ -66,21 +66,15 @@ postgres:
   password: $(postgresDbPassword)
   dbname: $(postgresDbName)
 
-create_kibana_pod: false
 kibana:
   host: $(kibanaHostName)
   port: 5601
   name: $(kibanaInstanceName)
-  serviceType: ClusterIP
-  repository: $(kibanaContainerRepositoryFullPath)
-  tag: 7.17.15
-  pullPolicy: IfNotPresent
 
 # Default values for elasticsearch.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-create_elasticsearch_pod: false
 esimage:
   repository: $(elasticContainerRepositoryFullPath)
   tag: 7.17.15
@@ -95,8 +89,8 @@ esresources:
   resources: {}
 
 elasticsearch:
-  name: elasticsearch
-  host: elasticsearch
+  name: elasticsearch-master
+  host: elasticsearch-master
   port: 9200
   protocol: https
   # values override for subchart elasticsearch
@@ -107,20 +101,14 @@ pv:
   geoCataloguePvName: geonetwork-azuredisk-pv
   geoCataloguePvDiskResourceId: $(geoCataloguePvDiskResourceId)
   geoCataloguePvSize: 4Gi
-  elasticIndexPvName: elastic-index-azuredisk-pv
-  elasticIndexPvDiskResourceId: $(elasticIndexPvDiskResourceId)
-  elasticIndexPvSize: 30Gi
 
 pvc:
   geoCataloguePvcName: geonetwork-azuredisk-pvc
   # initial size for geonetwork catalogue data
   geoCataloguePvcSize: 4Gi  
   geoCatalogueStorageClassName: dynamic-premium-zrs # Class for managed Azure disks
-  geoMetaDataFileShareName: ncea-enricher-fileshare-pvc
+  geoMetaDataFileShareName: ncea-enricher-fileshare-pvc #This will reference the existing fileshare PVC created by enricher in 'nceafrontend' namespace
   geoMetaDataFileShareSize: 10Gi
-  elasticIndexPvcName: elasticindex-azuredisk-pvc
-  elasticIndexPvcSize: 30Gi
-  elasticIndexStorageClassName: managed-csi 
 
 peSaFileshare:
   storageAccountResourceGroup: $(storageAccountResourceGroup)
