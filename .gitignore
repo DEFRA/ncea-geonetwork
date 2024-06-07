@@ -44,3 +44,4 @@ dev-values.yaml
 charts/geonetwork/sbox-values 1.yaml
 charts/geonetwork/sbox-values copy.yaml
 sc.yaml
+NewDevvalues.yaml
