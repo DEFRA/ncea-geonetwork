@@ -1,0 +1,9 @@
+Steps for migration to elasticsearch cluster with self signed ssl certificate for application connectivity:
+
+Prior to updating the geonetwork pipeline and deploying that way. We should test by running the helm chart locally.
+
+1. Notify the team that geonetwork will be down in dev.
+2. Ensure you are in the development aks context 'kubectl config use-context DEVNCEINFAK1401'
+Test the 'geonetwork-es' chart locally by deploying directly to the nceafrontend namespace
+3. 
+
