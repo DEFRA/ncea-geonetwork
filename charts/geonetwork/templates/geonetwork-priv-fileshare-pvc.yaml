@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.pvc.geoMetaDataFileShareName }}
+  name: {{ .Values.peSaFileshare.geoMetaDataFileShareName }}
 spec:
   accessModes:
   - ReadWriteMany
   resources:
     requests:
-      storage: {{ .Values.pvc.geoMetaDataFileShareSize }}
+      storage: {{ .Values.peSaFileshare.geoMetaDataFileShareSize }}
   storageClassName: {{ .Values.peSaFileshare.geoMetaDataFileShareScName }}
