@@ -45,3 +45,8 @@ charts/geonetwork/sbox-values 1.yaml
 charts/geonetwork/sbox-values copy.yaml
 sc.yaml
 NewDevvalues.yaml
+geonetwork-es/NewDevvalues.yaml.old
+geonetwork-es/dev-values.yaml.old
+dev-values.yaml.old
+NewDevvalues.yaml.old
+TODO-Pre-migration.txt
