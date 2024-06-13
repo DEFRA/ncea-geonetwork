@@ -56,11 +56,22 @@ steps:
         postgres.dbuser=$(postgresDbUser)
         postgres.password=$(postgresDbPassword)
         postgres.dbname=$(postgresDbName)
+        esimage.repository=$(elasticContainerRepositoryFullPath)
+        elasticsearch.name=$(elasticsearchName)
+        elasticsearch.host=$(elasticsearchHost)
+        pv.geoCataloguePvDiskResourceId=$(geoCataloguePvDiskResourceId)
         peSaFileshare.storageAccountResourceGroup=$(storageAccountResourceGroup)
         peSaFileshare.storageAccountName=$(storageAccountName)
         peSaFileshare.storageAccountFilePrivateEndpointFqdn=$(storageAccountFilePrivateEndpointFqdn)
+        identity.serviceAccountName=$(serviceAccountGeonetwork)
+        identity.clientId=$(managedIdentityClientIdGeonetwork)
+        identity.tenantId=$(tenantId)
+        identity.keyvaultName=$(keyvaultName)
+        ingress.elasticHostName=$(elasticSearchIngressHostname)
         kibana.host=$(kibanaHostName)
         kibana.name=$(kibanaInstanceName)
+        kibana.repository=$(kibanaContainerRepositoryFullPath)
+        pv.elasticIndexPvDiskResourceId=$(elasticIndexPvDiskResourceId)
     install: true
     # force: true
     arguments: --timeout=30m --debug
