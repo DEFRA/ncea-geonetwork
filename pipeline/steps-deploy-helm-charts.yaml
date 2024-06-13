@@ -51,6 +51,8 @@ steps:
     overrideValues: |
         geoimage.repository=$(containerRepositoryFullPath)
         geoimage.tag=$(imageTag)
+        elasticsearch.name=$(elasticsearchName)
+        elasticsearch.host=$(elasticsearchHost)
         ingress.host=$(ingressHostname)
         postgres.host=$(postgresHostname)
         postgres.dbuser=$(postgresDbUser)
