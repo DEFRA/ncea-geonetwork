@@ -94,7 +94,7 @@ spec:
             claimName: {{ .Values.pvc.geoCataloguePvcName }}
         - name: geonetworkmetadata
           persistentVolumeClaim:
-            claimName: {{ .Values.pvc.geoMetaDataFileShareName }}
+            claimName: {{ .Values.peSaFileshare.geoMetaDataFileShareName }}
         - name: elasticsearch-certs
           secret:
             secretName: elasticsearch-master-certs
