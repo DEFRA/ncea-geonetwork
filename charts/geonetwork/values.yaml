@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 #target k8s namespace
-namespace: geonetwork
+# namespace: geonetwork
 georeplicaCount: 1
 
 geoimage:  
