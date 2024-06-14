@@ -34,11 +34,11 @@ geoservice:
 georesources:
   resources:
     requests:
-      memory: "1200Mi"
-      cpu: "250m"
-    limits:
       memory: "1500Mi"
-      cpu: "1400m"
+      cpu: "500m"
+    limits:
+      memory: "4000Mi"
+      cpu: "2500m"
 
 nodeSelector: {}
 
