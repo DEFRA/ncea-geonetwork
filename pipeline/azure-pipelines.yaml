@@ -50,6 +50,7 @@ extends:
       projectPath: "core-geonetwork/pom.xml"
       compiledPackagePath: "core-geonetwork/web/target/geonetwork.war"
       imageRepoName: ncea-geonetwork
+      dockerfilePath: core-geonetwork/docker/Dockerfile
     # appTestConfig:
     #   testFilePath: "./docker-compose.test.yaml"
     #   snykTestFilePath: "./docker-compose.snyk.yaml"
