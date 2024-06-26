@@ -12,7 +12,7 @@ ENV JAVA_OPTS -Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF \
         -Dgeonetwork.codeList.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/codelist \
         -Dgeonetwork.schema.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins
 
-RUN mvn -f core-geonetwork/pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
+RUN mvn -f /core-geonetwork/pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
 
 USER root
 RUN apt-get update && apt-get update && apt-get install -y unzip
@@ -24,7 +24,7 @@ COPY /docker-entrypoint.sh /geonetwork-entrypoint.sh
 RUN chmod 774 /geonetwork-entrypoint.sh
 
 USER jetty
-COPY core-geonetwork/web/target/geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
+COPY /core-geonetwork/web/target/geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
 
 RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
      unzip geonetwork.war && \
