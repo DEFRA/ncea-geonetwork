@@ -1,9 +1,9 @@
 FROM maven:3.8.4-openjdk-11-slim AS build
 # Set the working directory in the container
-WORKDIR .
+WORKDIR /core-geonetwork
 # Copy the pom.xml and the project files to the container
-COPY core-geonetwork/pom.xml .
-COPY core-geonetwork ./core-geonetwork
+COPY pom.xml .
+# COPY core-geonetwork ./core-geonetwork
 # Build the application using Maven
 # RUN mvn clean package -DskipTests
 RUN mvn -f core-geonetwork/pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
