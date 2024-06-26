@@ -7,14 +7,15 @@ COPY pom.xml .
 # Build the application using Maven
 # RUN mvn clean package -DskipTests
 RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
-# Use an official OpenJDK image as the base image
-FROM openjdk:11-jre-slim
-# Set the working directory in the container
-WORKDIR /core-geonetwork
-# # Copy the built JAR file from the previous stage to the container
-# COPY - from=build /app/target/my-application.jar .
-# # Set the command to run the application
-CMD ["java", "-war", "geonetwork.war"]
+
+# # # # Use an official OpenJDK image as the base image
+# # # FROM openjdk:11-jre-slim
+# # # # Set the working directory in the container
+# # # WORKDIR /core-geonetwork
+# # # # # Copy the built JAR file from the previous stage to the container
+# # # # COPY - from=build /app/target/my-application.jar .
+# # # # # Set the command to run the application
+# # # CMD ["java", "-war", "geonetwork.war"]
 
 # # FROM jetty:9-jdk8
 
