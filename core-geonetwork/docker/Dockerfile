@@ -6,7 +6,7 @@ COPY pom.xml .
 # COPY core-geonetwork ./core-geonetwork
 # Build the application using Maven
 # RUN mvn clean package -DskipTests
-RUN mvn -f core-geonetwork/pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
+RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
 # Use an official OpenJDK image as the base image
 FROM openjdk:11-jre-slim
 # Set the working directory in the container
