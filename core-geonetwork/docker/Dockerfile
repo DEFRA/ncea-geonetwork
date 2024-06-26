@@ -6,7 +6,7 @@ WORKDIR /
 COPY core-geonetwork/pom.xml .
 COPY core-geonetwork/. .
 # Build the application using Maven
-RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 2C
+RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 2C -X
 
 FROM jetty:9-jdk8
 
