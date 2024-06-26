@@ -16,36 +16,36 @@ WORKDIR /core-geonetwork
 # # Set the command to run the application
 CMD ["java", "-war", "geonetwork.war"]
 
-FROM jetty:9-jdk8
+# # FROM jetty:9-jdk8
 
-ENV GN_FILE geonetwork.war
-ENV GN_VERSION 4.2.8
+# # ENV GN_FILE geonetwork.war
+# # ENV GN_VERSION 4.2.8
 
-ENV DATA_DIR /catalogue-data
-ENV JAVA_OPTS -Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF \
-        -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true \
-        -Xms512M -Xss512M -Xmx2G -XX:+UseConcMarkSweepGC \
-        -Dgeonetwork.resources.dir=${DATA_DIR}/resources \
-        -Dgeonetwork.data.dir=${DATA_DIR} \
-        -Dgeonetwork.codeList.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/codelist \
-        -Dgeonetwork.schema.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins
+# # ENV DATA_DIR /catalogue-data
+# # ENV JAVA_OPTS -Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF \
+# #         -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true \
+# #         -Xms512M -Xss512M -Xmx2G -XX:+UseConcMarkSweepGC \
+# #         -Dgeonetwork.resources.dir=${DATA_DIR}/resources \
+# #         -Dgeonetwork.data.dir=${DATA_DIR} \
+# #         -Dgeonetwork.codeList.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/codelist \
+# #         -Dgeonetwork.schema.dir=/var/lib/jetty/webapps/geonetwork/WEB-INF/data/config/schema_plugins
 
-USER root
-RUN apt-get update && apt-get update && apt-get install -y unzip
-RUN mkdir -p /catalogue-data && \
-    chown -R jetty:jetty /catalogue-data && \
-    mkdir -p /var/lib/jetty/webapps/geonetwork && \
-    chown -R jetty:jetty /var/lib/jetty/webapps/geonetwork
-COPY /docker-entrypoint.sh /geonetwork-entrypoint.sh    
-RUN chmod 774 /geonetwork-entrypoint.sh
+# # USER root
+# # RUN apt-get update && apt-get update && apt-get install -y unzip
+# # RUN mkdir -p /catalogue-data && \
+# #     chown -R jetty:jetty /catalogue-data && \
+# #     mkdir -p /var/lib/jetty/webapps/geonetwork && \
+# #     chown -R jetty:jetty /var/lib/jetty/webapps/geonetwork
+# # COPY /docker-entrypoint.sh /geonetwork-entrypoint.sh    
+# # RUN chmod 774 /geonetwork-entrypoint.sh
 
-USER jetty
-COPY core-geonetwork/web/target/geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
+# # USER jetty
+# # COPY core-geonetwork/web/target/geonetwork.war /var/lib/jetty/webapps/geonetwork/geonetwork.war
 
-RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
-     unzip geonetwork.war && \
-     rm geonetwork.war
+# # RUN  cd /var/lib/jetty/webapps/geonetwork/ && \
+# #      unzip geonetwork.war && \
+# #      rm geonetwork.war
 
-#COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
-ENTRYPOINT ["/geonetwork-entrypoint.sh"]
-CMD ["java","-jar","/usr/local/jetty/start.jar"]
+# # #COPY ./docker-entrypoint.sh /geonetwork-entrypoint.sh
+# # ENTRYPOINT ["/geonetwork-entrypoint.sh"]
+# # CMD ["java","-jar","/usr/local/jetty/start.jar"]
