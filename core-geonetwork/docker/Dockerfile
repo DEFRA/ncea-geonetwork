@@ -5,7 +5,7 @@ WORKDIR /
 COPY core-geonetwork/pom.xml .
 COPY core-geonetwork/. .
 # Build the application using Maven
-RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 2C -X -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -Dmaven.wagon.http.ssl.check.disable=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -Dmaven.resolver.transport=wagon -Daether.connector.basic.threads=1 -Daether.connector.resumeDownloads=false
+RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 1 -X -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -Dmaven.wagon.http.ssl.check.disable=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -Dmaven.resolver.transport=wagon
 
 FROM jetty:9-jdk8
 
