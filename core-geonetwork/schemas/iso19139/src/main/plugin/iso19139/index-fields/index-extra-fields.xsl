@@ -292,13 +292,13 @@
 
 
 	<!--MDC Identifiers-->
-	<xsl:if test="mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString/text() != ''">
+	<xsl:if test="mdc:NceaIdentifiers/mdc:MasterReferenceID/mdc:CatalogueEntry/gco:CharacterString/text() != ''">
 		<OrgNceaIdentifiers type="object">
 		{
-			"projectId":"<xsl:value-of select="util:escapeForJson(mdc:nceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString)"/>",
+			"projectId":"<xsl:value-of select="util:escapeForJson(mdc:NceaIdentifiers/mdc:ProjectID/mdc:projectID/gco:CharacterString)"/>",
 			"masterReferenceID":{
-					"catalogueEntry":"<xsl:value-of select="util:escapeForJson(mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:catalogueEntry/gco:CharacterString)"/>", 
-					"sourceSystemReferenceID": "<xsl:value-of select="util:escapeForJson(mdc:nceaIdentifiers/mdc:MasterReferenceID/mdc:sourceSystemReferenceID/gco:CharacterString)"/>"
+					"catalogueEntry":"<xsl:value-of select="util:escapeForJson(mdc:NceaIdentifiers/mdc:MasterReferenceID/mdc:CatalogueEntry/gco:CharacterString)"/>", 
+					"sourceSystemReferenceID": "<xsl:value-of select="util:escapeForJson(mdc:NceaIdentifiers/mdc:MasterReferenceID/mdc:SourceSystemReferenceID/gco:CharacterString)"/>"
 				}
 		}
 		</OrgNceaIdentifiers>
