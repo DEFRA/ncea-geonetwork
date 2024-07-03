@@ -306,7 +306,7 @@
 
 	
 	<!--MDC Classifiers-->
-	<xsl:for-each select="mdc:nceaClassifierInfo">
+	<xsl:for-each select="mdc:NceaClassifierInfo">
 		<OrgNceaClassifiers type="object">
 		[
 			<xsl:call-template name="index-classifiers">
@@ -323,13 +323,13 @@
 	<xsl:param name="classifiers"/>
 
 	<xsl:choose>
-		<xsl:when test="count($classifiers/mdc:classifier) &gt; 0">
-			<xsl:for-each select="$classifiers/mdc:classifier">
+		<xsl:when test="count($classifiers/mdc:Classifier) &gt; 0">
+			<xsl:for-each select="$classifiers/mdc:Classifier">
 				{
-				    "name":"<xsl:value-of select="util:escapeForJson(mdc:name/gco:CharacterString)"/>",
-				    "code":"<xsl:value-of select="util:escapeForJson(mdc:code/gco:CharacterString)"/>"
+				    "name":"<xsl:value-of select="util:escapeForJson(mdc:Name/gco:CharacterString)"/>",
+				    "code":"<xsl:value-of select="util:escapeForJson(mdc:Code/gco:CharacterString)"/>"
 
-					<xsl:if test="count(mdc:NC_Classifiers/mdc:classifier) &gt; 0">
+					<xsl:if test="count(mdc:NC_Classifiers/mdc:Classifier) &gt; 0">
 						<xsl:text>,</xsl:text>
 						"classifiers":[<xsl:call-template name="index-classifiers">
 											<xsl:with-param name="classifiers" select="mdc:NC_Classifiers"/>
