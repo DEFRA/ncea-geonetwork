@@ -10,7 +10,7 @@ RUN mvn -f pom.xml clean install -DskipTests -DschemasCopy=true -T 1 -X -Dmaven.
 FROM jetty:9-jdk8
 
 ENV GN_FILE geonetwork.war
-ENV GN_VERSION 4.2.8
+ENV GN_VERSION 4.4.0
 
 ENV DATA_DIR /catalogue-data
 ENV JAVA_OPTS -Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF \
