@@ -3,10 +3,6 @@ parameters:
     displayName: "Deploy from Feature Branch"
     type: boolean
     default: false
-  - name: deployConfigOnly
-    displayName: "Deploy App Config"
-    type: boolean
-    default: false
 pr:
   branches:
     include:
@@ -43,7 +39,7 @@ extends:
     teamName: "ncea-search"
     serviceName: "ncea-geonetwork"
     deployFromFeature: ${{ parameters.deployFromFeature }}
-    deployConfigOnly: ${{ parameters.deployConfigOnly }}
+    deployConfigOnly: false
     includePlatformEnvs: true
     appBuildConfig:
       appFrameworkType: "java"
@@ -51,109 +47,3 @@ extends:
       compiledPackagePath: "core-geonetwork/web/target/geonetwork.war"
       imageRepoName: ncea-geonetwork
       dockerFilePath: core-geonetwork/docker/Dockerfile
-    # appTestConfig:
-    #   testFilePath: "./docker-compose.test.yaml"
-    #   snykTestFilePath: "./docker-compose.snyk.yaml"
-    # appDeployConfig:
-    #   filepath: "./appConfig"
-    #   filetype: "yaml"    
-    #   variableGroups: 
-    #     - ffc-demo-web-<environment>
-
-
-# name: $(Date:yyyyMMdd)$(Rev:.r)
-
-# trigger:
-#   branches:
-#     include:
-#       - main
-#       - feature/*
-
-# variables: 
-#   - template: templates/variables-global.yml
-#   - name : azureServiceConnectionForAcr
-#     value: AZR-NCE-DEV1  
-#   - name : azureServiceConnectionForTest
-#     value: AZR-NCE-TST
-#   - name : deployToDev
-#     value: true
-#   - name : deployToTest
-#     value: true
-
-# stages:
-# - stage: 'Build'
-#   displayName: 'Build GeoNetwork App'
-#   jobs: 
-#   - job: 'Build'
-#     displayName: 'Build job'
-#     pool:
-#       name: DEFRA-COMMON-ubuntu2204-SSV3
-#     variables:
-#       - template: templates/variables-build.yml      
-#     steps:
-#       - template: steps-build-and-test.yaml
-#       - template: steps-build-and-push-docker-images.yaml
-#       - template: steps-package-and-push-helm-charts.yaml
-
-# # - stage: 'sandbox'
-# #   displayName: 'Deploy to Sandbox'
-# #   dependsOn: Build
-# #   condition:  and(succeeded(), eq(variables.isPullRequest, true))  
-# #   jobs:
-# #   - deployment: Deploy
-# #     pool:
-# #       vmImage: 'ubuntu-latest'
-# #     variables:
-# #       - template: templates/variables-sandbox.yml
-# #       - name : aksServiceConnection
-# #         value: aksServiceConn-AZR-NCE-SND1
-# #     environment: sandbox 
-# #     strategy:
-# #       runOnce:
-# #         deploy:
-# #           steps:
-# #             - template: steps-deploy-helm-charts.yaml
-# #               parameters:
-# #                 envName: sandbox
-# #                 releaseName: ncea-geonetwork-sandbox
-# #                 aksServiceConnection: aksServiceConn-AZR-NCE-SND1
-
-# - stage: 'dev'
-#   displayName: 'Deploy to Dev'
-#   dependsOn: Build
-#   condition: and(succeeded(), and(eq(variables.isMain, true), eq(variables.deployToDev, true)))
-#   jobs:
-#   - deployment: Deploy
-#     pool:
-#       name: DEFRA-COMMON-ubuntu2204-SSV3
-#     variables:
-#       - template: templates/variables-dev.yml
-#     environment: dev 
-#     strategy:
-#       runOnce:
-#         deploy:
-#           steps:
-#             - template: steps-deploy-helm-charts.yaml
-#               parameters:
-#                 releaseName: "geonetwork-helm-deploy"
-#                 armServiceConnection: AZR-NCE-DEV1
-
-# - stage: 'test'
-#   displayName: 'Deploy to test'
-#   dependsOn: dev
-#   condition: and(succeeded(), eq(variables.deployToTest, true))
-#   jobs:
-#   - deployment: Deploy
-#     pool:
-#       name: DEFRA-COMMON-ubuntu2204-SSV3
-#     variables:
-#       - template: templates/variables-test.yml
-#     environment: test 
-#     strategy:
-#       runOnce:
-#         deploy:
-#           steps:
-#             - template: steps-deploy-helm-charts.yaml
-#               parameters:
-#                 releaseName: "geonetwork-helm-deploy"
-#                 armServiceConnection: AZR-NCE-TST

@@ -1,3 +1,0 @@
-variables:
-- group: azureVariables-sandbox
-- group: geoNetworkAppVariables-sandbox
