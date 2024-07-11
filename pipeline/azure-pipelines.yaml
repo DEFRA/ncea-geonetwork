@@ -17,6 +17,8 @@ variables:
     value: true
   - name : deployToTest
     value: true
+  - name : deployToPre
+    value: true
 
 stages:
 - stage: 'Build'
@@ -32,29 +34,6 @@ stages:
       - template: steps-build-and-test.yaml
       - template: steps-build-and-push-docker-images.yaml
       - template: steps-package-and-push-helm-charts.yaml
-
-# - stage: 'sandbox'
-#   displayName: 'Deploy to Sandbox'
-#   dependsOn: Build
-#   condition:  and(succeeded(), eq(variables.isPullRequest, true))  
-#   jobs:
-#   - deployment: Deploy
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     variables:
-#       - template: templates/variables-sandbox.yml
-#       - name : aksServiceConnection
-#         value: aksServiceConn-AZR-NCE-SND1
-#     environment: sandbox 
-#     strategy:
-#       runOnce:
-#         deploy:
-#           steps:
-#             - template: steps-deploy-helm-charts.yaml
-#               parameters:
-#                 envName: sandbox
-#                 releaseName: ncea-geonetwork-sandbox
-#                 aksServiceConnection: aksServiceConn-AZR-NCE-SND1
 
 - stage: 'dev'
   displayName: 'Deploy to Dev'
@@ -95,3 +74,26 @@ stages:
               parameters:
                 releaseName: "geonetwork-helm-deploy"
                 armServiceConnection: AZR-NCE-TST
+
+- stage: 'pre'
+  displayName: 'Deploy to Pre Prod'
+  dependsOn: test
+  condition: and(succeeded(), and(eq(variables.isPullRequest, false), eq(variables.deployToPre, true)))
+  jobs:
+  - deployment: Deploy
+    pool:
+      name: DEFRA-COMMON-ubuntu2204-SSV5
+    variables:
+      - template: templates/variables-pre.yaml
+    environment: pre
+    strategy:
+      runOnce:
+        deploy:
+          steps:            
+            - template: steps-import-docker-images.yaml
+              parameters:
+                azureServiceConnection: AZR-NCE-PRE1
+            - template: steps-deploy-helm-charts.yaml
+              parameters:
+                releaseName: "geonetwork-helm-deploy"
+                armServiceConnection: AZR-NCE-PRE
