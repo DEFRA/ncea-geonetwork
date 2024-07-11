@@ -12,7 +12,9 @@ variables:
   - name : azureServiceConnectionForAcr
     value: AZR-NCE-DEV1  
   - name : azureServiceConnectionForTest
-    value: AZR-NCE-TST
+    value: AZR-NCE-TST  
+  - name : azureServiceConnectionForPre
+    value: AZR-NCE-PRE
   - name : deployToDev
     value: true
   - name : deployToTest
@@ -91,9 +93,7 @@ stages:
         deploy:
           steps:            
             - template: steps-import-docker-images.yaml
-              parameters:
-                azureServiceConnection: AZR-NCE-PRE1
             - template: steps-deploy-helm-charts.yaml
               parameters:
-                releaseName: "geonetwork-helm-deploy"
-                armServiceConnection: AZR-NCE-PRE
+                releaseName: "geonetwork-helm-deploy-pre"
+                armServiceConnection: AZR-NCE-PRE1
