@@ -96,4 +96,4 @@ stages:
             - template: steps-deploy-helm-charts.yaml
               parameters:
                 releaseName: "geonetwork-helm-deploy-pre"
-                armServiceConnection: AZR-NCE-PRE1
+                armServiceConnection: AZR-NCE-PRE
