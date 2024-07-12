@@ -86,7 +86,7 @@ stages:
     pool:
       name: DEFRA-COMMON-ubuntu2204-SSV5
     variables:
-      - template: templates/variables-pre.yaml
+      - template: templates/variables-pre.yml
     environment: pre
     strategy:
       runOnce:
