@@ -1,0 +1,4 @@
+variables:
+- group: azureVariables-pre
+- group: geoNetworkAppVariables-pre
+- group: pipelineVariables
