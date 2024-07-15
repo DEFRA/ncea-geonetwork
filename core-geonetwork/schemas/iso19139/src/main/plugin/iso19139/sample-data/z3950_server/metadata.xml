@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gmd:MD_Metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:gml="http://www.opengis.net/gml" xmlns:gmd="http://www.isotc211.org/2005/gmd"
-                 xmlns:mdc="https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc"
+                 xmlns:mdc="https://ncea-search.azure.defra.cloud/assets/xml-schema/mdc"
                  xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gsr="http://www.isotc211.org/2005/gsr"
                  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gss="http://www.isotc211.org/2005/gss"
                  xmlns:srv="http://www.isotc211.org/2005/srv"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc http://www.isotc211.org/2005/srv http://www.isotc211.org/2005/srv/srv.xsd http://www.opengis.net/gml http://www.isotc211.org/2005/gml/gml.xsd http://www.w3.org/1999/xlink http://www.isotc211.org/2005/xlink/xlinks.xsd http://www.isotc211.org/2005/gmd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd https://ncea-search.azure.defra.cloud/assets/xml-schema/mdc http://www.isotc211.org/2005/srv http://www.isotc211.org/2005/srv/srv.xsd http://www.opengis.net/gml http://www.isotc211.org/2005/gml/gml.xsd http://www.w3.org/1999/xlink http://www.isotc211.org/2005/xlink/xlinks.xsd http://www.isotc211.org/2005/gmd">
     <gmd:fileIdentifier>
         <gco:CharacterString>74c30b26-969a-466f-87fe-649e5af4feb7</gco:CharacterString>
     </gmd:fileIdentifier>
