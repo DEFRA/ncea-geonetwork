@@ -610,7 +610,7 @@ public final class Geonet {
         public static final Namespace GEONET = Namespace.getNamespace("geonet", "http://www.fao.org/geonetwork");
         public static final Namespace GMX = Namespace.getNamespace("gmx", "http://www.isotc211.org/2005/gmx");
         public static final Namespace GMD = Namespace.getNamespace("gmd", "http://www.isotc211.org/2005/gmd");
-        public static final Namespace MDC = Namespace.getNamespace("mdc", "https://github.com/DEFRA/ncea-geonetwork/tree/main/core-geonetwork/schemas/iso19139/src/main/plugin/iso19139/schema2007/mdc");
+        public static final Namespace MDC = Namespace.getNamespace("mdc", "https://ncea-search.azure.defra.cloud/assets/xml-schema/mdc");
         public static final Namespace OASIS_CATALOG = Namespace.getNamespace("urn:oasis:names:tc:entity:xmlns:xml:catalog");
         public static final Namespace SRV = Namespace.getNamespace("srv", "http://www.isotc211.org/2005/srv");
         public static final Namespace XLINK = Namespace.getNamespace("xlink", "http://www.w3.org/1999/xlink");
