@@ -33,7 +33,7 @@
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gn-fn-index="http://geonetwork-opensource.org/xsl/functions/index"
-			    xmlns:mdc="https://ncea-search.azure.defra.cloud/assets/xml-schema/mdc"
+			    xmlns:mdc="https://ncea-search.azure.defra.cloud/mdc"
                 xmlns:index="java:org.fao.geonet.kernel.search.EsSearchManager"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:date-util="java:org.fao.geonet.utils.DateUtil"
