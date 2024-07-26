@@ -6,7 +6,7 @@
                  xmlns:srv="http://www.isotc211.org/2005/srv"
                  xmlns:gmx="http://www.isotc211.org/2005/gmx"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xmlns:mdc="https://ncea-search.azure.defra.cloud/assets/xml-schema/mdc"
+                 xmlns:mdc="https://ncea-search.azure.defra.cloud/mdc"
                  xmlns:gco="http://www.isotc211.org/2005/gco">
     <gmd:fileIdentifier>
         <gco:CharacterString>3d498227-0bd1-41e8-8310-cb2a334b29c3</gco:CharacterString>
