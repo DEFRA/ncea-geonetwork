@@ -1225,6 +1225,9 @@
 			<!-- "organisationObject": "<xsl:value-of select="util:escapeForJson($orgObject)"/>", -->
 		<!-- </xsl:if> -->
       <!-- </xsl:if> -->
+	  <xsl:if test="$organisationName"> 
+	    "organisationName": "<xsl:value-of select="util:escapeForJson($organisationName)"/>", 
+	  </xsl:if> 
       "role":"<xsl:value-of select="$role"/>",
       "email":"<xsl:value-of select="util:escapeForJson($email[1])"/>",
       "website":"<xsl:value-of select="util:escapeForJson($website)"/>",
