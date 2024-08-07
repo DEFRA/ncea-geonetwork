@@ -7,6 +7,8 @@ trigger:
       - main
       - feature/*
 
+variables: 
+  - template: variables-global.yml
 
 stages:
 - stage: 'Build'
