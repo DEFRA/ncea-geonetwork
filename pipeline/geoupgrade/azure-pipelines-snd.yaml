@@ -7,6 +7,7 @@ trigger:
       - main
       - feature/*
 
+
 stages:
 - stage: 'Build'
   displayName: 'Build GeoNetwork App'
@@ -16,7 +17,7 @@ stages:
     pool:
       name: DEFRA-COMMON-ubuntu2204-SSV3
     variables:
-      - template: pipeline/geoupgrade/variables-build.yml      
+      - template: variables-build.yml      
     steps:
-      - template: pipeline/geoupgrade/steps-build-and-test.yaml
-      - template: pipeline/geoupgrade/steps-build-and-push-docker-images.yaml
+      - template: steps-build-and-test.yaml
+      - template: steps-build-and-push-docker-images.yaml
