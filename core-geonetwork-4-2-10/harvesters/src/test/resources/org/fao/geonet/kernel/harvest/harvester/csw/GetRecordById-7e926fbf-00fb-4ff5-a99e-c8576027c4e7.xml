@@ -1,435 +1,662 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (C) 2001-2016 Food and Agriculture Organization of the
-  ~ United Nations (FAO-UN), United Nations World Food Programme (WFP)
-  ~ and United Nations Environment Programme (UNEP)
-  ~
-  ~ This program is free software; you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation; either version 2 of the License, or (at
-  ~ your option) any later version.
-  ~
-  ~ This program is distributed in the hope that it will be useful, but
-  ~ WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-  ~ General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with this program; if not, write to the Free Software
-  ~ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
-  ~
-  ~ Contact: Jeroen Ticheler - FAO - Viale delle Terme di Caracalla 2,
-  ~ Rome - Italy. email: geonetwork@osgeo.org
-  -->
-
-<csw:GetRecordByIdResponse xmlns:csw="http://www.opengis.net/cat/csw/2.0.2">
-  <gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
-                   xmlns:gml="http://www.opengis.net/gml"
-                   xmlns:gco="http://www.isotc211.org/2005/gco"
-  >
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:mdc="https://ncea-search.azure.defra.cloud/mdc"
+                 xmlns:gss="http://www.isotc211.org/2005/gss"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:geonet="http://www.fao.org/geonetwork"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd https://ncea-search.azure.defra.cloud/mdc http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <gmd:fileIdentifier>
-      <gco:CharacterString>7e926fbf-00fb-4ff5-a99e-c8576027c4e7</gco:CharacterString>
+        <gco:CharacterString>9a8e4568-c088-4c88-8d94-99c941aea8f8</gco:CharacterString>
     </gmd:fileIdentifier>
+    <!-- 29 Metadata Language (M) -->
     <gmd:language>
-      <gco:CharacterString/>
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">
+            English
+        </gmd:LanguageCode>
     </gmd:language>
-    <gmd:characterSet>
-      <gmd:MD_CharacterSetCode codeListValue="utf8"
-                               codeList="./resources/codeList.xml#MD_CharacterSetCode"/>
-    </gmd:characterSet>
-    <gmd:contact>
-      <gmd:CI_ResponsibleParty>
-        <gmd:individualName>
-          <gco:CharacterString>Marina Zanetti</gco:CharacterString>
-        </gmd:individualName>
-        <gmd:organisationName>
-          <gco:CharacterString>FAO - Land and Water Development Division</gco:CharacterString>
-        </gmd:organisationName>
-        <gmd:positionName>
-          <gco:CharacterString>GIS specialist</gco:CharacterString>
-        </gmd:positionName>
-        <gmd:role>
-          <gmd:CI_RoleCode codeList="./resources/codeList.xml#CI_RoleCode"
-                           codeListValue="pointOfContact"/>
-        </gmd:role>
-      </gmd:CI_ResponsibleParty>
-    </gmd:contact>
-    <gmd:dateStamp>
-      <gco:DateTime>2007-11-06T12:10:47</gco:DateTime>
-    </gmd:dateStamp>
+    <!-- 4 Resource type (M) -->
+    <gmd:hierarchyLevel>
+        <gmd:MD_ScopeCode
+                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ScopeCode"
+                codeListValue="dataset">dataset
+        </gmd:MD_ScopeCode>
+    </gmd:hierarchyLevel>
+    <!-- 27 Metadata standard name (M) -->
     <gmd:metadataStandardName>
-      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+        <gmx:Anchor xlink:type="simple" xlink:href="http://vocab.nerc.ac.uk/collection/M25/current/MEDIN/">MEDIN
+        </gmx:Anchor>
     </gmd:metadataStandardName>
+    <!-- 28 Metadata standard version (M) -->
     <gmd:metadataStandardVersion>
-      <gco:CharacterString>1.0</gco:CharacterString>
+        <gco:CharacterString>3.1.1</gco:CharacterString>
     </gmd:metadataStandardVersion>
-    <gmd:spatialRepresentationInfo>
-      <gmd:MD_VectorSpatialRepresentation>
-        <gmd:topologyLevel>
-          <gmd:MD_TopologyLevelCode codeList="./resources/codeList.xml#MD_TopologyLevelCode"
-                                    codeListValue="abstract"/>
-        </gmd:topologyLevel>
-        <gmd:geometricObjects>
-          <gmd:MD_GeometricObjects>
-            <gmd:geometricObjectType>
-              <gmd:MD_GeometricObjectTypeCode
-                codeList="./resources/codeList.xml#MD_GeometricObjectTypeCode"
-                codeListValue="complex"/>
-            </gmd:geometricObjectType>
-          </gmd:MD_GeometricObjects>
-        </gmd:geometricObjects>
-      </gmd:MD_VectorSpatialRepresentation>
-    </gmd:spatialRepresentationInfo>
+    <!-- 15 Spatial reference system (M) -->
     <gmd:referenceSystemInfo>
-      <gmd:MD_ReferenceSystem>
-        <gmd:referenceSystemIdentifier>
-          <gmd:RS_Identifier>
-            <gmd:code>
-              <gco:CharacterString>Lambert Azimuthal Projection</gco:CharacterString>
-            </gmd:code>
-          </gmd:RS_Identifier>
-        </gmd:referenceSystemIdentifier>
-      </gmd:MD_ReferenceSystem>
+        <gmd:MD_ReferenceSystem>
+            <gmd:referenceSystemIdentifier>
+                <gmd:RS_Identifier>
+                    <gmd:code>
+                        <gmx:Anchor xlink:href="https://epsg.org/crs_4326/WGS_84.html">WGS 84</gmx:Anchor>
+                    </gmd:code>
+                </gmd:RS_Identifier>
+            </gmd:referenceSystemIdentifier>
+        </gmd:MD_ReferenceSystem>
     </gmd:referenceSystemInfo>
-    <gmd:identificationInfo>
-      <gmd:MD_DataIdentification>
-        <gmd:citation>
-          <gmd:CI_Citation>
-            <gmd:title>
-              <gco:CharacterString>Physiographic Map of North and Central Eurasia (Sample record,
-                please remove!)
-              </gco:CharacterString>
-            </gmd:title>
-            <gmd:date>
-              <gmd:CI_Date>
-                <gmd:date>
-                  <gco:Date>1999-10-01</gco:Date>
-                </gmd:date>
-                <gmd:dateType>
-                  <gmd:CI_DateTypeCode codeList="./resources/codeList.xml#CI_DateTypeCode"
-                                       codeListValue="publication"/>
-                </gmd:dateType>
-              </gmd:CI_Date>
-            </gmd:date>
-            <gmd:edition>
-              <gco:CharacterString>First</gco:CharacterString>
-            </gmd:edition>
-            <gmd:presentationForm>
-              <gmd:CI_PresentationFormCode
-                codeList="./resources/codeList.xml#CI_PresentationFormCode"
-                codeListValue="mapDigital"/>
-            </gmd:presentationForm>
-          </gmd:CI_Citation>
-        </gmd:citation>
-        <gmd:abstract>
-          <gco:CharacterString>Physiographic maps for the CIS and Baltic States (CIS_BS), Mongolia,
-            China and Taiwan Province of China. Between the three regions (China, Mongolia, and
-            CIS_BS countries) DCW boundaries were introduced. There are no DCW boundaries between
-            Russian Federation and the rest of the new countries of the CIS_BS. The original
-            physiographic map of China includes the Chinese border between India and China, which
-            extends beyond the Indian border line, and the South China Sea islands (no physiographic
-            information is present for islands in the South China Sea). The use of these country
-            boundaries does not imply the expression of any opinion whatsoever on the part of FAO
-            concerning the legal or constitutional states of any country, territory, or sea area, or
-            concerning delimitation of frontiers. The Maps visualize the items LANDF, HYPSO, SLOPE
-            that correspond to Landform, Hypsometry and Slope.
-          </gco:CharacterString>
-        </gmd:abstract>
-        <gmd:purpose>
-          <gco:CharacterString/>
-        </gmd:purpose>
-        <gmd:status>
-          <gmd:MD_ProgressCode codeList="./resources/codeList.xml#MD_ProgressCode"
-                               codeListValue="completed"/>
-        </gmd:status>
-        <gmd:pointOfContact>
-          <gmd:CI_ResponsibleParty>
-            <gmd:individualName>
-              <gco:CharacterString>Nachtergaele Freddy</gco:CharacterString>
-            </gmd:individualName>
+    <!-- 22 Responsible party Point of Contact (M) -->
+    <gmd:contact>
+        <gmd:CI_ResponsibleParty>
             <gmd:organisationName>
-              <gco:CharacterString>FAO - Land and Water Development Division</gco:CharacterString>
+                <gco:CharacterString>United Kingdom Hydrographic Office</gco:CharacterString>
             </gmd:organisationName>
-            <gmd:positionName>
-              <gco:CharacterString>Technical officer</gco:CharacterString>
-            </gmd:positionName>
             <gmd:contactInfo>
-              <gmd:CI_Contact>
-                <gmd:address>
-                  <gmd:CI_Address>
-                    <gmd:deliveryPoint>
-                      <gco:CharacterString>Viale delle Terme di Caracalla</gco:CharacterString>
-                    </gmd:deliveryPoint>
-                    <gmd:city>
-                      <gco:CharacterString>Rome</gco:CharacterString>
-                    </gmd:city>
-                    <gmd:administrativeArea>
-                      <gco:CharacterString>RM</gco:CharacterString>
-                    </gmd:administrativeArea>
-                    <gmd:postalCode>
-                      <gco:CharacterString>00153</gco:CharacterString>
-                    </gmd:postalCode>
-                    <gmd:country>
-                      <gco:CharacterString>Italy</gco:CharacterString>
-                    </gmd:country>
-                    <gmd:electronicMailAddress>
-                      <gco:CharacterString>Freddy.Nachtergaele@fao.org</gco:CharacterString>
-                    </gmd:electronicMailAddress>
-                  </gmd:CI_Address>
-                </gmd:address>
-              </gmd:CI_Contact>
+                <gmd:CI_Contact>
+                    <gmd:address>
+                        <gmd:CI_Address>
+                            <gmd:electronicMailAddress>
+                                <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                            </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                    </gmd:address>
+                </gmd:CI_Contact>
             </gmd:contactInfo>
             <gmd:role>
-              <gmd:CI_RoleCode codeList="./resources/codeList.xml#CI_RoleCode"
-                               codeListValue="pointOfContact"/>
+                <gmd:CI_RoleCode
+                        codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                        codeListValue="pointOfContact">pointOfContact
+                </gmd:CI_RoleCode>
             </gmd:role>
-          </gmd:CI_ResponsibleParty>
-        </gmd:pointOfContact>
-        <gmd:resourceMaintenance>
-          <gmd:MD_MaintenanceInformation>
-            <gmd:maintenanceAndUpdateFrequency>
-              <gmd:MD_MaintenanceFrequencyCode
-                codeList="./resources/codeList.xml#MD_MaintenanceFrequencyCode"
-                codeListValue="asNeeded"/>
-            </gmd:maintenanceAndUpdateFrequency>
-          </gmd:MD_MaintenanceInformation>
-        </gmd:resourceMaintenance>
-        <gmd:graphicOverview>
-          <gmd:MD_BrowseGraphic>
-            <gmd:fileName>
-              <gco:CharacterString>phy_s.gif</gco:CharacterString>
-            </gmd:fileName>
-            <gmd:fileDescription>
-              <gco:CharacterString>thumbnail</gco:CharacterString>
-            </gmd:fileDescription>
-            <gmd:fileType>
-              <gco:CharacterString>gif</gco:CharacterString>
-            </gmd:fileType>
-          </gmd:MD_BrowseGraphic>
-        </gmd:graphicOverview>
-        <gmd:graphicOverview>
-          <gmd:MD_BrowseGraphic>
-            <gmd:fileName>
-              <gco:CharacterString>phy.gif</gco:CharacterString>
-            </gmd:fileName>
-            <gmd:fileDescription>
-              <gco:CharacterString>large_thumbnail</gco:CharacterString>
-            </gmd:fileDescription>
-            <gmd:fileType>
-              <gco:CharacterString>gif</gco:CharacterString>
-            </gmd:fileType>
-          </gmd:MD_BrowseGraphic>
-        </gmd:graphicOverview>
-        <gmd:descriptiveKeywords>
-          <gmd:MD_Keywords>
-            <gmd:keyword>
-              <gco:CharacterString>physiography, soil</gco:CharacterString>
-            </gmd:keyword>
-            <gmd:type>
-              <gmd:MD_KeywordTypeCode codeList="./resources/codeList.xml#MD_KeywordTypeCode"
-                                      codeListValue="theme"/>
-            </gmd:type>
-          </gmd:MD_Keywords>
-        </gmd:descriptiveKeywords>
-        <gmd:descriptiveKeywords>
-          <gmd:MD_Keywords>
-            <gmd:keyword>
-              <gco:CharacterString>Eurasia</gco:CharacterString>
-            </gmd:keyword>
-            <gmd:type>
-              <gmd:MD_KeywordTypeCode codeList="./resources/codeList.xml#MD_KeywordTypeCode"
-                                      codeListValue="place"/>
-            </gmd:type>
-          </gmd:MD_Keywords>
-        </gmd:descriptiveKeywords>
-        <gmd:resourceConstraints>
-          <gmd:MD_LegalConstraints>
-            <gmd:accessConstraints>
-              <gmd:MD_RestrictionCode codeList="./resources/codeList.xml#MD_RestrictionCode"
-                                      codeListValue="copyright"/>
-            </gmd:accessConstraints>
-            <gmd:useConstraints>
-              <gmd:MD_RestrictionCode codeList="./resources/codeList.xml#MD_RestrictionCode"
-                                      codeListValue="copyright"/>
-            </gmd:useConstraints>
-            <gmd:otherConstraints>
-              <gco:CharacterString/>
-            </gmd:otherConstraints>
-          </gmd:MD_LegalConstraints>
-        </gmd:resourceConstraints>
-        <gmd:spatialRepresentationType>
-          <gmd:MD_SpatialRepresentationTypeCode
-            codeList="./resources/codeList.xml#MD_SpatialRepresentationTypeCode"
-            codeListValue="vector"/>
-        </gmd:spatialRepresentationType>
-        <gmd:spatialResolution>
-          <gmd:MD_Resolution>
-            <gmd:equivalentScale>
-              <gmd:MD_RepresentativeFraction>
-                <gmd:denominator>
-                  <gco:Integer>5000000</gco:Integer>
-                </gmd:denominator>
-              </gmd:MD_RepresentativeFraction>
-            </gmd:equivalentScale>
-          </gmd:MD_Resolution>
-        </gmd:spatialResolution>
-        <gmd:language>
-          <gco:CharacterString/>
-        </gmd:language>
-        <gmd:characterSet>
-          <gmd:MD_CharacterSetCode codeList="./resources/codeList.xml#MD_CharacterSetCode"
-                                   codeListValue="utf8"/>
-        </gmd:characterSet>
-        <gmd:topicCategory>
-          <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
-        </gmd:topicCategory>
-        <gmd:extent>
-          <gmd:EX_Extent>
-            <gmd:temporalElement>
-              <gmd:EX_TemporalExtent>
-                <gmd:extent>
-                  <gml:TimePeriod gml:id="timeperiod1">
-                    <gml:beginPosition>2000-01-01T04:29:00</gml:beginPosition>
-                    <gml:endPosition>2008-01-08T04:29:00</gml:endPosition>
-                  </gml:TimePeriod>
-                </gmd:extent>
-              </gmd:EX_TemporalExtent>
-            </gmd:temporalElement>
-          </gmd:EX_Extent>
-        </gmd:extent>
-        <gmd:extent>
-          <gmd:EX_Extent>
-            <gmd:geographicElement>
-              <gmd:EX_GeographicBoundingBox>
-                <gmd:westBoundLongitude>
-                  <gco:Decimal>37</gco:Decimal>
-                </gmd:westBoundLongitude>
-                <gmd:eastBoundLongitude>
-                  <gco:Decimal>156</gco:Decimal>
-                </gmd:eastBoundLongitude>
-                <gmd:southBoundLatitude>
-                  <gco:Decimal>-3</gco:Decimal>
-                </gmd:southBoundLatitude>
-                <gmd:northBoundLatitude>
-                  <gco:Decimal>83</gco:Decimal>
-                </gmd:northBoundLatitude>
-              </gmd:EX_GeographicBoundingBox>
-            </gmd:geographicElement>
-          </gmd:EX_Extent>
-        </gmd:extent>
-        <gmd:supplementalInformation>
-          <gco:CharacterString>The maps are included in the SOIL and TERRAIN Database for Northern
-            and Central EURASIA CD-ROM , which contains also the Soil map of North and Central
-            Eurasia, reports and databases. Copies of this CD-Rom can be ordered from: Sales and
-            Marketing Group FAO, Viale delle Terme di Caracalla, 00153 Rome, or by email to
-            Publications-sales@fao.org. The terms and definitions used in the Physiographic database
-            are based on the procedures manual for ?Global and National Soils and Terrain Digital
-            Databases (SOTER)?, prepared by UNEP, ISSS, ISRIC and FAO and published by FAO as World
-            Soil Resources Report #74 Rev1 (1995). Refinements were made in China as part of the
-            preparation of a physiographic map for Asia, work carried out by G. van Lynden for FAO
-            as part of the ASSOD project.
-          </gco:CharacterString>
-        </gmd:supplementalInformation>
-      </gmd:MD_DataIdentification>
+        </gmd:CI_ResponsibleParty>
+    </gmd:contact>
+    <!-- 26 Metadata date (M) -->
+    <gmd:dateStamp>
+        <gco:DateTime>2024-02-09T07:09:56</gco:DateTime>
+    </gmd:dateStamp>
+    <gmd:identificationInfo>
+        <gmd:MD_DataIdentification>
+            <gmd:citation>
+                <gmd:CI_Citation>
+                    <!-- 1 Resource title (M) -->
+                    <gmd:title>
+                        <gco:CharacterString>Sea 2</gco:CharacterString>
+                    </gmd:title>
+                    <!-- 16.1 Date of Publication (M) -->
+                    <gmd:date>
+                        <gmd:CI_Date>
+                            <gmd:date>
+                                <gco:Date>2022-03-23T17:22:03</gco:Date>
+                            </gmd:date>
+                            <gmd:dateType>
+                                <gmd:CI_DateTypeCode
+                                        codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                        codeListValue="publication">publication
+                                </gmd:CI_DateTypeCode>
+                            </gmd:dateType>
+                        </gmd:CI_Date>
+                    </gmd:date>
+                    <!-- 6 Unique resource identifier (C) -->
+                    <gmd:identifier>
+                        <gmd:MD_Identifier>
+                            <gmd:code>
+                                <gco:CharacterString>a83e3ef1-960d-43da-a8f2-23ae1939b59d</gco:CharacterString>
+                            </gmd:code>
+                            <gmd:codeSpace>
+                                <gco:CharacterString>https://seabed.admiralty.co.uk</gco:CharacterString>
+                            </gmd:codeSpace>
+                        </gmd:MD_Identifier>
+                    </gmd:identifier>
+                </gmd:CI_Citation>
+            </gmd:citation>
+            <!-- 3 Resource abstract (M) -->
+            <gmd:abstract>
+                <gco:CharacterString>This processed bathymetric data set has been derived from an Echosounder -
+                    multibeam survey. The source data was collected, validated and processed for the purpose of Safety
+                    Of Life At Sea (SOLAS). The data set must not be used for navigation or to create products that
+                    could be used for navigation.
+                </gco:CharacterString>
+            </gmd:abstract>
+            <!-- 22 Responsible Party (M) -->
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>Centre for Environment Fisheries and Aquaculture Science (CEFAS)
+                        </gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                                codeListValue="originator">originator
+                        </gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>Natural England</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                                codeListValue="originator">originator
+                        </gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>United Kingdom Hydrographic Office</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                                codeListValue="custodian">custodian
+                        </gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>United Kingdom Hydrographic Office</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                                codeListValue="distributor">distributor
+                        </gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>Centre for Environment Fisheries and Aquaculture Science (CEFAS)
+                        </gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                                codeListValue="owner">owner
+                        </gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName>
+                        <gco:CharacterString>Natural England</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>customerservices@ukho.gov.uk</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_RoleCode"
+                                codeListValue="owner">owner
+                        </gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <!-- 11 Keywords (M) -->
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P22/current/10/">Elevation
+                        </gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>GEMET - INSPIRE themes</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2009-07-30</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode
+                                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                codeListValue="creation">creation
+                                        </gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P02/current/MBAN/">Bathymetry and
+                            Elevation
+                        </gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>SeaDataNet Parameter Discovery Vocabulary</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2006-09-29</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode
+                                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                codeListValue="revision">revision
+                                        </gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gmx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/N01/current/NDGO0001/">Marine
+                            Environmental Data and Information Network
+                        </gmx:Anchor>
+                    </gmd:keyword>
+                    <gmd:thesaurusName>
+                        <gmd:CI_Citation>
+                            <gmd:title>
+                                <gco:CharacterString>Medin Metadata Record Availability</gco:CharacterString>
+                            </gmd:title>
+                            <gmd:date>
+                                <gmd:CI_Date>
+                                    <gmd:date>
+                                        <gco:Date>2012-01-10</gco:Date>
+                                    </gmd:date>
+                                    <gmd:dateType>
+                                        <gmd:CI_DateTypeCode
+                                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                codeListValue="revision">revision
+                                        </gmd:CI_DateTypeCode>
+                                    </gmd:dateType>
+                                </gmd:CI_Date>
+                            </gmd:date>
+                        </gmd:CI_Citation>
+                    </gmd:thesaurusName>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <!-- 24 Frequency of update (M) -->
+            <gmd:resourceMaintenance>
+                <gmd:MD_MaintenanceInformation>
+                    <gmd:maintenanceAndUpdateFrequency>
+                        <gmd:MD_MaintenanceFrequencyCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                codeListValue="notPlanned">notPlanned
+                        </gmd:MD_MaintenanceFrequencyCode>
+                    </gmd:maintenanceAndUpdateFrequency>
+                </gmd:MD_MaintenanceInformation>
+            </gmd:resourceMaintenance>
+            <gmd:resourceConstraints>
+                <!-- 20 Limitations on public access (M) -->
+                <gmd:MD_LegalConstraints>
+                    <gmd:accessConstraints>
+                        <gmd:MD_RestrictionCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode"
+                                codeListValue="otherRestrictions">otherRestrictions
+                        </gmd:MD_RestrictionCode>
+                    </gmd:accessConstraints>
+                    <gmd:otherConstraints>
+                        <gmx:Anchor
+                                xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">
+                            There are no limitations on public access to spatial data sets and services.
+                        </gmx:Anchor>
+                    </gmd:otherConstraints>
+                </gmd:MD_LegalConstraints>
+                <!-- 21 Conditions applying for access and use (M) -->
+                <gmd:MD_LegalConstraints>
+                    <gmd:useConstraints>
+                        <gmd:MD_RestrictionCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_RestrictionCode"
+                                codeListValue="otherRestrictions">otherRestrictions
+                        </gmd:MD_RestrictionCode>
+                    </gmd:useConstraints>
+                    <gmd:otherConstraints>
+                        <gco:CharacterString>Open Government License</gco:CharacterString>
+                    </gmd:otherConstraints>
+                    <gmd:otherConstraints>
+                        <gco:CharacterString>The Supplied Material is not to be used for Navigation or to create
+                            products that could be used for Navigation.
+                        </gco:CharacterString>
+                    </gmd:otherConstraints>
+                </gmd:MD_LegalConstraints>
+            </gmd:resourceConstraints>
+            <!-- 18 Spatial resolution (C) -->
+            <gmd:spatialResolution>
+                <gmd:MD_Resolution>
+                    <gmd:distance>
+                        <gco:Distance
+                                uom="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#m">
+                            2.0
+                        </gco:Distance>
+                    </gmd:distance>
+                </gmd:MD_Resolution>
+            </gmd:spatialResolution>
+            <!-- 8 Resource languages (C) -->
+            <gmd:language>
+                <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php"
+                                  codeListValue="eng">English
+                </gmd:LanguageCode>
+            </gmd:language>
+            <!-- 9 Topic category (C) -->
+            <gmd:topicCategory>
+                <gmd:MD_TopicCategoryCode>elevation</gmd:MD_TopicCategoryCode>
+            </gmd:topicCategory>
+            <gmd:extent>
+                <gmd:EX_Extent>
+                    <!-- 12 Geographic bounding box (C) -->
+                    <gmd:geographicElement>
+                        <gmd:EX_GeographicBoundingBox>
+                            <gmd:westBoundLongitude>
+                                <gco:Decimal>1.7056</gco:Decimal>
+                            </gmd:westBoundLongitude>
+                            <gmd:eastBoundLongitude>
+                                <gco:Decimal>1.8802</gco:Decimal>
+                            </gmd:eastBoundLongitude>
+                            <gmd:southBoundLatitude>
+                                <gco:Decimal>51.5908</gco:Decimal>
+                            </gmd:southBoundLatitude>
+                            <gmd:northBoundLatitude>
+                                <gco:Decimal>51.7261</gco:Decimal>
+                            </gmd:northBoundLatitude>
+                        </gmd:EX_GeographicBoundingBox>
+                    </gmd:geographicElement>
+                    <!-- 16 Temporal reference (M) 16.4 Temporal Extents -->
+                    <gmd:temporalElement>
+                        <gmd:EX_TemporalExtent>
+                            <gmd:extent>
+                                <gml:TimePeriod gml:id="medinMEDIN01">
+                                    <gml:beginPosition>2014-01-03T00:00:00</gml:beginPosition>
+                                    <gml:endPosition>2014-01-27T00:00:00</gml:endPosition>
+                                </gml:TimePeriod>
+                            </gmd:extent>
+                        </gmd:EX_TemporalExtent>
+                    </gmd:temporalElement>
+                    <!-- 14 Vertical extent information (C) -->
+                    <gmd:verticalElement>
+                        <gmd:EX_VerticalExtent>
+                            <gmd:minimumValue>
+                                <gco:Real>-19.2</gco:Real>
+                            </gmd:minimumValue>
+                            <gmd:maximumValue>
+                                <gco:Real>-51.3</gco:Real>
+                            </gmd:maximumValue>
+                            <gmd:verticalCRS xlink:href="urn:ogc:def:crs:EPSG::5861"/>
+                        </gmd:EX_VerticalExtent>
+                    </gmd:verticalElement>
+                </gmd:EX_Extent>
+            </gmd:extent>
+            <!-- 32 Spatial representation type (C) -->
+            <gmd:spatialRepresentationType>
+                <gmd:MD_SpatialRepresentationTypeCode
+                        codeList="http://standards.iso.org/itff/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                        codeListValue="grid"/>
+            </gmd:spatialRepresentationType>
+        </gmd:MD_DataIdentification>
     </gmd:identificationInfo>
     <gmd:distributionInfo>
-      <gmd:MD_Distribution>
-        <gmd:transferOptions>
-          <gmd:MD_DigitalTransferOptions>
-            <gmd:onLine>
-              <gmd:CI_OnlineResource>
-                <gmd:linkage>
-                  <gmd:URL>
-                    http://localhost:8080/geonetwork/srv/en/resources.get?uuid=78f93047-74f8-4419-ac3d-fc62e4b0477b&amp;fname=phy.zip&amp;access=private
-                  </gmd:URL>
-                </gmd:linkage>
-                <gmd:protocol>
-                  <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
-                </gmd:protocol>
-                <gmd:name>
-                  <gco:CharacterString>phy.zip</gco:CharacterString>
-                </gmd:name>
-                <gmd:description>
-                  <gco:CharacterString>Physiography of North and Central Eurasia Landform (Gif
-                    Format)
-                  </gco:CharacterString>
-                </gmd:description>
-              </gmd:CI_OnlineResource>
-            </gmd:onLine>
-            <gmd:onLine>
-              <gmd:CI_OnlineResource>
-                <gmd:linkage>
-                  <gmd:URL>http://geonetwork3.fao.org/ows/7386_landf</gmd:URL>
-                </gmd:linkage>
-                <gmd:protocol>
-                  <gco:CharacterString>OGC:WMS-1.1.1-http-get-map</gco:CharacterString>
-                </gmd:protocol>
-                <gmd:name>
-                  <gco:CharacterString>landform</gco:CharacterString>
-                </gmd:name>
-                <gmd:description>
-                  <gco:CharacterString>Physiography of North and Central Eurasia Landform
-                  </gco:CharacterString>
-                </gmd:description>
-              </gmd:CI_OnlineResource>
-            </gmd:onLine>
-            <gmd:onLine>
-              <gmd:CI_OnlineResource>
-                <gmd:linkage>
-                  <gmd:URL>http://geonetwork3.fao.org/ows/7386_slope</gmd:URL>
-                </gmd:linkage>
-                <gmd:protocol>
-                  <gco:CharacterString>OGC:WMS-1.1.1-http-get-map</gco:CharacterString>
-                </gmd:protocol>
-                <gmd:name>
-                  <gco:CharacterString>slope</gco:CharacterString>
-                </gmd:name>
-                <gmd:description>
-                  <gco:CharacterString>Physiography of North and Central Eurasia Slope
-                  </gco:CharacterString>
-                </gmd:description>
-              </gmd:CI_OnlineResource>
-            </gmd:onLine>
-            <gmd:onLine>
-              <gmd:CI_OnlineResource>
-                <gmd:linkage>
-                  <gmd:URL>http://geonetwork3.fao.org/ows/7386_hypso</gmd:URL>
-                </gmd:linkage>
-                <gmd:protocol>
-                  <gco:CharacterString>OGC:WMS-1.1.1-http-get-map</gco:CharacterString>
-                </gmd:protocol>
-                <gmd:name>
-                  <gco:CharacterString>hypsography</gco:CharacterString>
-                </gmd:name>
-                <gmd:description>
-                  <gco:CharacterString>Physiography of North and Central Eurasia Hypsography
-                  </gco:CharacterString>
-                </gmd:description>
-              </gmd:CI_OnlineResource>
-            </gmd:onLine>
-          </gmd:MD_DigitalTransferOptions>
-        </gmd:transferOptions>
-      </gmd:MD_Distribution>
+        <gmd:MD_Distribution>
+            <!-- 23 Data format (M) -->
+            <gmd:distributionFormat>
+                <gmd:MD_Format>
+                    <gmd:name>
+                        <gmx:Anchor xlink:type="simple" xlink:href="http://vocab.nerc.ac.uk/collection/M01/current/GIS">
+                            Geographic Information System
+                        </gmx:Anchor>
+                    </gmd:name>
+                    <gmd:version gco:nilReason="unknown"/>
+                </gmd:MD_Format>
+            </gmd:distributionFormat>
+            <gmd:distributionFormat>
+                <gmd:MD_Format>
+                    <gmd:name>
+                        <gmx:Anchor xlink:type="simple" xlink:href="http://vocab.nerc.ac.uk/collection/M01/current/DEL">
+                            Delimited
+                        </gmx:Anchor>
+                    </gmd:name>
+                    <gmd:version gco:nilReason="unknown"/>
+                </gmd:MD_Format>
+            </gmd:distributionFormat>
+            <!-- 5 Resource locator (C) -->
+            <gmd:transferOptions>
+                <gmd:MD_DigitalTransferOptions>
+                    <gmd:onLine>
+                        <gmd:CI_OnlineResource>
+                            <gmd:linkage>
+                                <gmd:URL>https://seabed.admiralty.co.uk</gmd:URL>
+                            </gmd:linkage>
+                            <gmd:name>
+                                <gco:CharacterString>Seabed Mapping Service</gco:CharacterString>
+                            </gmd:name>
+                            <gmd:function>
+                                <gmd:CI_OnLineFunctionCode
+                                        codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                        codeListValue="download">download
+                                </gmd:CI_OnLineFunctionCode>
+                            </gmd:function>
+                        </gmd:CI_OnlineResource>
+                    </gmd:onLine>
+                </gmd:MD_DigitalTransferOptions>
+            </gmd:transferOptions>
+        </gmd:MD_Distribution>
     </gmd:distributionInfo>
     <gmd:dataQualityInfo>
-      <gmd:DQ_DataQuality>
-        <gmd:scope>
-          <gmd:DQ_Scope>
-            <gmd:level>
-              <gmd:MD_ScopeCode codeList="./resources/codeList.xml#MD_ScopeCode"
-                                codeListValue="dataset"/>
-            </gmd:level>
-          </gmd:DQ_Scope>
-        </gmd:scope>
-        <gmd:lineage>
-          <gmd:LI_Lineage>
-            <gmd:statement>
-              <gco:CharacterString/>
-            </gmd:statement>
-          </gmd:LI_Lineage>
-        </gmd:lineage>
-      </gmd:DQ_DataQuality>
+        <gmd:DQ_DataQuality>
+            <!-- Scope - Required by ISO 19115 constraint -->
+            <gmd:scope>
+                <gmd:DQ_Scope>
+                    <gmd:level>
+                        <gmd:MD_ScopeCode
+                                codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#MD_ScopeCode"
+                                codeListValue="dataset">dataset
+                        </gmd:MD_ScopeCode>
+                    </gmd:level>
+                </gmd:DQ_Scope>
+            </gmd:scope>
+            <gmd:report>
+                <gmd:DQ_DomainConsistency>
+                    <gmd:result>
+                        <gmd:DQ_ConformanceResult>
+                            <gmd:specification>
+                                <gmd:CI_Citation>
+                                    <gmd:title>
+                                        <gmx:Anchor xlink:type="simple"
+                                                    xlink:href="http://data.europa.eu/eli/reg/2010/1089">Commission
+                                            Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive
+                                            2007/2/EC of the European Parliament and of the Council as regards
+                                            interoperability of spatial data sets and services
+                                        </gmx:Anchor>
+                                    </gmd:title>
+                                    <gmd:date>
+                                        <gmd:CI_Date>
+                                            <gmd:date>
+                                                <gco:Date>2010-12-08</gco:Date>
+                                            </gmd:date>
+                                            <gmd:dateType>
+                                                <gmd:CI_DateTypeCode
+                                                        codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                        codeListValue="publication">publication
+                                                </gmd:CI_DateTypeCode>
+                                            </gmd:dateType>
+                                        </gmd:CI_Date>
+                                    </gmd:date>
+                                </gmd:CI_Citation>
+                            </gmd:specification>
+                            <gmd:explanation>
+                                <gco:CharacterString>inapplicable</gco:CharacterString>
+                            </gmd:explanation>
+                            <gmd:pass>
+                                <gco:Boolean>false</gco:Boolean>
+                            </gmd:pass>
+                        </gmd:DQ_ConformanceResult>
+                    </gmd:result>
+                </gmd:DQ_DomainConsistency>
+            </gmd:report>
+            <!-- 17 Lineage (C) -->
+            <gmd:lineage>
+                <gmd:LI_Lineage>
+                    <gmd:statement>
+                        <gco:CharacterString>This data set has been derived from an Echosounder - multibeam survey which
+                            was collected for the purpose of Scientific Research. The survey has been validated and
+                            processed by the UK Hydrographic Office (UKHO).
+                        </gco:CharacterString>
+                    </gmd:statement>
+                </gmd:LI_Lineage>
+            </gmd:lineage>
+        </gmd:DQ_DataQuality>
     </gmd:dataQualityInfo>
-  </gmd:MD_Metadata>
-</csw:GetRecordByIdResponse>
-
+    <mdc:nceaClassifierInfo>
+        <mdc:NC_Classifiers>
+            <mdc:classifier>
+                <mdc:name>
+                    <gco:CharacterString>Ecosystem Services and Benefits</gco:CharacterString>
+                </mdc:name>
+                <mdc:code>
+                    <gco:CharacterString>lv1-001</gco:CharacterString>
+                </mdc:code>
+                <mdc:NC_Classifiers>
+                    <mdc:classifier>
+                        <mdc:name>
+                            <gco:CharacterString>Regulating Services</gco:CharacterString>
+                        </mdc:name>
+                        <mdc:code>
+                            <gco:CharacterString>lV2-005</gco:CharacterString>
+                        </mdc:code>
+                        <!-- child classifiers -->
+                        <mdc:NC_Classifiers>
+                            <mdc:classifier>
+                                <mdc:name>
+                                    <gco:CharacterString>Maintaining wild populations</gco:CharacterString>
+                                </mdc:name>
+                                <mdc:code>
+                                    <gco:CharacterString>lV2-006</gco:CharacterString>
+                                </mdc:code>
+                                <mdc:NC_Classifiers>
+                                    <mdc:classifier>
+                                        <mdc:name>
+                                            <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                        </mdc:name>
+                                        <mdc:code>
+                                            <gco:CharacterString>lV4-007</gco:CharacterString>
+                                        </mdc:code>
+                                    </mdc:classifier>
+                                </mdc:NC_Classifiers>
+                            </mdc:classifier>
+                        </mdc:NC_Classifiers>
+                    </mdc:classifier>
+                    <mdc:classifier>
+                        <mdc:name>
+                            <gco:CharacterString>Cultural Services</gco:CharacterString>
+                        </mdc:name>
+                        <mdc:code>
+                            <gco:CharacterString>lV2-002</gco:CharacterString>
+                        </mdc:code>
+                        <mdc:NC_Classifiers>
+                            <mdc:classifier>
+                                <mdc:name>
+                                    <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                </mdc:name>
+                                <mdc:code>
+                                    <gco:CharacterString>lV2-010</gco:CharacterString>
+                                </mdc:code>
+                            </mdc:classifier>
+                        </mdc:NC_Classifiers>
+                    </mdc:classifier>
+                </mdc:NC_Classifiers>
+            </mdc:classifier>
+        </mdc:NC_Classifiers>
+    </mdc:nceaClassifierInfo>
+    <mdc:nceaIdentifiers>
+        <mdc:ProjectID>
+            <mdc:projectID>
+                <gco:CharacterString>some project ID</gco:CharacterString>
+            </mdc:projectID>
+        </mdc:ProjectID>
+        <mdc:MasterReferenceID>
+            <mdc:catalogueEntry>
+                <gco:CharacterString>some NCEACatalogueEntry</gco:CharacterString>
+            </mdc:catalogueEntry>
+            <mdc:sourceSystemReferenceID>
+                <gco:CharacterString>some SourceSystemReferenceID</gco:CharacterString>
+            </mdc:sourceSystemReferenceID>
+        </mdc:MasterReferenceID>
+    </mdc:nceaIdentifiers>
+</gmd:MD_Metadata>

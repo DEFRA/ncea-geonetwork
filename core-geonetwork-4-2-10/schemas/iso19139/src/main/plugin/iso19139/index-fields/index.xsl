@@ -44,6 +44,7 @@
   <xsl:import href="fn.xsl"/>
   <xsl:import href="common/inspire-constant.xsl"/>
   <xsl:import href="common/index-utils.xsl"/>
+  <xsl:import href="index-extra-fields.xsl"/>
 
   <xsl:output name="default-serialize-mode"
               indent="no"
@@ -82,7 +83,7 @@
 
   <xsl:variable name="siteUrl" select="util:getSiteUrl()" />
 
-  <xsl:template mode="index-extra-fields" match="*"/>
+  
 
   <xsl:template mode="index-extra-documents" match="*"/>
 
@@ -844,10 +845,14 @@
               </inspireServiceType>
             </xsl:if>
           </xsl:if>
-        </xsl:for-each>
-
-        <xsl:for-each select="srv:serviceTypeVersion">
-          <serviceTypeVersion><xsl:value-of select="gco:CharacterString/text()"/></serviceTypeVersion>
+          <xsl:if test="following-sibling::srv:serviceTypeVersion">
+            <serviceTypeAndVersion>
+              <xsl:value-of select="concat(
+                        text(),
+                        $separator,
+                        following-sibling::srv:serviceTypeVersion/gco:CharacterString/text())"/>
+            </serviceTypeAndVersion>
+          </xsl:if>
         </xsl:for-each>
       </xsl:for-each>
 
@@ -867,6 +872,16 @@
           </xsl:if>
 
           <crsDetails type="object">{
+			"ciTitle":"<xsl:value-of select="gn-fn-index:json-escape((gmd:authority/gmd:CI_Citation/gmd:title/gco:CharacterString/text()[1]))"/>",
+			<xsl:if test="gn-fn-index:is-isoDate((gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date)[1])">
+				<xsl:variable name="dateType"
+				select="gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType[1]/gmd:CI_DateTypeCode/@codeListValue"
+				as="xs:string?"/>
+				<xsl:variable name="date"
+				select="string(gmd:authority/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[1]/gco:Date|gmd:date[1]/gco:DateTime)"/>
+				"type": "<xsl:value-of select="$dateType"/>", 
+				"date": "<xsl:value-of select="$date" />",
+			</xsl:if>
             "code": "<xsl:value-of select="util:escapeForJson((gmd:code/*/text())[1])"/>",
             "codeSpace": "<xsl:value-of select="util:escapeForJson((gmd:codeSpace/*/text())[1])"/>",
             "name": "<xsl:value-of select="util:escapeForJson($crsLabel)"/>",
@@ -1062,7 +1077,7 @@
                                 'description', gmd:description, $allLanguages, true())"/>,
             </xsl:if>
             "function":"<xsl:value-of select="gmd:function/gmd:CI_OnLineFunctionCode/@codeListValue"/>",
-            "applicationProfile":"<xsl:value-of select="util:escapeForJson(gmd:applicationProfile/(gco:CharacterString|gmx:Anchor)/text())"/>",
+            "applicationProfile":"<xsl:value-of select="util:escapeForJson(gmd:applicationProfile/gco:CharacterString/text())"/>",
             "group": <xsl:value-of select="$transferGroup"/>
             }
             <!--Link object in Angular used to be
@@ -1208,12 +1223,18 @@
       <xsl:copy-of select="gn-fn-index:add-multilingual-field(
                             $roleField, $organisationName, $languages)"/>
     </xsl:if>
-    <xsl:element name="contact{$fieldSuffix}">
+    
+	<xsl:variable name="orgObject" select="gn-fn-index:add-multilingual-field('organisation', $organisationName, $languages, true())"/>
+	<xsl:element name="contact{$fieldSuffix}">
       <xsl:attribute name="type" select="'object'"/>{
-      <xsl:if test="$organisationName">
-        "organisationObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
-                              'organisation', $organisationName, $languages, true())"/>,
-      </xsl:if>
+      <!-- <xsl:if test="$organisationName"> -->
+		<!-- <xsl:if test="$orgObject != ''"> -->
+			<!-- "organisationObject": "<xsl:value-of select="util:escapeForJson($orgObject)"/>", -->
+		<!-- </xsl:if> -->
+      <!-- </xsl:if> -->
+	  <xsl:if test="$organisationName"> 
+	    "organisationName": "<xsl:value-of select="util:escapeForJson($organisationName)"/>", 
+	  </xsl:if> 
       "role":"<xsl:value-of select="$role"/>",
       "email":"<xsl:value-of select="util:escapeForJson($email[1])"/>",
       "website":"<xsl:value-of select="util:escapeForJson($website)"/>",

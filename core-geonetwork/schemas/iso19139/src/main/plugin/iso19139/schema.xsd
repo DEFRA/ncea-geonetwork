@@ -33,7 +33,6 @@
   <!-- 19139:2007 version -->
   <xs:include schemaLocation="schema2007/gmd/metadataApplication.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema2007/srv/srv.xsd"/>
-  <xs:import namespace="https://ncea-search.azure.defra.cloud/mdc" schemaLocation="schema2007/mdc/mdc.xsd"/>
   <xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="schema2007/gmx/gmx.xsd"/>
   <!-- 19139:2005 version
   <xs:include schemaLocation="schema/gmd/metadataApplication.xsd"/>

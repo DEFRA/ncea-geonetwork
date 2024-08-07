@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmd:MD_Metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:srv="http://www.isotc211.org/2005/srv" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/srv http://www.isotc211.org/2005/srv/srv.xsd http://www.opengis.net/gml http://www.isotc211.org/2005/gml/gml.xsd http://www.w3.org/1999/xlink http://www.isotc211.org/2005/xlink/xlinks.xsd">
+<gmd:MD_Metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gml="http://www.opengis.net/gml" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:mdc="https://ncea-search.azure.defra.cloud/mdc"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gss="http://www.isotc211.org/2005/gss"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd https://ncea-search.azure.defra.cloud/mdc http://www.isotc211.org/2005/srv http://www.isotc211.org/2005/srv/srv.xsd http://www.opengis.net/gml http://www.isotc211.org/2005/gml/gml.xsd http://www.w3.org/1999/xlink http://www.isotc211.org/2005/xlink/xlinks.xsd http://www.isotc211.org/2005/gmd">
     <gmd:fileIdentifier>
-        <gco:CharacterString>z3950-server-test-record-aabb12345bbaa</gco:CharacterString>
+        <gco:CharacterString>74c30b26-969a-466f-87fe-649e5af4feb7</gco:CharacterString>
     </gmd:fileIdentifier>
     <gmd:language>
         <gco:CharacterString>eng</gco:CharacterString>
     </gmd:language>
     <gmd:hierarchyLevel>
-        <gmd:MD_ScopeCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#MD_ScopeCode" codeListValue="service"/>
+        <gmd:MD_ScopeCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#MD_ScopeCode"
+                          codeListValue="service"/>
     </gmd:hierarchyLevel>
     <gmd:hierarchyLevelName>
         <gco:CharacterString>service - distributed Z23950 zservice</gco:CharacterString>
@@ -18,7 +26,8 @@
                 <gco:CharacterString>Geoffrey's Tube Australia</gco:CharacterString>
             </gmd:organisationName>
             <gmd:role>
-                <gmd:CI_RoleCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_RoleCode" codeListValue="resourceProvider"/>
+                <gmd:CI_RoleCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_RoleCode"
+                                 codeListValue="resourceProvider"/>
             </gmd:role>
         </gmd:CI_ResponsibleParty>
     </gmd:contact>
@@ -36,7 +45,8 @@
             <gmd:citation>
                 <gmd:CI_Citation>
                     <gmd:title>
-                        <gco:CharacterString>The Geoffrey's Tube Z3950 Server (Sample Record - Please Delete!)</gco:CharacterString>
+                        <gco:CharacterString>The Geoffrey's Tube Z3950 Server (Sample Record - Please Delete!)
+                        </gco:CharacterString>
                     </gmd:title>
                     <gmd:date>
                         <gmd:CI_Date>
@@ -44,7 +54,9 @@
                                 <gco:Date>2010-03-24</gco:Date>
                             </gmd:date>
                             <gmd:dateType>
-                                <gmd:CI_DateTypeCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision"/>
+                                <gmd:CI_DateTypeCode
+                                        codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_DateTypeCode"
+                                        codeListValue="revision"/>
                             </gmd:dateType>
                         </gmd:CI_Date>
                     </gmd:date>
@@ -85,14 +97,18 @@
                                 </gmd:CI_Contact>
                             </gmd:contactInfo>
                             <gmd:role>
-                                <gmd:CI_RoleCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_RoleCode" codeListValue="owner"/>
+                                <gmd:CI_RoleCode
+                                        codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_RoleCode"
+                                        codeListValue="owner"/>
                             </gmd:role>
                         </gmd:CI_ResponsibleParty>
                     </gmd:citedResponsibleParty>
                 </gmd:CI_Citation>
             </gmd:citation>
             <gmd:abstract>
-                <gco:CharacterString>This catalog is for registering all metadata records held by the Geofffrey's Tube Palace Hotel Ballroom.</gco:CharacterString>
+                <gco:CharacterString>This catalog is for registering all metadata records held by the Geofffrey's Tube
+                    Palace Hotel Ballroom.
+                </gco:CharacterString>
             </gmd:abstract>
             <srv:serviceType>
                 <gco:LocalName>ISO 23950 gateway</gco:LocalName>
@@ -136,12 +152,92 @@
                                 <gco:CharacterString>ASDD Z3950 zserver</gco:CharacterString>
                             </gmd:description>
                             <gmd:function>
-                                <gmd:CI_OnLineFunctionCode codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="search"/>
+                                <gmd:CI_OnLineFunctionCode
+                                        codeList="http://asdd.ga.gov.au/asdd/profileinfo/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                        codeListValue="search"/>
                             </gmd:function>
                         </gmd:CI_OnlineResource>
                     </srv:connectPoint>
                 </srv:SV_OperationMetadata>
             </srv:containsOperations>
+            <!-- Element 7 - Coupled Resource (C) -->
+            <srv:operatesOn xlink:href="http://marinedatainstitution.org/data/database/datapotal/"/>
         </srv:SV_ServiceIdentification>
     </gmd:identificationInfo>
+    <mdc:nceaClassifierInfo>
+        <mdc:NC_Classifiers>
+            <mdc:classifier>
+                <mdc:name>
+                    <gco:CharacterString>Ecosystem Services and Benefits</gco:CharacterString>
+                </mdc:name>
+                <mdc:code>
+                    <gco:CharacterString>lv1-005</gco:CharacterString>
+                </mdc:code>
+                <mdc:NC_Classifiers>
+                    <mdc:classifier>
+                        <mdc:name>
+                            <gco:CharacterString>Regulating Services</gco:CharacterString>
+                        </mdc:name>
+                        <mdc:code>
+                            <gco:CharacterString>lV2-003</gco:CharacterString>
+                        </mdc:code>
+                        <!-- child classifiers -->
+                        <mdc:NC_Classifiers>
+                            <mdc:classifier>
+                                <mdc:name>
+                                    <gco:CharacterString>Maintaining wild populations</gco:CharacterString>
+                                </mdc:name>
+                                <mdc:code>
+                                    <gco:CharacterString>lV2-002</gco:CharacterString>
+                                </mdc:code>
+                                <mdc:NC_Classifiers>
+                                    <mdc:classifier>
+                                        <mdc:name>
+                                            <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                        </mdc:name>
+                                        <mdc:code>
+                                            <gco:CharacterString>lV4-008</gco:CharacterString>
+                                        </mdc:code>
+                                    </mdc:classifier>
+                                </mdc:NC_Classifiers>
+                            </mdc:classifier>
+                        </mdc:NC_Classifiers>
+                    </mdc:classifier>
+                    <mdc:classifier>
+                        <mdc:name>
+                            <gco:CharacterString>Cultural Services</gco:CharacterString>
+                        </mdc:name>
+                        <mdc:code>
+                            <gco:CharacterString>lV2-009</gco:CharacterString>
+                        </mdc:code>
+                        <mdc:NC_Classifiers>
+                            <mdc:classifier>
+                                <mdc:name>
+                                    <gco:CharacterString>Cultural significance of nature</gco:CharacterString>
+                                </mdc:name>
+                                <mdc:code>
+                                    <gco:CharacterString>lV2-011</gco:CharacterString>
+                                </mdc:code>
+                            </mdc:classifier>
+                        </mdc:NC_Classifiers>
+                    </mdc:classifier>
+                </mdc:NC_Classifiers>
+            </mdc:classifier>
+        </mdc:NC_Classifiers>
+    </mdc:nceaClassifierInfo>
+    <mdc:nceaIdentifiers>
+        <mdc:ProjectID>
+            <mdc:projectID>
+                <gco:CharacterString>some project ID</gco:CharacterString>
+            </mdc:projectID>
+        </mdc:ProjectID>
+        <mdc:MasterReferenceID>
+            <mdc:catalogueEntry>
+                <gco:CharacterString>some NCEACatalogueEntry</gco:CharacterString>
+            </mdc:catalogueEntry>
+            <mdc:sourceSystemReferenceID>
+                <gco:CharacterString>some SourceSystemReferenceID</gco:CharacterString>
+            </mdc:sourceSystemReferenceID>
+        </mdc:MasterReferenceID>
+    </mdc:nceaIdentifiers>
 </gmd:MD_Metadata>

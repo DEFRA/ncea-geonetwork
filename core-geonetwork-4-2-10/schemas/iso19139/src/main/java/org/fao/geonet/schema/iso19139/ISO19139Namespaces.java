@@ -37,6 +37,8 @@ public class ISO19139Namespaces {
         Namespace.getNamespace("srv", "http://www.isotc211.org/2005/srv");
     public static final Namespace GMD =
         Namespace.getNamespace("gmd", "http://www.isotc211.org/2005/gmd");
+    public static final Namespace MDC =
+            Namespace.getNamespace("mdc", "https://ncea-search.azure.defra.cloud/mdc");
     public static final Namespace GML =
         Namespace.getNamespace("gml", "http://www.opengis.net/gml/3.2");
     public static final Namespace GML320 =

@@ -51,6 +51,7 @@ import java.util.stream.Collectors;
 
 import static org.fao.geonet.schema.iso19139.ISO19139Namespaces.GCO;
 import static org.fao.geonet.schema.iso19139.ISO19139Namespaces.GMD;
+import static org.fao.geonet.schema.iso19139.ISO19139Namespaces.MDC;
 import static org.fao.geonet.schema.iso19139.ISO19139Namespaces.GMX;
 import static org.fao.geonet.schema.iso19139.ISO19139Namespaces.SRV;
 import static org.fao.geonet.schema.iso19139.ISO19139Namespaces.XLINK;
@@ -78,6 +79,7 @@ public class ISO19139SchemaPlugin
             .add(GCO)
             .add(GMD)
             .add(SRV)
+            .add(MDC)
             .build();
         allTypenames = ImmutableMap.<String, Namespace>builder()
             .put("csw:Record", Namespace.getNamespace("csw", "http://www.opengis.net/cat/csw/2.0.2"))

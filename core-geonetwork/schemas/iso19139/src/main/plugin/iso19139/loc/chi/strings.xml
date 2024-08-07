@@ -49,8 +49,6 @@
   <identificationInfo>Identification</identificationInfo>
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Quality</dataQualityInfo>
-  <nceaClassifierInfo>Classifiers</nceaClassifierInfo>
-  <nceaIdentifiers>Identifiers</nceaIdentifiers>
   <spatialRepresentationInfo>Spatial rep.</spatialRepresentationInfo>
   <referenceSystemInfo>Ref. system</referenceSystemInfo>
   <contentInfo>Content</contentInfo>
