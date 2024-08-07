@@ -63,7 +63,7 @@
 	<xsl:copy-of select="gn-fn-index:add-field('mainLanguageFullName', $mainLanguageFullName)"/>
 	
 	<xsl:for-each select="gmd:identificationInfo">
-		<xsl:for-each select="gmd:MD_DataIdentification">
+		<xsl:for-each select="(gmd:MD_DataIdentification|srv:SV_ServiceIdentification)">
 			
 			<!-- characterSet -->
 			<xsl:for-each select="gmd:characterSet/*[@codeListValue != '']">
