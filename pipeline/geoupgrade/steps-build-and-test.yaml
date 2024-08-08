@@ -19,6 +19,6 @@ steps:
       Contents: |
         core-geonetwork-4-2-10/web/target/geonetwork.war
         core-geonetwork-4-2-10/docker/Dockerfile
-        core-geonetwork-4-2-10/docker-entrypoint.sh
+        core-geonetwork-4-2-10/docker/docker-entrypoint.sh
       TargetFolder: $(Build.ArtifactStagingDirectory)
       flattenFolders: true
