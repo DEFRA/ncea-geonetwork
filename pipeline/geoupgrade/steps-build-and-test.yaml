@@ -3,7 +3,7 @@ steps:
   - task: Maven@4
     displayName: 'Maven build'
     inputs:
-      mavenPomFile: 'core-geonetwork-4-2-10/pom.xml'
+      mavenPomFile: 'core-geonetwork-4-2-10-vanilla/pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
@@ -17,8 +17,8 @@ steps:
     inputs:
       SourceFolder: '$(System.DefaultWorkingDirectory)'
       Contents: |
-        core-geonetwork-4-2-10/web/target/geonetwork.war
-        core-geonetwork-4-2-10/docker/Dockerfile
-        core-geonetwork-4-2-10/docker/docker-entrypoint.sh
+        core-geonetwork-4-2-10-vanilla/web/target/geonetwork.war
+        core-geonetwork-4-2-10-vanilla/docker/Dockerfile
+        core-geonetwork-4-2-10-vanilla/docker/docker-entrypoint.sh
       TargetFolder: $(Build.ArtifactStagingDirectory)
       flattenFolders: true
