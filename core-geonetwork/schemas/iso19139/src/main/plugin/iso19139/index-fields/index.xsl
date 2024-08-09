@@ -1202,6 +1202,12 @@
     <xsl:variable name="address" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/(
                                         gmd:deliveryPoint|gmd:postalCode|gmd:city|
                                         gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+	  
+	  <xsl:variable name="deliveryPoint" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint/gco:CharacterString/text(), ', ')"/>
+	  <xsl:variable name="postalCode" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/gmd:postalCode/gco:CharacterString/text(), ', ')"/>
+	  <xsl:variable name="city" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/gmd:city/gco:CharacterString/text(), ', ')"/>
+	  <xsl:variable name="country" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/gmd:country/gco:CharacterString/text(), ', ')"/>
+	  <xsl:variable name="administrativeArea" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea/gco:CharacterString/text(), ', ')"/>
 
     <xsl:variable name="roleField"
                   select="concat(replace($role, '[^a-zA-Z0-9-]', ''),
@@ -1235,8 +1241,13 @@
       "individual":"<xsl:value-of select="util:escapeForJson($individualName)"/>",
       "position":"<xsl:value-of select="util:escapeForJson($positionName)"/>",
       "phone":"<xsl:value-of select="util:escapeForJson($phone[1])"/>",
-      "address":"<xsl:value-of select="util:escapeForJson($address)"/>"
-
+      "address":"<xsl:value-of select="util:escapeForJson($address)"/>",
+	  
+	  "deliveryPoint":"<xsl:value-of select="util:escapeForJson($deliveryPoint)"/>",
+      "postalCode":"<xsl:value-of select="util:escapeForJson($postalCode)"/>",
+      "city":"<xsl:value-of select="util:escapeForJson($city)"/>",
+	  "country":"<xsl:value-of select="util:escapeForJson($country)"/>",
+      "administrativeArea":"<xsl:value-of select="util:escapeForJson($administrativeArea)"/>"
       }
     </xsl:element>
   </xsl:template>
