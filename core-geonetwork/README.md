@@ -4,6 +4,38 @@
 
 [![Build Status](https://github.com/geonetwork/core-geonetwork/actions/workflows/linux.yml/badge.svg?branch=main)](https://github.com/geonetwork/core-geonetwork/actions/workflows/linux.yml?query=branch%3Amain)
 
+# Build Source code
+
+* If you only wish to quickly build the GeoNetwork code, execute the following:
+
+`cd core-geonetwork
+mvn clean install -DskipTests`
+
+* Generated "geonetwork.war" file and referred it in docker file for deployment.
+
+* Documentation is managed at [Geonetwork Build Documentation](https://docs.geonetwork-opensource.org/4.2/install-guide/installing-from-source-code/#tools)
+
+# Creating MDC schema
+
+* Created a folder folder for MDC schema files under below location
+  `core-geonetwork\web\src\main\webapp\WEB-INF\data\data\resources\xml\schemas\iso19139\schema2007\MDC`
+* Created 3 Schema files under MDC directory.
+  `MDC.xsd
+   identifiers.xsd
+   classifiers.xsd`
+* Added referrence to identifiers and Classifiers nodes in schema file 
+  schema file:
+  `ncea-geonetwork\core-geonetwork\web\src\main\webapp\WEB-INF\data\data\resources\xml\schemas\iso19139\schema2007\gmd\metadataEntity.xsd.`
+  
+   Code change:
+   `<xs:element name="nceaClassifierInfo" type="mdc:NC_Classifiers_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+   <xs:element name="nceaIdentifiers" type="mdc:NC_Identifiers_Type" minOccurs="0" maxOccurs="unbounded"/>`
+
+# Indexing customization
+* Created a xsl file for custom indexing "index-extra-fields.xsl" and referred it in index.xsl
+  `core-geonetwork\schemas\iso19139\src\main\plugin\iso19139\index-fields\index.xsl`
+* Added all custom indexing inside "index-extra-fields.xsl"
+
 # Features
 
 * Immediate search access to local and distributed geospatial catalogues
